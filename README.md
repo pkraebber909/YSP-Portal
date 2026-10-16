@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000`. On first run, the app creates a SQLite database and two random demo passwords in `.data/demo-credentials.txt`. Read that local file and sign in as either **YSP representative** or **Cyclones partner admin**. The credential file and database are ignored by Git. For a production-style local check, use `npm run build && npm run start`.
+Open `http://localhost:3000` and choose **Enter rep workspace** or **Enter partner workspace**. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
 
 Optional paths are documented in [.env.example](.env.example). Copy it to `.env.local` only if you want to move the SQLite database or upload directory. Relative paths resolve from the checkout. Uploads default to `.data/uploads`.
 
@@ -34,7 +34,7 @@ Match and experience assignments remain unconfirmed. The draft is shown as **Not
 
 ## Data and prototype limits
 
-SQLite persists organizations, users, contacts, partnerships, requirements, communications, files and the other relational concepts in `src/lib/db.ts`. Upload bytes persist on local disk. Session tokens are opaque, random and stored by hash; demo passwords are generated locally and stored as salted scrypt hashes. The two demo accounts provide a real server side role and organization boundary for this prototype, but there is no account administration, password recovery, email verification, multi-factor authentication, or production identity provider.
+SQLite persists organizations, users, contacts, partnerships, requirements, communications, files and the other relational concepts in `src/lib/db.ts`. Upload bytes persist on local disk. The two demo workspace buttons create opaque sessions so each view uses its own server side organization filter. Anyone who can reach the preview can choose either role, so this is **not authentication** and must not be used with real partner data. There is no account administration or production identity provider.
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance, photo distribution and CRM editing are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 

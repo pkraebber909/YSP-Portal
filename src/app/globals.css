@@ -13,4 +13,5 @@
 @media(max-width:480px){.detail-side{display:block}.hero-copy h1{font-size:2rem}.alert-line>div:nth-child(2){display:block}.alert-line span{display:block;margin-top:4px}.partner-welcome{padding:20px}.partner-welcome .club-logo{width:62px;height:62px}.partner-content h1{font-size:2.5rem}}
 
 .club-tile-image{width:64px;height:46px;object-fit:contain;flex:none}.club-profile-image{width:112px;height:80px;object-fit:contain;flex:none}.partner-welcome .club-profile-image{width:112px;height:80px}
+.demo-workspaces{display:grid;gap:12px;max-width:390px}.demo-workspaces form,.demo-workspaces button{width:100%}.demo-workspaces button{padding:15px 17px}.demo-workspaces .button.ghost{background:#fff;border:1px solid #cedee6;color:#0b4365}
 @media(max-width:480px){.club-profile-image,.partner-welcome .club-profile-image{width:88px;height:60px}}
