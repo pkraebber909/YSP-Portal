@@ -15,7 +15,9 @@ if [ ! -d node_modules ]; then
   npm ci
 fi
 
-nohup npm run dev -- --port "$port" > "$log_file" 2>&1 < /dev/null &
+# Codespaces closes the lifecycle command after it returns. Give Next.js its
+# own session so the server remains alive after that command ends.
+nohup setsid --fork npm run dev -- --port "$port" > "$log_file" 2>&1 < /dev/null
 
 for attempt in {1..30}; do
   if curl --fail --silent --output /dev/null --max-time 2 "$url"; then
