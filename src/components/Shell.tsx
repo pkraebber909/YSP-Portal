@@ -1,5 +1,39 @@
 import Link from "next/link";
 
-export function Shell({ kind, name, children }: { kind: "rep" | "partner"; name: string; children: React.ReactNode }) {
-  return <div className="app-shell"><aside className="sidebar"><Link href={kind === "rep" ? "/rep" : "/partner"} className="side-brand"><span className="brand-mark">YSP<span>•</span></span><small>SOCCER PARTNERSHIPS</small></Link><div className="side-season">SPRING 2027 <span>↗</span></div><nav aria-label="Main navigation"><p className="nav-label">WORKSPACE</p><Link className="nav-link active" href={kind === "rep" ? "/rep" : "/partner"}><span className="nav-icon">▦</span>{kind === "rep" ? "Partners" : "Overview"}</Link><div className="nav-link disabled"><span className="nav-icon">◫</span>Draft <span className="soon">Soon</span></div><div className="nav-link disabled"><span className="nav-icon">⌁</span>Matches <span className="soon">Soon</span></div>{kind === "rep" && <><p className="nav-label second">RELATIONSHIPS</p><div className="nav-link disabled"><span className="nav-icon">◎</span>Soccer CRM <span className="soon">Soon</span></div></>}</nav><div className="sidebar-bottom"><div className="avatar">{name.split(" ").map(x => x[0]).slice(0, 2).join("")}</div><div><strong>{name}</strong><small>{kind === "rep" ? "YSP Representative" : "Partner Admin"}</small></div><form action="/api/logout" method="post"><button title="Sign out" className="logout" type="submit">↪</button></form></div></aside><div className="main-area"><header className="topbar"><span>NYCFC <b>/</b> Youth Soccer Partnership</span><span className="topbar-right"><i className="status-dot" /> Spring 2027 <span className="topbar-divider" /> {kind === "rep" ? "Rep workspace" : "Partner workspace"}</span></header>{children}</div></div>;
+type ShellProps = {
+  kind: "rep" | "partner";
+  name: string;
+  children: React.ReactNode;
+  active?: "partners" | "club" | "overview";
+};
+
+export function Shell({ kind, name, children, active = kind === "rep" ? "partners" : "overview" }: ShellProps) {
+  const isRep = kind === "rep";
+
+  return <div className="app-shell">
+    <a className="skip-link" href="#main-content">Skip to main content</a>
+    <header className="site-header">
+      <Link href={isRep ? "/rep" : "/partner"} className="site-identity" aria-label="Youth Soccer Partnership home">
+        <span className="site-roundel" aria-hidden="true">YSP</span>
+        <span className="site-wordmark"><strong>NYCFC</strong><small>YOUTH SOCCER PARTNERSHIP</small></span>
+      </Link>
+      <span className="site-header-label">{isRep ? "Rep workspace" : "Partner workspace"}</span>
+      <div className="site-account"><span className="account-name">{name}</span><form action="/api/logout" method="post"><button className="sign-out" type="submit">Sign out</button></form></div>
+    </header>
+    <div className="sky-band"><span>SPRING 2027</span><span>YOUTH SOCCER PARTNERSHIPS</span></div>
+    <div className="page-masthead"><div className="masthead-inner"><span className="masthead-kicker">NEW YORK CITY FC</span><p>{isRep ? "Rep Workspace" : "Partner Workspace"}</p></div></div>
+    <nav className="workspace-nav" aria-label="Workspace navigation"><div className="workspace-nav-inner">
+      {isRep ? <>
+        <Link href="/rep" aria-current={active === "partners" ? "page" : undefined}>Partners</Link>
+        <Link href="/rep/partners/cyclones" aria-current={active === "club" ? "page" : undefined}>Cyclones record</Link>
+      </> : <>
+        <Link href="/partner" aria-current="page">Overview</Link>
+        <a href="#checklist">Checklist</a>
+        <a href="#messages">Messages</a>
+        <a href="#resources">Resources</a>
+      </>}
+    </div></nav>
+    {children}
+    <footer className="site-footer"><div><strong>NYCFC <span>YSP</span></strong><small>Spring 2027 prototype</small></div><span>Youth Soccer Partnership</span></footer>
+  </div>;
 }
