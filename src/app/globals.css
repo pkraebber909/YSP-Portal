@@ -40,6 +40,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .site-identity { display: inline-flex; align-items: center; gap: 13px; min-width: 0; text-decoration: none; }
 .site-identity:hover { text-decoration: none; }
 .site-roundel { width: 54px; height: 54px; flex: none; border: 3px solid #fff; border-radius: 50%; display: grid; place-items: center; box-shadow: inset 0 0 0 2px var(--sky); color: #fff; font-size: 15px; font-weight: 700; letter-spacing: -.06em; }
+.site-crest { width: 54px; height: 54px; flex: none; object-fit: contain; }
 .site-wordmark { display: grid; gap: 1px; }
 .site-wordmark strong { font-size: 1.22rem; line-height: 1; letter-spacing: -.04em; }
 .site-wordmark small { font-size: .59rem; font-weight: 700; letter-spacing: .1em; white-space: nowrap; }
@@ -219,6 +220,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 @media (max-width: 680px) {
   .site-header { min-height: 66px; gap: 12px; }
   .site-roundel { width: 46px; height: 46px; font-size: 13px; }
+  .site-crest { width: 46px; height: 46px; }
   .site-wordmark strong { font-size: 1rem; }
   .site-wordmark small { font-size: .48rem; }
   .site-header-label, .account-name { display: none; }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type ShellProps = {
   kind: "rep" | "partner";
@@ -14,7 +15,9 @@ export function Shell({ kind, name, children, active = kind === "rep" ? "partner
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <header className="site-header">
       <Link href={isRep ? "/rep" : "/partner"} className="site-identity" aria-label="Youth Soccer Partnership home">
-        <span className="site-roundel" aria-hidden="true">YSP</span>
+        {isRep
+          ? <Image className="site-crest" src="/nycfc-crest.png" alt="" width={54} height={54} priority />
+          : <span className="site-roundel" aria-hidden="true">YSP</span>}
         <span className="site-wordmark"><strong>NYCFC</strong><small>YOUTH SOCCER PARTNERSHIP</small></span>
       </Link>
       <span className="site-header-label">{isRep ? "Rep workspace" : "Partner workspace"}</span>
