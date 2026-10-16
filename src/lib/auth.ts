@@ -2,11 +2,11 @@ import { cookies } from "next/headers";
 import { randomBytes, createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import Database from "better-sqlite3";
+import { DatabaseSync } from "node:sqlite";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-const authDb = new Database(dbPath);
+const authDb = new DatabaseSync(dbPath, { timeout: 5000 });
 authDb.exec("CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL, expires_at INTEGER NOT NULL);");
 
 export type Session = { userId: string; role: "rep" | "partner_admin"; organizationId: string | null; name: string };

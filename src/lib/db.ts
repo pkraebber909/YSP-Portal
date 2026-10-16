@@ -1,12 +1,11 @@
-import Database from "better-sqlite3";
+import { DatabaseSync } from "node:sqlite";
 import fs from "node:fs";
 import path from "node:path";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-const db = new Database(dbPath);
-db.pragma("foreign_keys = ON");
-db.pragma("journal_mode = WAL");
+const db = new DatabaseSync(dbPath, { timeout: 5000 });
+db.exec("PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL;");
 
 db.exec(`
 CREATE TABLE IF NOT EXISTS organizations (id TEXT PRIMARY KEY, name TEXT NOT NULL, kind TEXT NOT NULL, website TEXT, instagram TEXT, facebook TEXT, logo_path TEXT);
@@ -27,7 +26,8 @@ CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
 CREATE INDEX IF NOT EXISTS idx_communications_org ON communications(organization_id);
 `);
 
-db.transaction(() => {
+db.exec("BEGIN IMMEDIATE;");
+try {
   if (!db.prepare("SELECT 1 FROM organizations WHERE id = ?").get("cyclones")) {
     db.prepare("INSERT INTO organizations (id,name,kind) VALUES (?,?,?)").run("cyclones", "Coney Island Cyclones Soccer Club", "youth_club");
     db.prepare("INSERT INTO users (id,name,role,organization_id) VALUES (?,?,?,?)").run("phineas", "Phineas Kraebber", "rep", null);
@@ -40,7 +40,11 @@ db.transaction(() => {
     }
     db.prepare("INSERT INTO portal_access (id,user_id,organization_id,role) VALUES (?,?,?,?)").run("cyclones-access", "cyclones-admin", "cyclones", "admin");
   }
-}).immediate();
+  db.exec("COMMIT;");
+} catch (error) {
+  db.exec("ROLLBACK;");
+  throw error;
+}
 
 export type Organization = { id: string; name: string; website: string | null; instagram: string | null; facebook: string | null; logo_path: string | null };
 export type Partnership = { id: string; organization_id: string; season: string; status: string; stage: string; draft_status: string; match_id: string | null; rep_name: string };
@@ -67,7 +71,7 @@ export function listPartnersForRep(repId: string) {
 }
 
 export function setRequirement(orgId: string, id: string, complete: boolean) {
-  return db.prepare("UPDATE requirements SET completed_at = ? WHERE id = ? AND organization_id = ?").run(complete ? new Date().toISOString() : null, id, orgId).changes;
+  return Number(db.prepare("UPDATE requirements SET completed_at = ? WHERE id = ? AND organization_id = ?").run(complete ? new Date().toISOString() : null, id, orgId).changes);
 }
 export function addCommunication(orgId: string, author: string, body: string, visibility: "partner" | "internal") {
   const id = crypto.randomUUID();
