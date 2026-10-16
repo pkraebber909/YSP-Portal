@@ -26,7 +26,7 @@ The data tests create their own temporary SQLite database. `npm run build` also 
 
 ## The Cyclones slice
 
-The rep signs in, opens **Assigned partners**, and selects Cyclones. The detail page shows the known club, contact, owner, season and stage, plus editable website, Instagram and Facebook links. The logo is a styled **CI** placeholder. Replace the placeholder in `src/app/rep/partners/[id]/page.tsx` and `src/app/partner/page.tsx` with a club approved asset placed at `public/cyclones-logo.png` when available.
+The rep signs in, opens **Assigned partners**, and selects Cyclones. The detail page shows the known club, contact, owner, season and stage, plus editable website, Instagram and Facebook links. The supplied inline Cyclones logo is represented by a close transparent recreation at `public/cyclones-logo.png`. Replace that file with the approved original PNG when available; the tile and profile views use the same asset.
 
 The rep can mark requirements complete or undo them, log a partner-visible message or internal note, upload a PDF, image or text file (up to 10 MB), and change a file's visibility. **Preview partner view** uses the same organization scoped query as a partner account. Internal notes and files never enter that query. Uploaded files are served by an access checked download endpoint.
 
