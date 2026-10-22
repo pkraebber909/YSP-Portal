@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000` and choose **Enter rep workspace** or **Enter partner workspace**. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
+Open `http://localhost:3000` and choose **Enter rep workspace**, **Enter partner workspace**, or **Enter YSP Internal CRM**. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
 
 Optional paths are documented in [.env.example](.env.example). Copy it to `.env.local` only if you want to move the SQLite database or upload directory. Relative paths resolve from the checkout. Uploads default to `.data/uploads`.
 
@@ -32,13 +32,19 @@ The rep can mark requirements complete or undo them, log a partner-visible messa
 
 Match and experience assignments remain unconfirmed. The draft is shown as **Not started**. No contact address, match date, selected experience, or deadline is invented.
 
+## YSP Internal CRM
+
+The CRM entry and the **CRM** tab in the rep workspace open six internal club records: 06 United New York, AAFNY, Alta Football Club, Brooklyn Hares Football Club, Corona Soccer Kids FC, and DKAY Henry Soccer Training. Each record has a current next action and a dated list of internal notes. Both are saved in the local SQLite database. The club marks are placeholders until approved logo files are available. These records are separate from the Cyclones partnership workflow.
+
+The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
+
 ## Data and prototype limits
 
-SQLite persists organizations, users, contacts, partnerships, requirements, communications, files and the other relational concepts in `src/lib/db.ts`. Upload bytes persist on local disk. The two demo workspace buttons create opaque sessions so each view uses its own server side organization filter. Anyone who can reach the preview can choose either role, so this is **not authentication** and must not be used with real partner data. There is no account administration or production identity provider.
+SQLite persists organizations, users, contacts, partnerships, requirements, communications, CRM records, files and the other relational concepts in `src/lib/db.ts`. Upload bytes persist on local disk. The demo workspace buttons create opaque sessions so each view uses its own server side organization filter. Anyone who can reach the preview can choose any role, so this is **not authentication** and must not be used with real partner data. There is no account administration or production identity provider.
 
-**Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance, photo distribution and CRM editing are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
+**Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The current UI and rep authorization are deliberately limited to the seeded Cyclones record and Phineas Kraebber. The schema includes organization, season, match and experience links for expansion to other clubs. Existing demo data is seeded once; changing seed code does not rewrite a populated database.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM adds six internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. Existing demo data is seeded once; changing seed code does not rewrite a populated database.
 
 ## Next milestone
 

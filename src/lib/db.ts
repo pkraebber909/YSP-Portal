@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS communications (id TEXT PRIMARY KEY, organization_id 
 CREATE TABLE IF NOT EXISTS files (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), partnership_id TEXT NOT NULL REFERENCES partnerships(id), original_name TEXT NOT NULL, stored_name TEXT NOT NULL, mime_type TEXT NOT NULL, size INTEGER NOT NULL, visibility TEXT NOT NULL, uploaded_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS portal_access (id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), organization_id TEXT NOT NULL REFERENCES organizations(id), role TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_activities (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), rep_id TEXT REFERENCES users(id), note TEXT NOT NULL, next_action TEXT, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS crm_records (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), next_action TEXT, updated_at TEXT);
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
 CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
 CREATE INDEX IF NOT EXISTS idx_communications_org ON communications(organization_id);
@@ -40,6 +41,19 @@ try {
     }
     db.prepare("INSERT INTO portal_access (id,user_id,organization_id,role) VALUES (?,?,?,?)").run("cyclones-access", "cyclones-admin", "cyclones", "admin");
   }
+  const insertClub = db.prepare("INSERT OR IGNORE INTO organizations (id,name,kind) VALUES (?,?,?)");
+  const insertRecord = db.prepare("INSERT OR IGNORE INTO crm_records (organization_id) VALUES (?)");
+  for (const [id, name] of [
+    ["06-united-new-york", "06 United New York"],
+    ["aafny", "AAFNY"],
+    ["alta-football-club", "Alta Football Club"],
+    ["brooklyn-hares-football-club", "Brooklyn Hares Football Club"],
+    ["corona-soccer-kids-fc", "Corona Soccer Kids FC"],
+    ["dkay-henry-soccer-training", "DKAY Henry Soccer Training"],
+  ]) {
+    insertClub.run(id, name, "crm_club");
+    insertRecord.run(id);
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");
@@ -51,6 +65,26 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
+export type CrmClub = { id: string; name: string; next_action: string | null; updated_at: string | null };
+export type CrmNote = { id: string; note: string; author: string; created_at: string };
+
+export function listCrmClubs() {
+  return db.prepare("SELECT o.id,o.name,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' ORDER BY o.name").all() as CrmClub[];
+}
+export function getCrmClub(orgId: string) {
+  return db.prepare("SELECT o.id,o.name,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' AND o.id=?").get(orgId) as CrmClub | undefined;
+}
+export function listCrmNotes(orgId: string) {
+  return db.prepare("SELECT a.id,a.note,COALESCE(u.name,'Rep') AS author,a.created_at FROM crm_activities a LEFT JOIN users u ON u.id=a.rep_id WHERE a.organization_id=? ORDER BY a.created_at DESC, a.rowid DESC").all(orgId) as CrmNote[];
+}
+export function addCrmNote(orgId: string, repId: string, note: string) {
+  if (!getCrmClub(orgId)) return false;
+  db.prepare("INSERT INTO crm_activities (id,organization_id,rep_id,note,created_at) VALUES (?,?,?,?,?)").run(crypto.randomUUID(), orgId, repId, note, new Date().toISOString());
+  return true;
+}
+export function setCrmNextAction(orgId: string, nextAction: string | null) {
+  return Number(db.prepare("UPDATE crm_records SET next_action=?,updated_at=? WHERE organization_id=?").run(nextAction, new Date().toISOString(), orgId).changes);
+}
 
 export function getPartner(orgId: string, partnerView = false) {
   const organization = db.prepare("SELECT id,name,website,instagram,facebook,logo_path FROM organizations WHERE id = ?").get(orgId) as Organization | undefined;

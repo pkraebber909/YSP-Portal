@@ -99,6 +99,14 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .row-badge { padding: 6px 10px; background: var(--pale); color: #004678; font-size: .8rem; font-weight: 700; white-space: nowrap; }
 .row-arrow { font-size: 1.3rem; color: #17659d; }
 .footnote { margin-top: 18px; color: var(--muted); font-size: .82rem; }
+.crm-notice { padding: 13px 16px; margin-bottom: 28px; border-left: 4px solid #2c85bc; background: var(--pale); color: #284457; font-size: .88rem; }
+.crm-logo { width: 68px; height: 54px; flex: none; display: grid; place-items: center; border: 1px solid #a6bed0; background: #e4f3ff; color: #004678; font-size: 1.2rem; font-weight: 700; letter-spacing: -.04em; }
+.crm-logo.large { width: 112px; height: 80px; font-size: 1.8rem; }
+.crm-sections { max-width: 860px; }
+.crm-form label { display: block; margin-bottom: 7px; color: #334857; font-size: .84rem; font-weight: 700; }
+.crm-form textarea { width: 100%; min-height: 100px; padding: 10px; border: 1px solid #aab9c4; border-radius: 2px; resize: vertical; color: var(--ink); font-size: .9rem; }
+.crm-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; }
+.crm-sections .panel { padding-bottom: 32px; }
 
 /* Club detail and partner overview */
 .back-link { display: inline-block; margin-bottom: 22px; color: #075283; font-size: .88rem; font-weight: 700; text-decoration: underline; }
@@ -258,6 +266,9 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
   .summary-strip > div:last-child { border-bottom: 0; }
   .summary-strip > div span:last-child { margin-top: 0; }
   .club-tile-image { width: 54px; height: 44px; }
+  .crm-logo { width: 54px; height: 44px; }
+  .crm-logo.large { width: 86px; height: 68px; }
+  .crm-form-footer { align-items: stretch; flex-direction: column; }
   .row-badge { font-size: .72rem; }
   .row-arrow { display: none; }
   .detail-side { display: block; }

@@ -8,7 +8,7 @@ export default function Login() {
       <div className="login-panel">
         <p className="eyebrow">Spring 2027 prototype</p>
         <h1>Choose a workspace</h1>
-        <p className="muted">Explore the Cyclones prototype without a password.</p>
+        <p className="muted">Explore the YSP prototype without a password.</p>
         <div className="demo-workspaces">
           <form action="/api/login" method="post">
             <input type="hidden" name="userId" value="phineas" />
@@ -17,6 +17,11 @@ export default function Login() {
           <form action="/api/login" method="post">
             <input type="hidden" name="userId" value="cyclones-admin" />
             <button className="button ghost" type="submit">Enter partner workspace <span>→</span></button>
+          </form>
+          <form action="/api/login" method="post">
+            <input type="hidden" name="userId" value="phineas" />
+            <input type="hidden" name="destination" value="crm" />
+            <button className="button ghost" type="submit">Enter YSP Internal CRM <span>→</span></button>
           </form>
         </div>
         <p className="small muted">Demo access is open to anyone who can reach this preview. Use test information only.</p>
