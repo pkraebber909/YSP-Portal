@@ -102,6 +102,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-notice { padding: 13px 16px; margin-bottom: 28px; border-left: 4px solid #2c85bc; background: var(--pale); color: #284457; font-size: .88rem; }
 .crm-logo { width: 68px; height: 54px; flex: none; display: grid; place-items: center; border: 1px solid #a6bed0; background: #e4f3ff; color: #004678; font-size: 1.2rem; font-weight: 700; letter-spacing: -.04em; }
 .crm-logo.large { width: 112px; height: 80px; font-size: 1.8rem; }
+.crm-logo img { width: 100%; height: 100%; object-fit: contain; }
 .crm-sections { max-width: 860px; }
 .crm-form label { display: block; margin-bottom: 7px; color: #334857; font-size: .84rem; font-weight: 700; }
 .crm-form textarea { width: 100%; min-height: 100px; padding: 10px; border: 1px solid #aab9c4; border-radius: 2px; resize: vertical; color: var(--ink); font-size: .9rem; }

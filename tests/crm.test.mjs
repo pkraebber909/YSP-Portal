@@ -9,9 +9,10 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 
-test("CRM seeds six separate clubs and leaves Cyclones partnership available", () => {
+test("CRM seeds all 14 clubs and leaves Cyclones partnership available", () => {
   assert.deepEqual(data.listCrmClubs().map(club => club.name), [
     "06 United New York", "AAFNY", "Alta Football Club", "Brooklyn Hares Football Club", "Corona Soccer Kids FC", "DKAY Henry Soccer Training",
+    "Eleftheria-Pancyprian", "Futbol Rebels", "Guerreros FC", "GW YSL", "Imperio New York", "Liga 16 de Septiembre", "Morelia Soccer Academy NY", "New York Kids Soccer Club",
   ]);
   assert.equal(data.getPartner("cyclones").organization.name, "Coney Island Cyclones Soccer Club");
   assert.equal(data.getCrmClub("cyclones"), undefined);

@@ -34,7 +34,7 @@ Match and experience assignments remain unconfirmed. The draft is shown as **Not
 
 ## YSP Internal CRM
 
-The CRM entry and the **CRM** tab in the rep workspace open six internal club records: 06 United New York, AAFNY, Alta Football Club, Brooklyn Hares Football Club, Corona Soccer Kids FC, and DKAY Henry Soccer Training. Each record has a current next action and a dated list of internal notes. Both are saved in the local SQLite database. The club marks are placeholders until approved logo files are available. These records are separate from the Cyclones partnership workflow.
+The CRM entry and the **CRM** tab in the rep workspace open 14 internal club records: 06 United New York, AAFNY, Alta Football Club, Brooklyn Hares Football Club, Corona Soccer Kids FC, DKAY Henry Soccer Training, Eleftheria-Pancyprian, Futbol Rebels, Guerreros FC, GW YSL, Imperio New York, Liga 16 de Septiembre, Morelia Soccer Academy NY, and New York Kids Soccer Club. Each record has a current next action and a dated list of internal notes. Both are saved in the local SQLite database. A club's logo appears when its image is installed; otherwise the page shows initials. These records are separate from the Cyclones partnership workflow.
 
 The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
 
@@ -44,7 +44,7 @@ SQLite persists organizations, users, contacts, partnerships, requirements, comm
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM adds six internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. Existing demo data is seeded once; changing seed code does not rewrite a populated database.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM adds 14 internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. Existing demo data is seeded once; changing seed code does not rewrite a populated database.
 
 ## Next milestone
 

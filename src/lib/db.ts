@@ -50,6 +50,14 @@ try {
     ["brooklyn-hares-football-club", "Brooklyn Hares Football Club"],
     ["corona-soccer-kids-fc", "Corona Soccer Kids FC"],
     ["dkay-henry-soccer-training", "DKAY Henry Soccer Training"],
+    ["eleftheria-pancyprian", "Eleftheria-Pancyprian"],
+    ["futbol-rebels", "Futbol Rebels"],
+    ["guerreros-fc", "Guerreros FC"],
+    ["gw-ysl", "GW YSL"],
+    ["imperio-new-york", "Imperio New York"],
+    ["liga-16-de-septiembre", "Liga 16 de Septiembre"],
+    ["morelia-soccer-academy-ny", "Morelia Soccer Academy NY"],
+    ["new-york-kids-soccer-club", "New York Kids Soccer Club"],
   ]) {
     insertClub.run(id, name, "crm_club");
     insertRecord.run(id);
@@ -65,14 +73,14 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
-export type CrmClub = { id: string; name: string; next_action: string | null; updated_at: string | null };
+export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
 
 export function listCrmClubs() {
-  return db.prepare("SELECT o.id,o.name,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' ORDER BY o.name").all() as CrmClub[];
+  return db.prepare("SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' ORDER BY o.name COLLATE NOCASE").all() as CrmClub[];
 }
 export function getCrmClub(orgId: string) {
-  return db.prepare("SELECT o.id,o.name,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' AND o.id=?").get(orgId) as CrmClub | undefined;
+  return db.prepare("SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' AND o.id=?").get(orgId) as CrmClub | undefined;
 }
 export function listCrmNotes(orgId: string) {
   return db.prepare("SELECT a.id,a.note,COALESCE(u.name,'Rep') AS author,a.created_at FROM crm_activities a LEFT JOIN users u ON u.id=a.rep_id WHERE a.organization_id=? ORDER BY a.created_at DESC, a.rowid DESC").all(orgId) as CrmNote[];
