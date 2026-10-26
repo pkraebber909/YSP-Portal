@@ -3,17 +3,26 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 
-test("CRM seeds all 14 clubs and leaves Cyclones partnership available", () => {
+test("CRM seeds all 20 clubs with matching image files and leaves Cyclones available", () => {
   assert.deepEqual(data.listCrmClubs().map(club => club.name), [
-    "06 United New York", "AAFNY", "Alta Football Club", "Brooklyn Hares Football Club", "Corona Soccer Kids FC", "DKAY Henry Soccer Training",
-    "Eleftheria-Pancyprian", "Futbol Rebels", "Guerreros FC", "GW YSL", "Imperio New York", "Liga 16 de Septiembre", "Morelia Soccer Academy NY", "New York Kids Soccer Club",
+    "06 United New York", "AAFNY", "Academy Argentina", "Alta Football Club", "Brooklyn Hares Football Club", "Corona Soccer Kids FC", "DKAY Henry Soccer Training",
+    "Eleftheria-Pancyprian", "Futbol Rebels", "Guerreros FC", "GW YSL", "Imperio New York", "Liga 16 de Septiembre", "Morelia Soccer Academy NY", "New York Kids Soccer Club", "New York Talentos", "Peruvian American Soccer NYC", "Reato Soccer Academy", "SC Gjøa", "Soccer Friends USA",
   ]);
+  const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
+  for (const club of data.listCrmClubs()) {
+    if (club.id === "aafny") assert.equal(club.logo_path, null);
+    else {
+      assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
+      assert.ok(fs.existsSync(path.join(publicDir, club.logo_path.slice(1))), `${club.name} logo file exists`);
+    }
+  }
   assert.equal(data.getPartner("cyclones").organization.name, "Coney Island Cyclones Soccer Club");
   assert.equal(data.getCrmClub("cyclones"), undefined);
 });

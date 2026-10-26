@@ -41,25 +41,34 @@ try {
     }
     db.prepare("INSERT INTO portal_access (id,user_id,organization_id,role) VALUES (?,?,?,?)").run("cyclones-access", "cyclones-admin", "cyclones", "admin");
   }
-  const insertClub = db.prepare("INSERT OR IGNORE INTO organizations (id,name,kind) VALUES (?,?,?)");
+  const insertClub = db.prepare("INSERT OR IGNORE INTO organizations (id,name,kind,logo_path) VALUES (?,?,?,?)");
+  const fillLogo = db.prepare("UPDATE organizations SET logo_path=? WHERE id=? AND kind='crm_club' AND logo_path IS NULL");
   const insertRecord = db.prepare("INSERT OR IGNORE INTO crm_records (organization_id) VALUES (?)");
-  for (const [id, name] of [
-    ["06-united-new-york", "06 United New York"],
-    ["aafny", "AAFNY"],
-    ["alta-football-club", "Alta Football Club"],
-    ["brooklyn-hares-football-club", "Brooklyn Hares Football Club"],
-    ["corona-soccer-kids-fc", "Corona Soccer Kids FC"],
-    ["dkay-henry-soccer-training", "DKAY Henry Soccer Training"],
-    ["eleftheria-pancyprian", "Eleftheria-Pancyprian"],
-    ["futbol-rebels", "Futbol Rebels"],
-    ["guerreros-fc", "Guerreros FC"],
-    ["gw-ysl", "GW YSL"],
-    ["imperio-new-york", "Imperio New York"],
-    ["liga-16-de-septiembre", "Liga 16 de Septiembre"],
-    ["morelia-soccer-academy-ny", "Morelia Soccer Academy NY"],
-    ["new-york-kids-soccer-club", "New York Kids Soccer Club"],
+  for (const [id, name, logo] of [
+    ["06-united-new-york", "06 United New York", "06-united-new-york.webp"],
+    ["aafny", "AAFNY", null],
+    ["academy-argentina", "Academy Argentina", "academy-argentina.webp"],
+    ["alta-football-club", "Alta Football Club", "alta-football-club.png"],
+    ["brooklyn-hares-football-club", "Brooklyn Hares Football Club", "brooklyn-hares-football-club.png"],
+    ["corona-soccer-kids-fc", "Corona Soccer Kids FC", "corona-soccer-kids-fc.webp"],
+    ["dkay-henry-soccer-training", "DKAY Henry Soccer Training", "dkay-henry-soccer-training.webp"],
+    ["eleftheria-pancyprian", "Eleftheria-Pancyprian", "eleftheria-pancyprian.webp"],
+    ["futbol-rebels", "Futbol Rebels", "futbol-rebels.webp"],
+    ["guerreros-fc", "Guerreros FC", "guerreros-fc.webp"],
+    ["gw-ysl", "GW YSL", "gw-ysl.webp"],
+    ["imperio-new-york", "Imperio New York", "imperio-new-york.webp"],
+    ["liga-16-de-septiembre", "Liga 16 de Septiembre", "liga-16-de-septiembre.webp"],
+    ["morelia-soccer-academy-ny", "Morelia Soccer Academy NY", "morelia-soccer-academy-ny.webp"],
+    ["new-york-kids-soccer-club", "New York Kids Soccer Club", "new-york-kids-soccer-club.webp"],
+    ["new-york-talentos", "New York Talentos", "new-york-talentos.webp"],
+    ["peruvian-american-soccer-nyc", "Peruvian American Soccer NYC", "peruvian-american-soccer-nyc.webp"],
+    ["reato-soccer-academy", "Reato Soccer Academy", "reato-soccer-academy.webp"],
+    ["sc-gjoa", "SC Gjøa", "sc-gjoa.webp"],
+    ["soccer-friends-usa", "Soccer Friends USA", "soccer-friends-usa.webp"],
   ]) {
-    insertClub.run(id, name, "crm_club");
+    const logoPath = logo ? `/club-logos/${logo}` : null;
+    insertClub.run(id, name, "crm_club", logoPath);
+    if (logoPath) fillLogo.run(logoPath, id);
     insertRecord.run(id);
   }
   db.exec("COMMIT;");
