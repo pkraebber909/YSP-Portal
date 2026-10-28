@@ -10,15 +10,17 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 
-test("CRM seeds all 20 clubs with matching image files and leaves Cyclones available", () => {
-  assert.deepEqual(data.listCrmClubs().map(club => club.name), [
-    "06 United New York", "AAFNY", "Academy Argentina", "Alta Football Club", "Brooklyn Hares Football Club", "Corona Soccer Kids FC", "DKAY Henry Soccer Training",
-    "Eleftheria-Pancyprian", "Futbol Rebels", "Guerreros FC", "GW YSL", "Imperio New York", "Liga 16 de Septiembre", "Morelia Soccer Academy NY", "New York Kids Soccer Club", "New York Talentos", "Peruvian American Soccer NYC", "Reato Soccer Academy", "SC Gjøa", "Soccer Friends USA",
-  ]);
+test("CRM includes the starter directory, keeps earlier clubs, and resolves installed logos", () => {
+  const clubs = data.listCrmClubs();
+  assert.equal(clubs.length, 75);
+  assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
+  for (const name of ["06 United", "Academia Argentina De Futbol En New York", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "AAFNY"]) {
+    assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
+  }
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  for (const club of data.listCrmClubs()) {
-    if (club.id === "aafny") assert.equal(club.logo_path, null);
-    else {
+  assert.equal(clubs.filter(club => club.logo_path).length, 19);
+  for (const club of clubs) {
+    if (club.logo_path) {
       assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
       assert.ok(fs.existsSync(path.join(publicDir, club.logo_path.slice(1))), `${club.name} logo file exists`);
     }
