@@ -34,7 +34,7 @@ Match and experience assignments remain unconfirmed. The draft is shown as **Not
 
 ## YSP Internal CRM
 
-The CRM entry on the login page opens 73 internal club records: 64 from the starter list after removing EPSC, plus 9 earlier clubs that are not on that list. A search box helps find a club. Each record has a current next action and a dated list of internal notes, saved in the local SQLite database. The supplied logos are shown for 45 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow. Existing EPSC data is retained outside the active CRM directory.
+The CRM entry on the login page opens 74 internal club records: 64 from the starter list after removing EPSC, plus 10 additional clubs. A search box helps find a club. Each record has a current next action and a dated list of internal notes, saved in the local SQLite database. The supplied logos are shown for 52 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow. Existing EPSC data is retained outside the active CRM directory.
 
 The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
 
@@ -44,7 +44,7 @@ SQLite persists organizations, users, contacts, partnerships, requirements, comm
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 73 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 74 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
 
 ## Next milestone
 

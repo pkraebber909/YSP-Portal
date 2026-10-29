@@ -12,9 +12,9 @@ const data = await import("../src/lib/db.ts");
 
 test("CRM includes the starter directory, keeps earlier clubs, and resolves installed logos", () => {
   const clubs = data.listCrmClubs();
-  assert.equal(clubs.length, 73);
+  assert.equal(clubs.length, 74);
   assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
-  for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club"]) {
+  for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL"]) {
     assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
   }
   assert.ok(!clubs.some(club => club.id === "academy-argentina"));
@@ -36,6 +36,14 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["eysa", "eysa.png"],
     ["fc-la-isla", "fc-la-isla.png"],
     ["fox-soccer", "fox-soccer.png"],
+    ["soccer-kids-nyc", "soccer-kids-nyc.webp"],
+    ["soccer-friends-usa", "soccer-friends-usa.webp"],
+    ["soccer-legion", "soccer-legion.webp"],
+    ["soccer-performance-lab", "soccer-performance-lab.webp"],
+    ["soccer-shots", "soccer-shots.png"],
+    ["soccer-stars", "soccer-stars.png"],
+    ["somers-ayso", "somers-ayso.png"],
+    ["sysl", "stamford-youth-soccer.webp"],
     ["sterling-house", "sterling-house.png"],
     ["tbg", "tbg.webp"],
     ["tibet-fc", "tibet-fc.png"],
@@ -50,7 +58,7 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 45);
+  assert.equal(clubs.filter(club => club.logo_path).length, 52);
   for (const club of clubs) {
     if (club.logo_path) {
       assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
@@ -85,7 +93,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   legacy.close();
 
   const merged = await import("../src/lib/db.ts?merge-legacy-action");
-  assert.equal(merged.listCrmClubs().length, 73);
+  assert.equal(merged.listCrmClubs().length, 74);
   assert.equal(merged.getCrmClub("academy-argentina"), undefined);
   assert.equal(merged.getCrmClub("aafny").next_action, "Call club director");
   assert.ok(merged.listCrmNotes("aafny").some(note => note.note === "Intro call completed"));
@@ -99,7 +107,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   const mergedAgain = await import("../src/lib/db.ts?merge-conflicting-actions");
   assert.equal(mergedAgain.getCrmClub("aafny").next_action, "Send proposal");
   assert.ok(mergedAgain.listCrmNotes("aafny").some(note => note.note === "Previous Academia Argentina next action: Schedule meeting"));
-  assert.equal(mergedAgain.listCrmClubs().length, 73);
+  assert.equal(mergedAgain.listCrmClubs().length, 74);
 });
 
 test("removing EPSC from the CRM preserves existing notes and actions", async () => {
@@ -111,7 +119,7 @@ test("removing EPSC from the CRM preserves existing notes and actions", async ()
 
   const updated = await import("../src/lib/db.ts?archive-epsc");
   assert.equal(updated.getCrmClub("epsc"), undefined);
-  assert.equal(updated.listCrmClubs().length, 73);
+  assert.equal(updated.listCrmClubs().length, 74);
   const preserved = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.deepEqual({ ...preserved.prepare("SELECT o.kind,r.next_action FROM organizations o JOIN crm_records r ON r.organization_id=o.id WHERE o.id='epsc'").get() }, { kind: "crm_archived", next_action: "Follow up" });
   assert.equal(preserved.prepare("SELECT note FROM crm_activities WHERE organization_id='epsc'").get().note, "Prior conversation");
