@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Login() {
   return <div className="login-page">
     <a className="skip-link" href="#main-content">Skip to main content</a>
-    <header className="login-header"><div className="site-identity"><span className="site-roundel" aria-hidden="true">YSP</span><span className="site-wordmark"><strong>NYCFC</strong><small>YOUTH SOCCER PORTAL</small></span></div></header>
+    <header className="login-header"><div className="site-identity"><Image className="site-crest" src="/nycfc-crest.png" alt="New York City FC crest" width={54} height={54} priority /><span className="site-wordmark"><strong>NYCFC</strong><small>YOUTH SOCCER PORTAL</small></span></div></header>
     <div className="login-band" />
     <div className="login-masthead"><p>Youth Soccer Portal</p></div>
     <main className="login-content" id="main-content">
