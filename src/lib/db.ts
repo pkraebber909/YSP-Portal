@@ -46,8 +46,7 @@ try {
   const insertRecord = db.prepare("INSERT OR IGNORE INTO crm_records (organization_id) VALUES (?)");
   for (const [id, name, logo] of [
     ["06-united-new-york", "06 United New York", "06-united-new-york.webp"],
-    ["aafny", "AAFNY", null],
-    ["academy-argentina", "Academy Argentina", "academy-argentina.webp"],
+    ["aafny", "AAFNY", "academy-argentina.webp"],
     ["alta-football-club", "Alta Football Club", "alta-football-club.png"],
     ["brooklyn-hares-football-club", "Brooklyn Hares Football Club", "brooklyn-hares-football-club.png"],
     ["corona-soccer-kids-fc", "Corona Soccer Kids FC", "corona-soccer-kids-fc.webp"],
@@ -75,7 +74,6 @@ try {
   // IDs, logos, notes, and next actions when a name also appears here.
   for (const [id, name] of [
     ["06-united-new-york", "06 United"],
-    ["academy-argentina", "Academia Argentina De Futbol En New York"],
     ["alliance-athletics", "Alliance Athletics"],
     ["alta-football-club", "Alta FC"],
     ["asteras", "Asteras"],
@@ -146,7 +144,6 @@ try {
   const renameClub = db.prepare("UPDATE organizations SET name=? WHERE id=? AND kind='crm_club' AND name=?");
   for (const [id, oldName, newName] of [
     ["06-united-new-york", "06 United New York", "06 United"],
-    ["academy-argentina", "Academy Argentina", "Academia Argentina De Futbol En New York"],
     ["alta-football-club", "Alta Football Club", "Alta FC"],
     ["gw-ysl", "GW YSL", "GWYSL"],
     ["liga-16-de-septiembre", "Liga 16 de Septiembre", "Liga Diesiseis De Septiembre"],
@@ -155,6 +152,22 @@ try {
     ["reato-soccer-academy", "Reato Soccer Academy", "Reato Soccer"],
     ["sc-gjoa", "SC Gjøa", "SC GJOA"],
   ]) renameClub.run(newName, id, oldName);
+  // Merge the earlier Academia Argentina entry into AAFNY without dropping
+  // notes or an action saved against either record in an existing database.
+  const legacyAcademy = db.prepare("SELECT next_action,updated_at FROM crm_records WHERE organization_id=?").get("academy-argentina") as { next_action: string | null; updated_at: string | null } | undefined;
+  if (legacyAcademy) {
+    const aafny = db.prepare("SELECT next_action FROM crm_records WHERE organization_id=?").get("aafny") as { next_action: string | null };
+    db.prepare("UPDATE crm_activities SET organization_id=? WHERE organization_id=?").run("aafny", "academy-argentina");
+    if (legacyAcademy.next_action && !aafny.next_action) {
+      db.prepare("UPDATE crm_records SET next_action=?,updated_at=? WHERE organization_id=?").run(legacyAcademy.next_action, legacyAcademy.updated_at, "aafny");
+    } else if (legacyAcademy.next_action && legacyAcademy.next_action !== aafny.next_action) {
+      db.prepare("INSERT INTO crm_activities (id,organization_id,rep_id,note,created_at) VALUES (?,?,?,?,?)").run(
+        crypto.randomUUID(), "aafny", null, `Previous Academia Argentina next action: ${legacyAcademy.next_action}`, legacyAcademy.updated_at || new Date().toISOString()
+      );
+    }
+    db.prepare("DELETE FROM crm_records WHERE organization_id=?").run("academy-argentina");
+    db.prepare("DELETE FROM organizations WHERE id=? AND kind='crm_club'").run("academy-argentina");
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");
