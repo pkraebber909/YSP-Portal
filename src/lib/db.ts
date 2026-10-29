@@ -47,6 +47,7 @@ try {
   for (const [id, name, logo] of [
     ["06-united-new-york", "06 United New York", "06-united-new-york.webp"],
     ["aafny", "AAFNY", "academy-argentina.webp"],
+    ["alliance-athletics", "Alliance Athletics", "alliance-athletics.png"],
     ["alta-football-club", "Alta Football Club", "alta-football-club.png"],
     ["brooklyn-hares-football-club", "Brooklyn Hares Football Club", "brooklyn-hares-football-club.png"],
     ["corona-soccer-kids-fc", "Corona Soccer Kids FC", "corona-soccer-kids-fc.webp"],
