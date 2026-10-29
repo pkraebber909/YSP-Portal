@@ -62,6 +62,10 @@ try {
     ["croton-ayso", "Croton AYSO", "croton-ayso.webp"],
     ["dkay-henry-soccer-training", "DKAY Henry Soccer Training", "dkay-henry-soccer-training.webp"],
     ["eleftheria-pancyprian", "Eleftheria-Pancyprian", "eleftheria-pancyprian.webp"],
+    ["eastern-fc", "Eastern FC", "eastern-fc.webp"],
+    ["eysa", "EYSA", "eysa.png"],
+    ["fc-la-isla", "FC La Isla", "fc-la-isla.png"],
+    ["fox-soccer", "Fox Soccer", "fox-soccer.png"],
     ["futbol-rebels", "Futbol Rebels", "futbol-rebels.webp"],
     ["guerreros-fc", "Guerreros FC", "guerreros-fc.webp"],
     ["gw-ysl", "GW YSL", "gw-ysl.webp"],
@@ -97,7 +101,6 @@ try {
     ["community-sc", "Community SC"],
     ["croton-ayso", "Croton AYSO"],
     ["eastern-fc", "Eastern FC"],
-    ["epsc", "EPSC"],
     ["eysa", "EYSA"],
     ["fc-la-isla", "FC La Isla"],
     ["fox-soccer", "Fox Soccer"],
@@ -162,6 +165,8 @@ try {
     ["reato-soccer-academy", "Reato Soccer Academy", "Reato Soccer"],
     ["sc-gjoa", "SC Gjøa", "SC GJOA"],
   ]) renameClub.run(newName, id, oldName);
+  // Keep any saved EPSC history but remove the club from the active CRM.
+  db.prepare("UPDATE organizations SET kind='crm_archived' WHERE id='epsc' AND kind='crm_club'").run();
   // Merge the earlier Academia Argentina entry into AAFNY without dropping
   // notes or an action saved against either record in an existing database.
   const legacyAcademy = db.prepare("SELECT next_action,updated_at FROM crm_records WHERE organization_id=?").get("academy-argentina") as { next_action: string | null; updated_at: string | null } | undefined;
