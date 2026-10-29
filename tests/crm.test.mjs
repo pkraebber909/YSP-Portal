@@ -36,6 +36,15 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["eysa", "eysa.png"],
     ["fc-la-isla", "fc-la-isla.png"],
     ["fox-soccer", "fox-soccer.png"],
+    ["nj-santos", "nj-santos.png"],
+    ["no-limits", "no-limits.png"],
+    ["ossining-ayso", "ossining-ayso.png"],
+    ["riverside-park", "riverside-park.png"],
+    ["rivertowns-ayso", "rivertowns-ayso.png"],
+    ["sachem-soccer", "sachem-soccer.webp"],
+    ["saints-fc", "saints-fc.webp"],
+    ["sharpened-athlete", "sharpened-athlete.png"],
+    ["soccer-institute-wolves-nyc", "soccer-institute-wolves-nyc.webp"],
     ["soccer-kids-nyc", "soccer-kids-nyc.webp"],
     ["soccer-friends-usa", "soccer-friends-usa.webp"],
     ["soccer-legion", "soccer-legion.webp"],
@@ -58,7 +67,7 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 52);
+  assert.equal(clubs.filter(club => club.logo_path).length, 61);
   for (const club of clubs) {
     if (club.logo_path) {
       assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
