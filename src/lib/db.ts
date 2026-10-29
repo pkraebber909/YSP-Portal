@@ -78,6 +78,12 @@ try {
     ["reato-soccer-academy", "Reato Soccer Academy", "reato-soccer-academy.webp"],
     ["sc-gjoa", "SC Gjøa", "sc-gjoa.webp"],
     ["soccer-friends-usa", "Soccer Friends USA", "soccer-friends-usa.webp"],
+    ["ust", "UST", "ust.png"],
+    ["vybz-futbol", "Vybz Futbol", "vybz-futbol.png"],
+    ["westbury-soccer", "Westbury Soccer", "westbury-soccer.png"],
+    ["westchester-elite", "Westchester Elite", "westchester-elite.png"],
+    ["williamsburg-soccer", "Williamsburg Soccer", "williamsburg-soccer.webp"],
+    ["y4yfc", "Y4YFC", "y4yfc.png"],
   ]) {
     const logoPath = logo ? `/club-logos/${logo}` : null;
     insertClub.run(id, name, "crm_club", logoPath);
