@@ -209,18 +209,13 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .login-band { min-height: 62px; background: var(--sky); }
 .login-masthead { padding: 29px clamp(20px, 3vw, 40px); background: var(--masthead); color: #fff; }
 .login-masthead p { max-width: 1480px; margin: 0 auto; font-size: clamp(1.65rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -.04em; }
-.login-content { width: min(100%, 1480px); margin: 0 auto; padding: 48px clamp(20px, 3vw, 40px) 70px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 440px); gap: 60px; align-items: start; flex: 1; }
+.login-content { width: min(100%, 1480px); margin: 0 auto; padding: 48px clamp(20px, 3vw, 40px) 70px; flex: 1; }
 .login-panel { max-width: 620px; }
 .login-panel h1 { margin-bottom: 12px; }
-.login-panel > .muted { margin-bottom: 30px; }
 .demo-workspaces { max-width: 440px; display: grid; gap: 12px; }
 .demo-workspaces form, .demo-workspaces button { width: 100%; }
 .demo-workspaces button { min-height: 52px; font-size: .98rem; }
 .login-panel .small { max-width: 440px; margin-top: 20px; }
-.login-aside { min-height: 330px; padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; background: var(--masthead); color: #fff; }
-.login-aside .eyebrow { color: var(--sky); }
-.login-aside h2 { max-width: 380px; margin-bottom: 12px; font-size: clamp(1.7rem, 3vw, 2.4rem); }
-.login-aside p:last-child { margin-bottom: 0; color: #d4e3ef; font-size: .9rem; }
 .login-page .site-footer { flex: none; }
 
 @media (max-width: 900px) {
@@ -228,7 +223,6 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
   .fact-grid { grid-template-columns: repeat(2, 1fr); }
   .partner-welcome { flex-wrap: wrap; }
   .rep-contact { width: 100%; padding: 15px 0 0; border-left: 0; border-top: 1px solid #557089; }
-  .login-content { gap: 28px; }
 }
 @media (max-width: 680px) {
   .site-header { min-height: 66px; gap: 12px; }
@@ -257,8 +251,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
   .detail-grid, .partner-grid { display: block; }
   .detail-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .form-grid { grid-template-columns: 1fr; }
-  .login-content { display: block; padding-top: 34px; }
-  .login-aside { min-height: 220px; margin-top: 40px; }
+  .login-content { padding-top: 34px; }
   .preview-banner { flex-wrap: wrap; }
   .preview-banner > span:nth-child(3) { display: none; }
 }
