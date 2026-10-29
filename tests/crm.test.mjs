@@ -36,6 +36,12 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["eysa", "eysa.png"],
     ["fc-la-isla", "fc-la-isla.png"],
     ["fox-soccer", "fox-soccer.png"],
+    ["sterling-house", "sterling-house.png"],
+    ["tbg", "tbg.webp"],
+    ["tibet-fc", "tibet-fc.png"],
+    ["tru-tekkers", "tru-tekkers.webp"],
+    ["trumbull-ayso", "trumbull-ayso.png"],
+    ["united-fc", "united-fc.png"],
     ["ust", "ust.png"],
     ["vybz-futbol", "vybz-futbol.png"],
     ["westbury-soccer", "westbury-soccer.png"],
@@ -44,7 +50,7 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 39);
+  assert.equal(clubs.filter(club => club.logo_path).length, 45);
   for (const club of clubs) {
     if (club.logo_path) {
       assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
