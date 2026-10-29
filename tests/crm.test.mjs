@@ -14,7 +14,7 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
   const clubs = data.listCrmClubs();
   assert.equal(clubs.length, 74);
   assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
-  for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL"]) {
+  for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL", "Little Neck Douglaston"]) {
     assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
   }
   assert.ok(!clubs.some(club => club.id === "academy-argentina"));
@@ -26,6 +26,7 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["bayshore-soccer", "bayshore-soccer.webp"],
     ["bethpage-pal", "bethpage-pal.png"],
     ["byram-hills-sc", "byram-hills-sc.png"],
+    ["cement-football", "cement-football.jpg"],
     ["chronis-elite", "chronis-elite.png"],
     ["cjsl", "cjsl.png"],
     ["commack-soccer", "commack-soccer.png"],
@@ -36,6 +37,9 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["eysa", "eysa.png"],
     ["fc-la-isla", "fc-la-isla.png"],
     ["fox-soccer", "fox-soccer.png"],
+    ["liitle-neck-douglaston", "little-neck-douglaston.png"],
+    ["lindenhurst-soccer-club", "lindenhurst-soccer-club.png"],
+    ["portchester", "portchester.png"],
     ["nj-santos", "nj-santos.png"],
     ["no-limits", "no-limits.png"],
     ["ossining-ayso", "ossining-ayso.png"],
@@ -67,10 +71,10 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 61);
+  assert.equal(clubs.filter(club => club.logo_path).length, 65);
   for (const club of clubs) {
     if (club.logo_path) {
-      assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(png|webp)$/);
+      assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(jpg|png|webp)$/);
       assert.ok(fs.existsSync(path.join(publicDir, club.logo_path.slice(1))), `${club.name} logo file exists`);
     }
   }
