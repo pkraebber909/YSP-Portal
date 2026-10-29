@@ -34,7 +34,7 @@ Match and experience assignments remain unconfirmed. The draft is shown as **Not
 
 ## YSP Internal CRM
 
-The CRM entry on the login page opens 74 internal club records: the 65-club starter list plus 9 earlier clubs that are not on that list. A search box helps find a club. Each record has a current next action and a dated list of internal notes, saved in the local SQLite database. The supplied logos are shown for 20 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow.
+The CRM entry on the login page opens 74 internal club records: the 65-club starter list plus 9 earlier clubs that are not on that list. A search box helps find a club. Each record has a current next action and a dated list of internal notes, saved in the local SQLite database. The supplied logos are shown for 25 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow.
 
 The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
 
