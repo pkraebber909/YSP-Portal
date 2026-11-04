@@ -22,11 +22,11 @@ test("seed contains only confirmed Cyclones details and pending assignments", ()
   assert.equal(data.listPartnersForRep("phineas").length, 1);
   assert.equal(data.listPartnersForRep("other-rep").length, 0);
   assert.deepEqual(data.listSalesReps().map(rep => [rep.name, rep.partner_count, rep.crm_count]), [
-    ["Phineas Kraebber", 1, 0],
     ["Chris Anderson", 0, 48],
     ["Jason Ortega", 0, 9],
-    ["Jordan DeBernardo", 0, 3],
     ["Sebastian Maymi", 0, 3],
+    ["Jordan DeBernardo", 0, 3],
+    ["Phineas Kraebber", 1, 0],
   ]);
   assert.deepEqual(new Set(data.listCrmClubsForRep("sebastian-maymi").map(club => club.id)), new Set(sebastianMaymiClubIds));
   assert.equal(data.listCrmClubsForRep("sebastian-maymi").length, 3);

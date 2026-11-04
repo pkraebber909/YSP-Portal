@@ -304,7 +304,13 @@ export function listSalesReps() {
   return db.prepare(`SELECT u.id,u.name,
     (SELECT COUNT(DISTINCT p.organization_id) FROM partnerships p WHERE p.assigned_rep_id=u.id) AS partner_count,
     (SELECT COUNT(*) FROM crm_assignments a WHERE a.rep_id=u.id) AS crm_count
-    FROM users u WHERE u.role='rep' ORDER BY CASE WHEN u.id='phineas' THEN 0 ELSE 1 END,u.name`).all() as { id: string; name: string; partner_count: number; crm_count: number }[];
+    FROM users u WHERE u.role='rep' ORDER BY CASE u.id
+      WHEN 'chris-anderson' THEN 0
+      WHEN 'jason-ortega' THEN 1
+      WHEN 'sebastian-maymi' THEN 2
+      WHEN 'jordan-debernardo' THEN 3
+      WHEN 'phineas' THEN 4
+      ELSE 5 END,u.name`).all() as { id: string; name: string; partner_count: number; crm_count: number }[];
 }
 export function setCrmRep(orgId: string, repId: string | null) {
   if (!getCrmClub(orgId)) return false;
