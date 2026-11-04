@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS crm_assignments (organization_id TEXT PRIMARY KEY REF
 CREATE TABLE IF NOT EXISTS crm_seed_state (key TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
+CREATE TABLE IF NOT EXISTS crm_contacts (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), name TEXT NOT NULL, email TEXT, phone TEXT, ticketing_id TEXT, is_primary INTEGER NOT NULL DEFAULT 1, sort_order INTEGER NOT NULL DEFAULT 0);
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
 CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
 CREATE INDEX IF NOT EXISTS idx_communications_org ON communications(organization_id);
@@ -254,6 +255,9 @@ try {
     if (club.area !== "Area to confirm") fillArea.run(club.area, club.area_basis, club.id);
     for (const source of club.sources) insertSource.run(club.id, source);
   }
+  db.prepare("INSERT OR IGNORE INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id) VALUES (?,?,?,?,?,?)").run(
+    "06-united-andy-chan", "06-united-new-york", "Andy Chan", "andy.chan@06united.com", "(718) 760-0280", "1540097"
+  );
   // Apply each owner-supplied book once. Subsequent staff edits, including
   // unassigning a club, must survive server restarts.
   const seedBook = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
@@ -286,6 +290,7 @@ export type Communication = { id: string; author: string; body: string; visibili
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
 export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
+export type CrmContact = { id: string; name: string; email: string | null; phone: string | null; ticketing_id: string | null };
 
 const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
   COALESCE(c.segment,'directory') AS segment,COALESCE(c.area,'Area to confirm') AS area,
@@ -335,6 +340,9 @@ export function setCrmClassification(orgId: string, segment: string, area: strin
 }
 export function listCrmNotes(orgId: string) {
   return db.prepare("SELECT a.id,a.note,COALESCE(u.name,'Rep') AS author,a.created_at FROM crm_activities a LEFT JOIN users u ON u.id=a.rep_id WHERE a.organization_id=? ORDER BY a.created_at DESC, a.rowid DESC").all(orgId) as CrmNote[];
+}
+export function listCrmPrimaryContacts(orgId: string) {
+  return db.prepare("SELECT id,name,email,phone,ticketing_id FROM crm_contacts WHERE organization_id=? AND is_primary=1 ORDER BY sort_order,name COLLATE NOCASE").all(orgId) as CrmContact[];
 }
 export function addCrmNote(orgId: string, repId: string, note: string) {
   if (!getCrmClub(orgId)) return false;

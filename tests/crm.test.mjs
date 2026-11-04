@@ -29,6 +29,9 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
   assert.ok(data.getCrmClub("directory-griffin-united-soccer-club"));
   assert.equal(clubs.filter(club => club.name.toLowerCase() === "griffin united soccer club").length, 1);
   assert.ok(data.getCrmClub("peruvian-soccer-academy"));
+  assert.deepEqual(data.listCrmPrimaryContacts("06-united-new-york").map(contact => ({ ...contact })), [{
+    id: "06-united-andy-chan", name: "Andy Chan", email: "andy.chan@06united.com", phone: "(718) 760-0280", ticketing_id: "1540097"
+  }]);
   assert.equal(data.getCrmClub("aafny").logo_path, "/club-logos/academy-argentina.webp");
   for (const [id, file] of [
     ["alliance-athletics", "alliance-athletics.png"],
