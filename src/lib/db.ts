@@ -7,6 +7,7 @@ import { chrisAndersonClubIds, chrisAndersonAdditionalClubIds } from "../data/ch
 import { sebastianMaymiClubIds } from "../data/sebastian-maymi-club-ids.ts";
 import { jasonOrtegaClubIds } from "../data/jason-ortega-club-ids.ts";
 import { jordanDeBernardoClubIds } from "../data/jordan-debernardo-club-ids.ts";
+import { chrisAndersonContacts } from "../data/chris-anderson-contacts.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -260,7 +261,7 @@ try {
   );
   // Apply each owner-supplied book once. Subsequent staff edits, including
   // unassigning a club, must survive server restarts.
-  const seedBook = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
+  const seedState = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
   const assignClub = db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?) ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id");
   const clubExists = db.prepare("SELECT 1 FROM organizations WHERE id=? AND kind='crm_club'");
   for (const [key, repId, clubIds] of [
@@ -270,11 +271,20 @@ try {
     ["jordan-debernardo-initial-clubs-2026-11-04", "jordan-debernardo", jordanDeBernardoClubIds],
     ["chris-anderson-followup-clubs-2026-11-04", "chris-anderson", chrisAndersonAdditionalClubIds],
   ] as const) {
-    if (seedBook.run(key).changes) {
+    if (seedState.run(key).changes) {
       for (const id of clubIds) {
         if (!clubExists.get(id)) throw new Error(`Rep book club missing from CRM: ${id}`);
         assignClub.run(id, repId);
       }
+    }
+  }
+  if (seedState.run("chris-anderson-contacts-2026-11-04").changes) {
+    const insertContact = db.prepare(`INSERT INTO crm_contacts (id,organization_id,name,email,sort_order)
+      SELECT ?,?,?,?,? WHERE NOT EXISTS
+      (SELECT 1 FROM crm_contacts WHERE organization_id=? AND lower(email)=lower(?))`);
+    for (const [order, [orgId, name, email]] of chrisAndersonContacts.entries()) {
+      if (!clubExists.get(orgId)) throw new Error(`Contact club missing from CRM: ${orgId}`);
+      insertContact.run(`${orgId}:${email}`, orgId, name, email, order, orgId, email);
     }
   }
   db.exec("COMMIT;");

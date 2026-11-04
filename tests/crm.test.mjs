@@ -9,6 +9,25 @@ import { DatabaseSync } from "node:sqlite";
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
+const { chrisAndersonContacts } = await import("../src/data/chris-anderson-contacts.ts");
+
+test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
+  const raw = new DatabaseSync(process.env.YSP_DB_PATH);
+  const counts = raw.prepare("SELECT COUNT(*) AS contacts,COUNT(DISTINCT organization_id) AS clubs FROM crm_contacts").get();
+  assert.equal(counts.contacts, 75);
+  assert.equal(counts.clubs, 45);
+  for (const [orgId, , email] of chrisAndersonContacts) {
+    assert.ok(data.listCrmPrimaryContacts(orgId).some(contact => contact.email === email), `${email} belongs to ${orgId}`);
+    assert.equal(data.getCrmClub(orgId).assigned_rep_name, "Chris Anderson");
+  }
+  assert.equal(data.listCrmPrimaryContacts("hlsc").length, 3);
+  assert.equal(data.listCrmPrimaryContacts("chronis-elite").length, 3);
+  assert.equal(data.listCrmPrimaryContacts("soccer-shots").length, 3);
+  assert.equal(data.listCrmPrimaryContacts("06-united-new-york").length, 1);
+  assert.equal(data.listCrmPrimaryContacts("06-united-new-york")[0].name, "Andy Chan");
+  assert.equal(data.listCrmPrimaryContacts("hlsc")[0].ticketing_id, null);
+  raw.close();
+});
 
 test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, and resolves installed logos", () => {
   const clubs = data.listCrmClubs();
