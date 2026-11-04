@@ -59,7 +59,9 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
     ["no-limits", "no-limits.png"],
     ["ocsc", "ocsc.png"],
     ["mt-pleasant-ayso", "mt-pleasant-ayso.png"],
+    ["new-hyde-park-wildcats-soccer-club", "new-hyde-park-wildcats-soccer-club.png"],
     ["ossining-ayso", "ossining-ayso.png"],
+    ["peruvian-soccer-academy", "peruvian-american-soccer-nyc.webp"],
     ["riverside-park", "riverside-park.png"],
     ["rivertowns-ayso", "rivertowns-ayso.png"],
     ["sachem-soccer", "sachem-soccer.webp"],
@@ -88,7 +90,7 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 72);
+  assert.equal(clubs.filter(club => club.logo_path).length, 74);
   for (const club of clubs) {
     if (club.logo_path) {
       assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(jpg|png|webp)$/);
