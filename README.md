@@ -30,13 +30,13 @@ The rep signs in, opens **Assigned partners**, and selects Cyclones. The detail 
 
 The rep can mark requirements complete or undo them, log a partner-visible message or internal note, upload a PDF, image or text file (up to 10 MB), and change a file's visibility. **Preview partner view** uses the same organization scoped query as a partner account. Internal notes and files never enter that query. Uploaded files are served by an access checked download endpoint.
 
-The Rep page shows four selectable sales rep books: Phineas Kraebber, Chris Anderson, Jason Ortega, and Sebastian Maymi. Cyclones remains assigned to Phineas; the other books start empty. Staff can assign CRM directory clubs to a rep from each CRM club page, and that assignment appears in the selected rep's book. CRM club assignments and active partnership records remain distinct.
+The Rep page shows four selectable sales rep books: Phineas Kraebber, Chris Anderson, Jason Ortega, and Sebastian Maymi. Cyclones remains assigned to Phineas. Chris starts with the 45 clubs explicitly assigned by the program owner; Jason and Sebastian start empty. Staff can assign CRM directory clubs to a rep from each CRM club page, and that assignment appears in the selected rep's book. CRM club assignments and active partnership records remain distinct.
 
 Match and experience assignments remain unconfirmed. The draft is shown as **Not started**. No contact address, match date, selected experience, or deadline is invented.
 
 ## YSP Internal CRM
 
-The CRM entry on the login page opens 642 club records. The 74 clubs already in the CRM are grouped as **Current Youth Partners (YSPs)**, as designated by the program owner. The 2026 youth soccer workbook supplied another 568 distinct clubs after matching 24 workbook names to existing CRM records. Only club names and workbook sheet names were imported; no contact names, email addresses, or phone numbers were copied. Existing logos, notes, and next actions remain in place. The supplied logos are shown for 70 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow. Existing EPSC data is retained outside the active CRM directory.
+The CRM entry on the login page opens 643 club records. The 74 original CRM clubs, plus EPSC restored at the program owner's request, are grouped as **Current Youth Partners (YSPs)**. The 2026 youth soccer workbook supplied another 568 distinct clubs after matching 24 workbook names to existing CRM records. Only club names and workbook sheet names were imported; no contact names, email addresses, or phone numbers were copied. Existing logos, notes, and next actions remain in place. The supplied logos are shown for 70 clubs; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow. Any saved EPSC notes and next actions were preserved when its record was restored.
 
 The directory can be searched and filtered by current partner status, area, and workbook sheet. Other directory clubs are grouped by borough or area where a club name or geographic league sheet suggests one. Those areas are provisional; the remainder appear under **Area to confirm**. Staff can correct a club's grouping and area on its CRM page. The original workbook is not stored in the repository.
 
@@ -58,7 +58,7 @@ SQLite persists organizations, users, contacts, partnerships, requirements, comm
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 642 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 643 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
 
 ## Next milestone
 

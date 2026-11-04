@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { currentYspIds } from "../data/current-ysp-ids.ts";
 import { workbookClubs2026 } from "../data/workbook-clubs-2026.ts";
+import { chrisAndersonClubIds } from "../data/chris-anderson-club-ids.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -25,6 +26,7 @@ CREATE TABLE IF NOT EXISTS portal_access (id TEXT PRIMARY KEY, user_id TEXT NOT 
 CREATE TABLE IF NOT EXISTS crm_activities (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), rep_id TEXT REFERENCES users(id), note TEXT NOT NULL, next_action TEXT, created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_records (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), next_action TEXT, updated_at TEXT);
 CREATE TABLE IF NOT EXISTS crm_assignments (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), rep_id TEXT NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS crm_seed_state (key TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
@@ -210,8 +212,11 @@ try {
     ["reato-soccer-academy", "Reato Soccer Academy", "Reato Soccer"],
     ["sc-gjoa", "SC Gjøa", "SC GJOA"],
   ]) renameClub.run(newName, id, oldName);
-  // Keep any saved EPSC history but remove the club from the active CRM.
-  db.prepare("UPDATE organizations SET kind='crm_archived' WHERE id='epsc' AND kind='crm_club'").run();
+  // EPSC is back in the active CRM at the program owner's request. Reuse an
+  // archived row so any earlier notes and next action remain attached.
+  db.prepare("UPDATE organizations SET kind='crm_club' WHERE id='epsc' AND kind='crm_archived'").run();
+  insertClub.run("epsc", "EPSC", "crm_club", null);
+  insertRecord.run("epsc");
   // Merge the earlier Academia Argentina entry into AAFNY without dropping
   // notes or an action saved against either record in an existing database.
   const legacyAcademy = db.prepare("SELECT next_action,updated_at FROM crm_records WHERE organization_id=?").get("academy-argentina") as { next_action: string | null; updated_at: string | null } | undefined;
@@ -240,6 +245,15 @@ try {
     insertClassification.run(club.id, "directory", club.area, club.area_basis);
     if (club.area !== "Area to confirm") fillArea.run(club.area, club.area_basis, club.id);
     for (const source of club.sources) insertSource.run(club.id, source);
+  }
+  // Apply this owner-supplied book once. Subsequent staff edits, including
+  // unassigning a club, must survive server restarts.
+  if (db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)").run("chris-anderson-initial-clubs-2026-11-04").changes) {
+    const assignClub = db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,'chris-anderson') ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id");
+    for (const id of chrisAndersonClubIds) {
+      if (!db.prepare("SELECT 1 FROM organizations WHERE id=? AND kind='crm_club'").get(id)) throw new Error(`Chris Anderson club missing from CRM: ${id}`);
+      assignClub.run(id);
+    }
   }
   db.exec("COMMIT;");
 } catch (error) {

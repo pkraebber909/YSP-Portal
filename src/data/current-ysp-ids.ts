@@ -18,6 +18,7 @@ export const currentYspIds = [
   "croton-ayso",
   "dkay-henry-soccer-training",
   "eastern-fc",
+  "epsc",
   "eleftheria-pancyprian",
   "eysa",
   "fc-la-isla",

@@ -7,6 +7,7 @@ import path from "node:path";
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-data-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
+const { chrisAndersonClubIds } = await import("../src/data/chris-anderson-club-ids.ts");
 
 test("seed contains only confirmed Cyclones details and pending assignments", () => {
   const partner = data.getPartner("cyclones");
@@ -19,24 +20,28 @@ test("seed contains only confirmed Cyclones details and pending assignments", ()
   assert.equal(data.listPartnersForRep("other-rep").length, 0);
   assert.deepEqual(data.listSalesReps().map(rep => [rep.name, rep.partner_count, rep.crm_count]), [
     ["Phineas Kraebber", 1, 0],
-    ["Chris Anderson", 0, 0],
+    ["Chris Anderson", 0, 45],
     ["Jason Ortega", 0, 0],
     ["Sebastian Maymi", 0, 0],
   ]);
 });
 
 test("CRM club assignments appear in the chosen rep's book and persist", async () => {
-  assert.equal(data.setCrmRep("06-united-new-york", "chris-anderson"), true);
-  assert.equal(data.setCrmRep("06-united-new-york", "unknown-rep"), false);
+  assert.equal(chrisAndersonClubIds.length, 45);
+  assert.equal(new Set(chrisAndersonClubIds).size, 45);
+  assert.deepEqual(new Set(data.listCrmClubsForRep("chris-anderson").map(club => club.id)), new Set(chrisAndersonClubIds));
+  assert.equal(data.setCrmRep("aafny", "chris-anderson"), true);
+  assert.equal(data.setCrmRep("aafny", "unknown-rep"), false);
   assert.equal(data.setCrmRep("cyclones", "chris-anderson"), false);
-  assert.equal(data.listCrmClubsForRep("chris-anderson").length, 1);
-  assert.equal(data.listSalesReps().find(rep => rep.id === "chris-anderson").crm_count, 1);
+  assert.equal(data.listCrmClubsForRep("chris-anderson").length, 46);
+  assert.equal(data.listSalesReps().find(rep => rep.id === "chris-anderson").crm_count, 46);
   assert.equal(data.listPartnersForRep("phineas")[0].name, "Coney Island Cyclones Soccer Club");
   const reopened = await import("../src/lib/db.ts?rep-assignment-reseed");
-  assert.equal(reopened.getCrmClub("06-united-new-york").assigned_rep_name, "Chris Anderson");
-  assert.equal(reopened.listCrmClubsForRep("chris-anderson")[0].id, "06-united-new-york");
+  assert.equal(reopened.getCrmClub("aafny").assigned_rep_name, "Chris Anderson");
   assert.equal(reopened.setCrmRep("06-united-new-york", null), true);
-  assert.equal(reopened.listCrmClubsForRep("chris-anderson").length, 0);
+  const reopenedAgain = await import("../src/lib/db.ts?rep-unassignment-reseed");
+  assert.equal(reopenedAgain.getCrmClub("06-united-new-york").assigned_rep_id, null);
+  assert.equal(reopenedAgain.listCrmClubsForRep("chris-anderson").length, 45);
 });
 
 test("partner projection excludes internal communications and files", () => {
