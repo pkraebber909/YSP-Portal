@@ -32,14 +32,21 @@ test("Chris Anderson contact batch appears on the right club pages without dupli
 test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, and resolves installed logos", () => {
   const clubs = data.listCrmClubs();
   assert.equal(clubs.length, 643);
-  assert.equal(clubs.filter(club => club.segment === "current_ysp").length, 75);
-  assert.equal(clubs.filter(club => club.segment === "directory").length, 568);
+  assert.equal(clubs.filter(club => club.segment === "current_ysp").length, 70);
+  assert.equal(clubs.filter(club => club.segment === "directory").length, 573);
   assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
   for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL", "Little Neck Douglaston"]) {
     assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
   }
   assert.ok(!clubs.some(club => club.id === "academy-argentina"));
   assert.equal(data.getCrmClub("epsc").assigned_rep_name, "Chris Anderson");
+  assert.equal(data.getCrmClub("brooklyn-hares-football-club").segment, "current_ysp");
+  assert.equal(data.getCrmClub("imperio-new-york").segment, "current_ysp");
+  assert.equal(data.getCrmClub("imperio-new-york").name, "Imperio Morelia New York");
+  for (const id of ["corona-soccer-kids-fc", "guerreros-fc", "new-york-talentos", "soccer-friends-usa", "soccer-kids-nyc"]) {
+    assert.equal(data.getCrmClub(id).segment, "directory");
+    assert.ok(data.getCrmClub(id).logo_path);
+  }
   assert.equal(data.getCrmClub("directory-albion-sc-brooklyn").area, "Brooklyn");
   assert.equal(data.getCrmClub("directory-albion-sc-brooklyn").area_basis, "Club name (provisional)");
   assert.match(data.getCrmClub("directory-albion-sc-brooklyn").sources, /CJSL/);
@@ -195,4 +202,27 @@ test("staff can correct a club's grouping without losing its notes or next actio
   assert.equal(reopened.getCrmClub(id).area_basis, "Staff set");
   assert.equal(reopened.getCrmClub(id).next_action, "Follow up");
   assert.equal(reopened.listCrmNotes(id)[0].note, "Reviewed club");
+});
+
+test("Jason's partner corrections migrate existing CRM records without deleting them", async () => {
+  const formerPartners = ["corona-soccer-kids-fc", "guerreros-fc", "new-york-talentos", "soccer-friends-usa", "soccer-kids-nyc"];
+  const old = new DatabaseSync(process.env.YSP_DB_PATH);
+  for (const id of formerPartners) old.prepare("UPDATE crm_classification SET segment='current_ysp' WHERE organization_id=?").run(id);
+  // Some starter clubs have no classification row in a new database; simulate
+  // the earlier version of the portal, which classified all five as YSPs.
+  for (const id of formerPartners) old.prepare("INSERT OR IGNORE INTO crm_classification (organization_id,segment,area,area_basis) VALUES (?,'current_ysp','Area to confirm','Unverified')").run(id);
+  old.prepare("UPDATE organizations SET name='Imperio New York' WHERE id='imperio-new-york'").run();
+  old.prepare("UPDATE crm_records SET next_action='Keep for future outreach' WHERE organization_id='corona-soccer-kids-fc'").run();
+  old.prepare("DELETE FROM crm_seed_state WHERE key='jason-2027-sprint-partner-status-2026-11-04'").run();
+  old.close();
+
+  const updated = await import("../src/lib/db.ts?jason-partner-correction");
+  for (const id of formerPartners) {
+    assert.equal(updated.getCrmClub(id).segment, "directory");
+    assert.ok(updated.getCrmClub(id).logo_path);
+  }
+  assert.equal(updated.getCrmClub("corona-soccer-kids-fc").next_action, "Keep for future outreach");
+  assert.equal(updated.getCrmClub("brooklyn-hares-football-club").segment, "current_ysp");
+  assert.equal(updated.getCrmClub("imperio-new-york").segment, "current_ysp");
+  assert.equal(updated.getCrmClub("imperio-new-york").name, "Imperio Morelia New York");
 });

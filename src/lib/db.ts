@@ -85,7 +85,7 @@ try {
     ["guerreros-fc", "Guerreros FC", "guerreros-fc.webp"],
     ["gw-ysl", "GW YSL", "gw-ysl.webp"],
     ["hlsc", "HLSC", "hlsc.webp"],
-    ["imperio-new-york", "Imperio New York", "imperio-new-york.webp"],
+    ["imperio-new-york", "Imperio Morelia New York", "imperio-new-york.webp"],
     ["jigs-soccer", "Jigs Soccer", "jigs-soccer.png"],
     ["joga-bonito", "Joga Bonito", "joga-bonito.png"],
     ["levittown-soccer-club", "Levittown Soccer Club", "levittown-soccer-club.webp"],
@@ -213,6 +213,7 @@ try {
     ["06-united-new-york", "06 United New York", "06 United"],
     ["alta-football-club", "Alta Football Club", "Alta FC"],
     ["gw-ysl", "GW YSL", "GWYSL"],
+    ["imperio-new-york", "Imperio New York", "Imperio Morelia New York"],
     ["liga-16-de-septiembre", "Liga 16 de Septiembre", "Liga Diesiseis De Septiembre"],
     ["liitle-neck-douglaston", "Liitle Neck Douglaston", "Little Neck Douglaston"],
     ["morelia-soccer-academy-ny", "Morelia Soccer Academy NY", "Morelia Soccer Academy"],
@@ -262,6 +263,12 @@ try {
   // Apply each owner-supplied book once. Subsequent staff edits, including
   // unassigning a club, must survive server restarts.
   const seedState = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
+  // Jason's Sprint 2027 update removes these five from the partner group.
+  // Keep their CRM records, logos, notes, and any rep assignments intact.
+  if (seedState.run("jason-2027-sprint-partner-status-2026-11-04").changes) {
+    const markDirectory = db.prepare("UPDATE crm_classification SET segment='directory' WHERE organization_id=? AND segment='current_ysp'");
+    for (const id of ["corona-soccer-kids-fc", "guerreros-fc", "new-york-talentos", "soccer-friends-usa", "soccer-kids-nyc"]) markDirectory.run(id);
+  }
   const assignClub = db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?) ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id");
   const clubExists = db.prepare("SELECT 1 FROM organizations WHERE id=? AND kind='crm_club'");
   for (const [key, repId, clubIds] of [
