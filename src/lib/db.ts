@@ -3,7 +3,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { currentYspIds } from "../data/current-ysp-ids.ts";
 import { workbookClubs2026 } from "../data/workbook-clubs-2026.ts";
-import { chrisAndersonClubIds } from "../data/chris-anderson-club-ids.ts";
+import { chrisAndersonClubIds, chrisAndersonAdditionalClubIds } from "../data/chris-anderson-club-ids.ts";
+import { sebastianMaymiClubIds } from "../data/sebastian-maymi-club-ids.ts";
+import { jasonOrtegaClubIds } from "../data/jason-ortega-club-ids.ts";
+import { jordanDeBernardoClubIds } from "../data/jordan-debernardo-club-ids.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -49,7 +52,7 @@ try {
     db.prepare("INSERT INTO portal_access (id,user_id,organization_id,role) VALUES (?,?,?,?)").run("cyclones-access", "cyclones-admin", "cyclones", "admin");
   }
   const insertRep = db.prepare("INSERT OR IGNORE INTO users (id,name,role,organization_id) VALUES (?,?,'rep',NULL)");
-  for (const [id, name] of [["chris-anderson", "Chris Anderson"], ["jason-ortega", "Jason Ortega"], ["sebastian-maymi", "Sebastian Maymi"]]) insertRep.run(id, name);
+  for (const [id, name] of [["chris-anderson", "Chris Anderson"], ["jason-ortega", "Jason Ortega"], ["sebastian-maymi", "Sebastian Maymi"], ["jordan-debernardo", "Jordan DeBernardo"]]) insertRep.run(id, name);
   const insertClub = db.prepare("INSERT OR IGNORE INTO organizations (id,name,kind,logo_path) VALUES (?,?,?,?)");
   const fillLogo = db.prepare("UPDATE organizations SET logo_path=? WHERE id=? AND kind='crm_club' AND logo_path IS NULL");
   const insertRecord = db.prepare("INSERT OR IGNORE INTO crm_records (organization_id) VALUES (?)");
@@ -246,13 +249,23 @@ try {
     if (club.area !== "Area to confirm") fillArea.run(club.area, club.area_basis, club.id);
     for (const source of club.sources) insertSource.run(club.id, source);
   }
-  // Apply this owner-supplied book once. Subsequent staff edits, including
+  // Apply each owner-supplied book once. Subsequent staff edits, including
   // unassigning a club, must survive server restarts.
-  if (db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)").run("chris-anderson-initial-clubs-2026-11-04").changes) {
-    const assignClub = db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,'chris-anderson') ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id");
-    for (const id of chrisAndersonClubIds) {
-      if (!db.prepare("SELECT 1 FROM organizations WHERE id=? AND kind='crm_club'").get(id)) throw new Error(`Chris Anderson club missing from CRM: ${id}`);
-      assignClub.run(id);
+  const seedBook = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
+  const assignClub = db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?) ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id");
+  const clubExists = db.prepare("SELECT 1 FROM organizations WHERE id=? AND kind='crm_club'");
+  for (const [key, repId, clubIds] of [
+    ["chris-anderson-initial-clubs-2026-11-04", "chris-anderson", chrisAndersonClubIds],
+    ["sebastian-maymi-initial-clubs-2026-11-04", "sebastian-maymi", sebastianMaymiClubIds],
+    ["jason-ortega-initial-clubs-2026-11-04", "jason-ortega", jasonOrtegaClubIds],
+    ["jordan-debernardo-initial-clubs-2026-11-04", "jordan-debernardo", jordanDeBernardoClubIds],
+    ["chris-anderson-followup-clubs-2026-11-04", "chris-anderson", chrisAndersonAdditionalClubIds],
+  ] as const) {
+    if (seedBook.run(key).changes) {
+      for (const id of clubIds) {
+        if (!clubExists.get(id)) throw new Error(`Rep book club missing from CRM: ${id}`);
+        assignClub.run(id, repId);
+      }
     }
   }
   db.exec("COMMIT;");

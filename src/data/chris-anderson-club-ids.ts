@@ -47,3 +47,11 @@ export const chrisAndersonClubIds = [
   "sterling-house",
   "soccer-performance-lab",
 ] as const;
+
+// Follow-up club assignments supplied after the initial 45-club book.
+// Soccer Performance Lab is already in the initial list.
+export const chrisAndersonAdditionalClubIds = [
+  "ossining-ayso",
+  "alta-football-club",
+  "liitle-neck-douglaston",
+] as const;

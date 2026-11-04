@@ -30,7 +30,7 @@ The rep signs in, opens **Assigned partners**, and selects Cyclones. The detail 
 
 The rep can mark requirements complete or undo them, log a partner-visible message or internal note, upload a PDF, image or text file (up to 10 MB), and change a file's visibility. **Preview partner view** uses the same organization scoped query as a partner account. Internal notes and files never enter that query. Uploaded files are served by an access checked download endpoint.
 
-The Rep page shows four selectable sales rep books: Phineas Kraebber, Chris Anderson, Jason Ortega, and Sebastian Maymi. Cyclones remains assigned to Phineas. Chris starts with the 45 clubs explicitly assigned by the program owner; Jason and Sebastian start empty. Staff can assign CRM directory clubs to a rep from each CRM club page, and that assignment appears in the selected rep's book. CRM club assignments and active partnership records remain distinct.
+The Rep page shows five selectable sales rep books: Phineas Kraebber, Chris Anderson, Jason Ortega, Jordan DeBernardo, and Sebastian Maymi. Cyclones remains assigned to Phineas. The owner-supplied assignments give Chris 48 CRM clubs, Jason nine, Jordan three, and Sebastian three. Repeated contact rows for one club create just one club assignment; contact names and emails from those rows have not been imported. Staff can assign CRM directory clubs to a rep from each CRM club page, and that assignment appears in the selected rep's book. CRM club assignments and active partnership records remain distinct.
 
 Match and experience assignments remain unconfirmed. The draft is shown as **Not started**. No contact address, match date, selected experience, or deadline is invented.
 

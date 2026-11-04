@@ -7,7 +7,10 @@ import path from "node:path";
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-data-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
-const { chrisAndersonClubIds } = await import("../src/data/chris-anderson-club-ids.ts");
+const { chrisAndersonClubIds, chrisAndersonAdditionalClubIds } = await import("../src/data/chris-anderson-club-ids.ts");
+const { sebastianMaymiClubIds } = await import("../src/data/sebastian-maymi-club-ids.ts");
+const { jasonOrtegaClubIds } = await import("../src/data/jason-ortega-club-ids.ts");
+const { jordanDeBernardoClubIds } = await import("../src/data/jordan-debernardo-club-ids.ts");
 
 test("seed contains only confirmed Cyclones details and pending assignments", () => {
   const partner = data.getPartner("cyclones");
@@ -20,28 +23,35 @@ test("seed contains only confirmed Cyclones details and pending assignments", ()
   assert.equal(data.listPartnersForRep("other-rep").length, 0);
   assert.deepEqual(data.listSalesReps().map(rep => [rep.name, rep.partner_count, rep.crm_count]), [
     ["Phineas Kraebber", 1, 0],
-    ["Chris Anderson", 0, 45],
-    ["Jason Ortega", 0, 0],
-    ["Sebastian Maymi", 0, 0],
+    ["Chris Anderson", 0, 48],
+    ["Jason Ortega", 0, 9],
+    ["Jordan DeBernardo", 0, 3],
+    ["Sebastian Maymi", 0, 3],
   ]);
+  assert.deepEqual(new Set(data.listCrmClubsForRep("sebastian-maymi").map(club => club.id)), new Set(sebastianMaymiClubIds));
+  assert.equal(data.listCrmClubsForRep("sebastian-maymi").length, 3);
+  assert.deepEqual(new Set(data.listCrmClubsForRep("jason-ortega").map(club => club.id)), new Set(jasonOrtegaClubIds));
+  assert.equal(data.listCrmClubsForRep("jason-ortega").length, 9);
+  assert.deepEqual(new Set(data.listCrmClubsForRep("jordan-debernardo").map(club => club.id)), new Set(jordanDeBernardoClubIds));
+  assert.equal(data.listCrmClubsForRep("jordan-debernardo").length, 3);
 });
 
 test("CRM club assignments appear in the chosen rep's book and persist", async () => {
   assert.equal(chrisAndersonClubIds.length, 45);
   assert.equal(new Set(chrisAndersonClubIds).size, 45);
-  assert.deepEqual(new Set(data.listCrmClubsForRep("chris-anderson").map(club => club.id)), new Set(chrisAndersonClubIds));
-  assert.equal(data.setCrmRep("aafny", "chris-anderson"), true);
-  assert.equal(data.setCrmRep("aafny", "unknown-rep"), false);
+  assert.deepEqual(new Set(data.listCrmClubsForRep("chris-anderson").map(club => club.id)), new Set([...chrisAndersonClubIds, ...chrisAndersonAdditionalClubIds]));
+  assert.equal(data.setCrmRep("directory-albion-sc-brooklyn", "chris-anderson"), true);
+  assert.equal(data.setCrmRep("directory-albion-sc-brooklyn", "unknown-rep"), false);
   assert.equal(data.setCrmRep("cyclones", "chris-anderson"), false);
-  assert.equal(data.listCrmClubsForRep("chris-anderson").length, 46);
-  assert.equal(data.listSalesReps().find(rep => rep.id === "chris-anderson").crm_count, 46);
+  assert.equal(data.listCrmClubsForRep("chris-anderson").length, 49);
+  assert.equal(data.listSalesReps().find(rep => rep.id === "chris-anderson").crm_count, 49);
   assert.equal(data.listPartnersForRep("phineas")[0].name, "Coney Island Cyclones Soccer Club");
   const reopened = await import("../src/lib/db.ts?rep-assignment-reseed");
-  assert.equal(reopened.getCrmClub("aafny").assigned_rep_name, "Chris Anderson");
+  assert.equal(reopened.getCrmClub("directory-albion-sc-brooklyn").assigned_rep_name, "Chris Anderson");
   assert.equal(reopened.setCrmRep("06-united-new-york", null), true);
   const reopenedAgain = await import("../src/lib/db.ts?rep-unassignment-reseed");
   assert.equal(reopenedAgain.getCrmClub("06-united-new-york").assigned_rep_id, null);
-  assert.equal(reopenedAgain.listCrmClubsForRep("chris-anderson").length, 45);
+  assert.equal(reopenedAgain.listCrmClubsForRep("chris-anderson").length, 48);
 });
 
 test("partner projection excludes internal communications and files", () => {
