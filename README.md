@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000` and choose **Enter rep workspace**, **Enter partner workspace**, or **Enter YSP Internal CRM**. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
+Open `http://localhost:3000` and choose **Enter rep workspace**, **Enter partner workspace**, **Enter YSP Internal CRM**, or the separate **Enter 2027 Sprint calendar** panel. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
 
 Optional paths are documented in [.env.example](.env.example). Copy it to `.env.local` only if you want to move the SQLite database or upload directory. Relative paths resolve from the checkout. Uploads default to `.data/uploads`.
 
@@ -44,7 +44,7 @@ The CRM uses the open rep demo session; it is not production authentication. Sal
 
 ## Sprint Season Experiences
 
-The rep workspace has an **Experiences** tab with calendar and list views of the seven supplied 2027 Sprint Season matches. Dates, Eastern kickoff times, venue, status, and operational notes are editable. March 27 starts as **Venue TBD**. Updating date, kickoff, or venue flags approved or sent reservation instructions for review.
+The landing page has a separate **2027 Sprint calendar** entry beside the three workspace buttons, with a preview of the current match schedule. It opens calendar and list views of the seven supplied 2027 Sprint Season matches. Dates, Eastern kickoff times, venue, status, and operational notes are editable. March 27 starts as **Venue TBD**. Updating date, kickoff, or venue flags approved or sent reservation instructions for review.
 
 The experience catalog starts with 11 **draft** types named in the handoff. There are no seeded 2027 offerings or bookings and no imported 2026 capacities or eligibility rules. Staff can edit or add catalog definitions, attach an offering to one match, set participant and chaperone capacity, match-specific rules and logistics, and mark catalog and offering approvals separately. An offering must have an approved catalog definition, approved match rules, and capacity before staff can make it available. Pausing or cancelling an offering does not alter other matches. Active reservations must be released before cancellation.
 
