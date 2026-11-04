@@ -96,6 +96,7 @@ try {
     ["new-york-talentos", "New York Talentos", "new-york-talentos.webp"],
     ["nj-santos", "NJ Santos", "nj-santos.png"],
     ["no-limits", "No Limits", "no-limits.png"],
+    ["ocsc", "OCSC", "ocsc.png"],
     ["ossining-ayso", "Ossining AYSO", "ossining-ayso.png"],
     ["peruvian-american-soccer-nyc", "Peruvian American Soccer NYC", "peruvian-american-soccer-nyc.webp"],
     ["portchester", "Portchester", "portchester.png"],
@@ -220,6 +221,8 @@ try {
   db.prepare("UPDATE organizations SET kind='crm_club' WHERE id='epsc' AND kind='crm_archived'").run();
   insertClub.run("epsc", "EPSC", "crm_club", null);
   insertRecord.run("epsc");
+  // The supplied Eleftheria-Pancyprian crest is also used for EPSC.
+  fillLogo.run("/club-logos/eleftheria-pancyprian.webp", "epsc");
   // Merge the earlier Academia Argentina entry into AAFNY without dropping
   // notes or an action saved against either record in an existing database.
   const legacyAcademy = db.prepare("SELECT next_action,updated_at FROM crm_records WHERE organization_id=?").get("academy-argentina") as { next_action: string | null; updated_at: string | null } | undefined;
