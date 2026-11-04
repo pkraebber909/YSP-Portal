@@ -242,9 +242,11 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .login-band { min-height: 62px; background: var(--sky); }
 .login-masthead { padding: 29px clamp(20px, 3vw, 40px); background: var(--masthead); color: #fff; }
 .login-masthead p { max-width: 1480px; margin: 0 auto; font-size: clamp(1.65rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -.04em; }
-.login-content { width: min(100%, 1480px); margin: 0 auto; padding: 48px clamp(20px, 3vw, 40px) 70px; flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr); align-content: start; gap: clamp(32px, 5vw, 76px); }
-.login-panel { max-width: 620px; }
-.login-panel h1 { margin-bottom: 12px; }
+.login-content { width: min(100%, 1480px); margin: 0 auto; padding: 48px clamp(20px, 3vw, 40px) 70px; flex: 1; }
+.login-intro { margin-bottom: 18px; }
+.login-intro h1 { margin-bottom: 0; }
+.login-entry-grid { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); align-items: start; gap: clamp(28px, 4vw, 60px); }
+.login-panel { max-width: 440px; }
 .demo-workspaces { max-width: 440px; display: grid; gap: 12px; }
 .demo-workspaces form, .demo-workspaces button { width: 100%; }
 .demo-workspaces button { min-height: 52px; font-size: .98rem; }
@@ -254,8 +256,8 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .login-calendar-head .eyebrow { color: var(--sky); }
 .login-calendar-head h2 { margin-bottom: 7px; }
 .login-calendar-head p:last-child { margin: 0; color: #c8d8e5; font-size: .86rem; }
-.login-calendar-schedule { padding: 15px 26px 4px; }
-.login-calendar-schedule-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; color: var(--navy); font-size: .83rem; }
+.login-calendar-schedule { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; padding: 15px 26px 4px; }
+.login-calendar-schedule-head { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; color: var(--navy); font-size: .83rem; }
 .login-calendar-schedule-head span { color: var(--muted); }
 .login-calendar-match { display: flex; align-items: center; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); }
 .login-calendar-match time { width: 48px; height: 52px; flex: none; display: grid; place-content: center; text-align: center; border-left: 3px solid var(--sky); background: var(--pale); color: var(--navy); line-height: 1.1; }
@@ -268,9 +270,12 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .login-calendar-panel form { padding: 16px 26px 24px; }
 .login-calendar-panel button { width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; }
 .login-page .site-footer { flex: none; }
-@media (max-width: 860px) {
-  .login-content { display: block; }
-  .login-calendar-panel { max-width: 620px; margin-top: 32px; }
+@media (max-width: 1050px) {
+  .login-entry-grid { grid-template-columns: 1fr; }
+  .login-calendar-panel { max-width: 700px; margin-top: 16px; }
+}
+@media (max-width: 600px) {
+  .login-calendar-schedule { grid-template-columns: 1fr; }
 }
 
 /* Sprint experience tracker, using the shared NYCFC shell and form language. */
