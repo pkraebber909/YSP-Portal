@@ -10,15 +10,25 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 
-test("CRM includes the starter directory, keeps earlier clubs, and resolves installed logos", () => {
+test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, and resolves installed logos", () => {
   const clubs = data.listCrmClubs();
-  assert.equal(clubs.length, 74);
+  assert.equal(clubs.length, 642);
+  assert.equal(clubs.filter(club => club.segment === "current_ysp").length, 74);
+  assert.equal(clubs.filter(club => club.segment === "directory").length, 568);
   assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
   for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL", "Little Neck Douglaston"]) {
     assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
   }
   assert.ok(!clubs.some(club => club.id === "academy-argentina"));
   assert.equal(data.getCrmClub("epsc"), undefined);
+  assert.equal(data.getCrmClub("directory-albion-sc-brooklyn").area, "Brooklyn");
+  assert.equal(data.getCrmClub("directory-albion-sc-brooklyn").area_basis, "Club name (provisional)");
+  assert.match(data.getCrmClub("directory-albion-sc-brooklyn").sources, /CJSL/);
+  assert.equal(data.getCrmClub("asteras").segment, "current_ysp");
+  assert.match(data.getCrmClub("asteras").sources, /EDP North Atlantic/);
+  assert.ok(data.getCrmClub("directory-griffin-united-soccer-club"));
+  assert.equal(clubs.filter(club => club.name.toLowerCase() === "griffin united soccer club").length, 1);
+  assert.ok(data.getCrmClub("peruvian-soccer-academy"));
   assert.equal(data.getCrmClub("aafny").logo_path, "/club-logos/academy-argentina.webp");
   for (const [id, file] of [
     ["alliance-athletics", "alliance-athletics.png"],
@@ -85,6 +95,9 @@ test("CRM includes the starter directory, keeps earlier clubs, and resolves inst
   }
   assert.equal(data.getPartner("cyclones").organization.name, "Coney Island Cyclones Soccer Club");
   assert.equal(data.getCrmClub("cyclones"), undefined);
+  const raw = new DatabaseSync(process.env.YSP_DB_PATH);
+  assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM contacts").get().n, 1);
+  raw.close();
 });
 
 test("notes and next actions persist per CRM club", () => {
@@ -111,7 +124,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   legacy.close();
 
   const merged = await import("../src/lib/db.ts?merge-legacy-action");
-  assert.equal(merged.listCrmClubs().length, 74);
+  assert.equal(merged.listCrmClubs().length, 642);
   assert.equal(merged.getCrmClub("academy-argentina"), undefined);
   assert.equal(merged.getCrmClub("aafny").next_action, "Call club director");
   assert.ok(merged.listCrmNotes("aafny").some(note => note.note === "Intro call completed"));
@@ -125,7 +138,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   const mergedAgain = await import("../src/lib/db.ts?merge-conflicting-actions");
   assert.equal(mergedAgain.getCrmClub("aafny").next_action, "Send proposal");
   assert.ok(mergedAgain.listCrmNotes("aafny").some(note => note.note === "Previous Academia Argentina next action: Schedule meeting"));
-  assert.equal(mergedAgain.listCrmClubs().length, 74);
+  assert.equal(mergedAgain.listCrmClubs().length, 642);
 });
 
 test("removing EPSC from the CRM preserves existing notes and actions", async () => {
@@ -137,9 +150,22 @@ test("removing EPSC from the CRM preserves existing notes and actions", async ()
 
   const updated = await import("../src/lib/db.ts?archive-epsc");
   assert.equal(updated.getCrmClub("epsc"), undefined);
-  assert.equal(updated.listCrmClubs().length, 74);
+  assert.equal(updated.listCrmClubs().length, 642);
   const preserved = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.deepEqual({ ...preserved.prepare("SELECT o.kind,r.next_action FROM organizations o JOIN crm_records r ON r.organization_id=o.id WHERE o.id='epsc'").get() }, { kind: "crm_archived", next_action: "Follow up" });
   assert.equal(preserved.prepare("SELECT note FROM crm_activities WHERE organization_id='epsc'").get().note, "Prior conversation");
   preserved.close();
+});
+
+test("staff can correct a club's grouping without losing its notes or next action", async () => {
+  const id = "directory-albion-sc-brooklyn";
+  assert.equal(data.addCrmNote(id, "phineas", "Reviewed club"), true);
+  assert.equal(data.setCrmNextAction(id, "Follow up"), 1);
+  assert.equal(data.setCrmClassification(id, "current_ysp", "Queens"), true);
+  const reopened = await import("../src/lib/db.ts?reseed-classification");
+  assert.equal(reopened.getCrmClub(id).segment, "current_ysp");
+  assert.equal(reopened.getCrmClub(id).area, "Queens");
+  assert.equal(reopened.getCrmClub(id).area_basis, "Staff set");
+  assert.equal(reopened.getCrmClub(id).next_action, "Follow up");
+  assert.equal(reopened.listCrmNotes(id)[0].note, "Reviewed club");
 });

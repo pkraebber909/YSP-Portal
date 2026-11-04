@@ -1,6 +1,8 @@
 import { DatabaseSync } from "node:sqlite";
 import fs from "node:fs";
 import path from "node:path";
+import { currentYspIds } from "../data/current-ysp-ids.ts";
+import { workbookClubs2026 } from "../data/workbook-clubs-2026.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -22,6 +24,8 @@ CREATE TABLE IF NOT EXISTS files (id TEXT PRIMARY KEY, organization_id TEXT NOT 
 CREATE TABLE IF NOT EXISTS portal_access (id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), organization_id TEXT NOT NULL REFERENCES organizations(id), role TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_activities (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), rep_id TEXT REFERENCES users(id), note TEXT NOT NULL, next_action TEXT, created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_records (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), next_action TEXT, updated_at TEXT);
+CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
 CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
 CREATE INDEX IF NOT EXISTS idx_communications_org ON communications(organization_id);
@@ -221,6 +225,19 @@ try {
     db.prepare("DELETE FROM crm_records WHERE organization_id=?").run("academy-argentina");
     db.prepare("DELETE FROM organizations WHERE id=? AND kind='crm_club'").run("academy-argentina");
   }
+  const insertClassification = db.prepare("INSERT OR IGNORE INTO crm_classification (organization_id,segment,area,area_basis) VALUES (?,?,?,?)");
+  const fillArea = db.prepare("UPDATE crm_classification SET area=?,area_basis=? WHERE organization_id=? AND area_basis='Unverified'");
+  const insertSource = db.prepare("INSERT OR IGNORE INTO crm_sources (organization_id,source) VALUES (?,?)");
+  for (const id of currentYspIds) insertClassification.run(id, "current_ysp", "Area to confirm", "Unverified");
+  // The workbook contains club directory rows and contact columns. Only club
+  // names and source sheet labels are copied into this seed; contacts stay out.
+  for (const club of workbookClubs2026) {
+    insertClub.run(club.id, club.name, "crm_club", null);
+    insertRecord.run(club.id);
+    insertClassification.run(club.id, "directory", club.area, club.area_basis);
+    if (club.area !== "Area to confirm") fillArea.run(club.area, club.area_basis, club.id);
+    for (const source of club.sources) insertSource.run(club.id, source);
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");
@@ -232,14 +249,26 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
-export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null };
+export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
 
+const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
+  COALESCE(c.segment,'directory') AS segment,COALESCE(c.area,'Area to confirm') AS area,
+  COALESCE(c.area_basis,'Unverified') AS area_basis,
+  COALESCE((SELECT GROUP_CONCAT(source, ' · ') FROM (SELECT source FROM crm_sources s WHERE s.organization_id=o.id ORDER BY source)),'') AS sources
+  FROM crm_records r JOIN organizations o ON o.id=r.organization_id
+  LEFT JOIN crm_classification c ON c.organization_id=o.id WHERE o.kind='crm_club'`;
 export function listCrmClubs() {
-  return db.prepare("SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' ORDER BY o.name COLLATE NOCASE").all() as CrmClub[];
+  return db.prepare(`${crmSelect} ORDER BY o.name COLLATE NOCASE`).all() as CrmClub[];
 }
 export function getCrmClub(orgId: string) {
-  return db.prepare("SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at FROM crm_records r JOIN organizations o ON o.id=r.organization_id WHERE o.kind='crm_club' AND o.id=?").get(orgId) as CrmClub | undefined;
+  return db.prepare(`${crmSelect} AND o.id=?`).get(orgId) as CrmClub | undefined;
+}
+export const crmAreas = ["Area to confirm", "Brooklyn", "Bronx", "Queens", "Manhattan", "Staten Island", "Long Island", "Westchester", "Hudson Valley", "Capital District", "Connecticut"] as const;
+export function setCrmClassification(orgId: string, segment: string, area: string) {
+  if (!getCrmClub(orgId) || !["current_ysp", "directory"].includes(segment) || !crmAreas.includes(area as typeof crmAreas[number])) return false;
+  db.prepare("INSERT INTO crm_classification (organization_id,segment,area,area_basis) VALUES (?,?,?,'Staff set') ON CONFLICT(organization_id) DO UPDATE SET segment=excluded.segment,area=excluded.area,area_basis='Staff set'").run(orgId, segment, area);
+  return true;
 }
 export function listCrmNotes(orgId: string) {
   return db.prepare("SELECT a.id,a.note,COALESCE(u.name,'Rep') AS author,a.created_at FROM crm_activities a LEFT JOIN users u ON u.id=a.rep_id WHERE a.organization_id=? ORDER BY a.created_at DESC, a.rowid DESC").all(orgId) as CrmNote[];

@@ -1,7 +1,7 @@
 "use server";
 
 import { getSession } from "@/lib/auth";
-import { addCrmNote, getCrmClub, setCrmNextAction } from "@/lib/db";
+import { addCrmNote, getCrmClub, setCrmNextAction, setCrmClassification } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 async function requireCrmRep(form: FormData) {
@@ -24,6 +24,13 @@ export async function saveCrmNextAction(form: FormData) {
   const nextAction = String(form.get("nextAction") || "").trim();
   if (nextAction.length > 500) throw new Error("Next action is too long");
   setCrmNextAction(orgId, nextAction || null);
+  revalidatePath("/crm");
+  revalidatePath(`/crm/${orgId}`);
+}
+
+export async function saveCrmClassification(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  if (!setCrmClassification(orgId, String(form.get("segment") || ""), String(form.get("area") || ""))) throw new Error("Invalid club grouping");
   revalidatePath("/crm");
   revalidatePath(`/crm/${orgId}`);
 }

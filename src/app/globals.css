@@ -107,6 +107,18 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-search label { color: #334857; font-size: .84rem; font-weight: 700; }
 .crm-search input { min-width: min(100%, 280px); min-height: 42px; padding: 9px 10px; border: 1px solid #aab9c4; border-radius: 2px; }
 .crm-search .small { margin-left: auto; }
+.crm-directory-filters { padding: 18px 6px; display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; background: #f5f9fc; border-bottom: 1px solid var(--line); }
+.crm-directory-filters label { min-width: 170px; display: flex; flex-direction: column; gap: 5px; color: #334857; font-size: .8rem; font-weight: 700; }
+.crm-directory-filters input, .crm-directory-filters select, .crm-classification-form select { width: 100%; min-height: 42px; padding: 9px 10px; border: 1px solid #aab9c4; border-radius: 2px; background: #fff; color: var(--ink); font-size: .88rem; }
+.crm-directory-filters .small { margin-left: auto; }
+.crm-directory-groups { display: grid; gap: 10px; margin-top: 18px; }
+.crm-directory-groups > details { border: 1px solid var(--line); border-top: 3px solid var(--navy); background: #fff; }
+.crm-directory-groups > details > summary { padding: 15px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #f5f9fc; color: var(--navy); cursor: pointer; }
+.crm-directory-groups > details > summary span { color: #486279; font-size: .8rem; font-weight: 700; }
+.crm-directory-groups .partner-list { padding: 0 18px; }
+.crm-directory-groups .partner-main small { max-width: 680px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.crm-classification-form { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+.crm-classification-form > div { min-width: 210px; flex: 1; }
 .crm-sections { max-width: 860px; }
 .crm-form label { display: block; margin-bottom: 7px; color: #334857; font-size: .84rem; font-weight: 700; }
 .crm-form textarea { width: 100%; min-height: 100px; padding: 10px; border: 1px solid #aab9c4; border-radius: 2px; resize: vertical; color: var(--ink); font-size: .9rem; }
