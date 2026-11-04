@@ -13,6 +13,11 @@ export default async function CrmClubPage({ params }: { params: Promise<{ id: st
   if (id === "academy-argentina") redirect("/crm/aafny");
   const club = getCrmClub(id);
   if (!club) notFound();
+  // Use 06 United as the first clean club-page layout while the rep view is designed.
+  if (id === "06-united-new-york") return <Shell kind="rep" name={session.name} active="crm"><main className="content detail-content" id="main-content">
+    <Link className="back-link" href={club.assigned_rep_id ? `/rep?rep=${club.assigned_rep_id}` : "/crm"}>← {club.assigned_rep_name ? `${club.assigned_rep_name}'s book` : "All CRM clubs"}</Link>
+    <div className="detail-hero"><CrmLogo name={club.name} path={club.logo_path} large /><div className="hero-copy"><p className="eyebrow">YSP INTERNAL CRM / CLUB RECORD</p><h1>{club.name}</h1><div className="hero-tags"><span className="tag blue">{club.segment === "current_ysp" ? "Current Youth Partner" : "2026 directory club"}</span><span className="tag outlined">{club.area}</span></div></div></div>
+  </main></Shell>;
   const notes = listCrmNotes(id);
   const reps = listSalesReps();
   return <Shell kind="rep" name={session.name} active="crm"><main className="content detail-content" id="main-content">
