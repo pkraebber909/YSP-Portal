@@ -38,6 +38,16 @@ The CRM entry on the login page opens 74 internal club records: 64 from the star
 
 The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
 
+## Sprint Season Experiences
+
+The rep workspace has an **Experiences** tab with calendar and list views of the seven supplied 2027 Sprint Season matches. Dates, Eastern kickoff times, venue, status, and operational notes are editable. March 27 starts as **Venue TBD**. Updating date, kickoff, or venue flags approved or sent reservation instructions for review.
+
+The experience catalog starts with 11 **draft** types named in the handoff. There are no seeded 2027 offerings or bookings and no imported 2026 capacities or eligibility rules. Staff can edit or add catalog definitions, attach an offering to one match, set participant and chaperone capacity, match-specific rules and logistics, and mark catalog and offering approvals separately. An offering must have an approved catalog definition, approved match rules, and capacity before staff can make it available. Pausing or cancelling an offering does not alter other matches. Active reservations must be released before cancellation.
+
+Staff can create groups and attach multiple separate reservations to an offering, with holds and confirmed allocations tracked independently. Active holds need a future Eastern expiration; expired or released holds stop consuming capacity. Reservations track assigned rep, participant and chaperone counts, next action, and separate manual roster, instruction, and waiver statuses. Match list filters cover date, opponent, venue, experience type, availability, rep, and items needing action. All edits persist in the local SQLite database; no participant or guardian details are collected in this release.
+
+The tracker is a staff-only **prototype** within the existing open demo rep session. It does not send instructions, communicate with groups, or connect to DocuSign. NYCFC staff still need to confirm the 2027 experiences offered per match, capacity and eligibility, ticket rules, approval ownership, roster and waiver deadlines, approved instruction templates, and DocuSign access before live bookings. The 2026 workbook is needed before importing any of its historical rules.
+
 ## Data and prototype limits
 
 SQLite persists organizations, users, contacts, partnerships, requirements, communications, CRM records, files and the other relational concepts in `src/lib/db.ts`. Upload bytes persist on local disk. The demo workspace buttons create opaque sessions so each view uses its own server side organization filter. Anyone who can reach the preview can choose any role, so this is **not authentication** and must not be used with real partner data. There is no account administration or production identity provider.

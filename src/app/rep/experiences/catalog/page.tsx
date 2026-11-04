@@ -1,0 +1,17 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getSession } from "@/lib/auth";
+import { listCatalog } from "@/lib/experiences";
+import { Shell } from "@/components/Shell";
+import { createCatalogAction, saveCatalogAction } from "../actions";
+
+export default async function ExperienceCatalog({ searchParams }: { searchParams: Promise<{ error?: string; saved?: string }> }) {
+  const session = await getSession(); if (session?.role !== "rep") redirect("/login");
+  const notice = await searchParams, catalog = listCatalog();
+  return <Shell kind="rep" name={session.name} active="experiences"><main className="content" id="main-content"><Link className="back-link" href="/rep/experiences">← Sprint matches</Link><div className="page-head"><div><p className="eyebrow">2027 SPRINT SEASON / STAFF REVIEW</p><h1>Experience catalog<span className="heading-dot">.</span></h1><p className="subtitle">Draft definitions to review before attaching inventory to matches.</p></div></div>
+    {notice.error && <div className="experience-feedback error" role="alert">{notice.error}</div>}{notice.saved && <div className="experience-feedback" role="status">Changes saved.</div>}
+    <div className="crm-notice">These names come from the 2026 tracker description in the handoff. No 2026 capacities, age limits, or ticket thresholds have been approved for 2027. Catalog approval does not publish an offering to any match.</div>
+    <section className="panel"><div className="panel-title"><div><p className="eyebrow">ADD TYPE</p><h2>New draft experience</h2></div></div><form action={createCatalogAction} className="experience-add-form"><label>Experience name<input name="name" maxLength={120} required placeholder="New experience type" /></label><button className="button primary" type="submit">Add draft type</button></form></section>
+    <section className="panel"><div className="panel-title"><div><p className="eyebrow">CATALOG</p><h2>{catalog.length} experience types</h2></div></div><div className="experience-catalog-list">{catalog.map(type => <details className="experience-details" key={type.id}><summary><strong>{type.name}</strong><span className={`tag tiny ${type.review_status === "approved" ? "blue" : "warning"}`}>{type.review_status}</span></summary><form action={saveCatalogAction} className="experience-form"><input type="hidden" name="catalogId" value={type.id} /><div className="experience-form-grid"><label className="wide">Description<textarea name="description" rows={2} maxLength={1000} defaultValue={type.description} placeholder="What staff should know about this experience" /></label><label className="wide">Draft eligibility / age rules<input name="eligibility" maxLength={500} defaultValue={type.eligibility_draft} placeholder="Awaiting 2027 confirmation" /></label><label className="wide">Draft ticket requirement<input name="ticketRule" maxLength={500} defaultValue={type.ticket_rule_draft} placeholder="Awaiting 2027 confirmation" /></label><label>Review status<select name="reviewStatus" defaultValue={type.review_status}><option value="draft">Draft</option><option value="approved">Approved definition</option></select></label></div><div className="experience-form-footer"><span className="small muted">Per-match rules and capacity are reviewed separately.</span><button className="button primary" type="submit">Save definition</button></div></form></details>)}</div></section>
+  </main></Shell>;
+}
