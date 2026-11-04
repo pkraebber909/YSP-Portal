@@ -99,6 +99,24 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .row-badge { padding: 6px 10px; background: var(--pale); color: #004678; font-size: .8rem; font-weight: 700; white-space: nowrap; }
 .row-arrow { font-size: 1.3rem; color: #17659d; }
 .footnote { margin-top: 18px; color: var(--muted); font-size: .82rem; }
+.rep-team-section { margin-bottom: 36px; }
+.rep-book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.rep-book-card { display: flex; flex-direction: column; gap: 14px; min-height: 145px; padding: 18px; border: 1px solid var(--line); border-top: 4px solid var(--navy); background: #fff; color: var(--ink); text-decoration: none; }
+.rep-book-card:hover { background: #f5faff; text-decoration: none; }
+.rep-book-card.selected { border-color: #69a9d1; border-top-color: var(--sky); background: var(--pale); }
+.rep-book-card:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.rep-card-top { display: flex; justify-content: space-between; color: #17659d; }
+.rep-card-top .eyebrow { margin: 0; }
+.rep-book-card > strong { font-size: 1.13rem; }
+.rep-card-count { margin-top: auto; color: var(--muted); font-size: .85rem; }
+.rep-card-count b { color: var(--navy); font-size: 1.4rem; }
+.rep-selected-head { margin-bottom: 0; }
+.rep-empty { padding: 20px; border: 1px solid var(--line); border-top: 0; margin: 0; background: #fff; color: var(--muted); }
+.rep-crm-section { margin-top: 30px; }
+.crm-rep-form { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.crm-rep-form > div { display: flex; gap: 12px; align-items: flex-end; }
+.crm-rep-form select { flex: 1; min-width: 0; }
+.crm-rep-form .small { margin-bottom: 0; }
 .crm-notice { padding: 13px 16px; margin-bottom: 28px; border-left: 4px solid #2c85bc; background: var(--pale); color: #284457; font-size: .88rem; }
 .crm-logo { width: 68px; height: 54px; flex: none; display: grid; place-items: center; border: 1px solid #a6bed0; background: #e4f3ff; color: #004678; font-size: 1.2rem; font-weight: 700; letter-spacing: -.04em; }
 .crm-logo.large { width: 112px; height: 80px; font-size: 1.8rem; }
@@ -109,7 +127,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-search .small { margin-left: auto; }
 .crm-directory-filters { padding: 18px 6px; display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; background: #f5f9fc; border-bottom: 1px solid var(--line); }
 .crm-directory-filters label { min-width: 170px; display: flex; flex-direction: column; gap: 5px; color: #334857; font-size: .8rem; font-weight: 700; }
-.crm-directory-filters input, .crm-directory-filters select, .crm-classification-form select { width: 100%; min-height: 42px; padding: 9px 10px; border: 1px solid #aab9c4; border-radius: 2px; background: #fff; color: var(--ink); font-size: .88rem; }
+.crm-directory-filters input, .crm-directory-filters select, .crm-classification-form select, .crm-rep-form select { width: 100%; min-height: 42px; padding: 9px 10px; border: 1px solid #aab9c4; border-radius: 2px; background: #fff; color: var(--ink); font-size: .88rem; }
 .crm-directory-filters .small { margin-left: auto; }
 .crm-directory-groups { display: grid; gap: 10px; margin-top: 18px; }
 .crm-directory-groups > details { border: 1px solid var(--line); border-top: 3px solid var(--navy); background: #fff; }
@@ -297,6 +315,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .experience-catalog-list summary { display: flex; align-items: center; gap: 12px; }
 
 @media (max-width: 900px) {
+  .rep-book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .experience-counts { max-width: 240px; }
   .experience-day { min-height: 110px; padding: 4px; }
   .calendar-match { padding: 4px; }
@@ -353,6 +372,9 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
   .preview-banner > span:nth-child(3) { display: none; }
 }
 @media (max-width: 440px) {
+  .rep-book-grid { grid-template-columns: 1fr; }
+  .crm-rep-form > div { display: block; }
+  .crm-rep-form button { margin-top: 12px; }
   .site-wordmark small { max-width: 100px; white-space: normal; line-height: 1.15; }
   .section-head { align-items: start; }
   .section-head > .small { display: none; }

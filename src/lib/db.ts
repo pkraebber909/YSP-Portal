@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS files (id TEXT PRIMARY KEY, organization_id TEXT NOT 
 CREATE TABLE IF NOT EXISTS portal_access (id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), organization_id TEXT NOT NULL REFERENCES organizations(id), role TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_activities (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), rep_id TEXT REFERENCES users(id), note TEXT NOT NULL, next_action TEXT, created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_records (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), next_action TEXT, updated_at TEXT);
+CREATE TABLE IF NOT EXISTS crm_assignments (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), rep_id TEXT NOT NULL REFERENCES users(id));
 CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
@@ -45,6 +46,8 @@ try {
     }
     db.prepare("INSERT INTO portal_access (id,user_id,organization_id,role) VALUES (?,?,?,?)").run("cyclones-access", "cyclones-admin", "cyclones", "admin");
   }
+  const insertRep = db.prepare("INSERT OR IGNORE INTO users (id,name,role,organization_id) VALUES (?,?,'rep',NULL)");
+  for (const [id, name] of [["chris-anderson", "Chris Anderson"], ["jason-ortega", "Jason Ortega"], ["sebastian-maymi", "Sebastian Maymi"]]) insertRep.run(id, name);
   const insertClub = db.prepare("INSERT OR IGNORE INTO organizations (id,name,kind,logo_path) VALUES (?,?,?,?)");
   const fillLogo = db.prepare("UPDATE organizations SET logo_path=? WHERE id=? AND kind='crm_club' AND logo_path IS NULL");
   const insertRecord = db.prepare("INSERT OR IGNORE INTO crm_records (organization_id) VALUES (?)");
@@ -249,20 +252,42 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
-export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string };
+export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
 
 const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
   COALESCE(c.segment,'directory') AS segment,COALESCE(c.area,'Area to confirm') AS area,
   COALESCE(c.area_basis,'Unverified') AS area_basis,
+  a.rep_id AS assigned_rep_id,u.name AS assigned_rep_name,
   COALESCE((SELECT GROUP_CONCAT(source, ' · ') FROM (SELECT source FROM crm_sources s WHERE s.organization_id=o.id ORDER BY source)),'') AS sources
   FROM crm_records r JOIN organizations o ON o.id=r.organization_id
-  LEFT JOIN crm_classification c ON c.organization_id=o.id WHERE o.kind='crm_club'`;
+  LEFT JOIN crm_classification c ON c.organization_id=o.id
+  LEFT JOIN crm_assignments a ON a.organization_id=o.id
+  LEFT JOIN users u ON u.id=a.rep_id WHERE o.kind='crm_club'`;
 export function listCrmClubs() {
   return db.prepare(`${crmSelect} ORDER BY o.name COLLATE NOCASE`).all() as CrmClub[];
 }
 export function getCrmClub(orgId: string) {
   return db.prepare(`${crmSelect} AND o.id=?`).get(orgId) as CrmClub | undefined;
+}
+export function listCrmClubsForRep(repId: string) {
+  return db.prepare(`${crmSelect} AND a.rep_id=? ORDER BY o.name COLLATE NOCASE`).all(repId) as CrmClub[];
+}
+export function listSalesReps() {
+  return db.prepare(`SELECT u.id,u.name,
+    (SELECT COUNT(DISTINCT p.organization_id) FROM partnerships p WHERE p.assigned_rep_id=u.id) AS partner_count,
+    (SELECT COUNT(*) FROM crm_assignments a WHERE a.rep_id=u.id) AS crm_count
+    FROM users u WHERE u.role='rep' ORDER BY CASE WHEN u.id='phineas' THEN 0 ELSE 1 END,u.name`).all() as { id: string; name: string; partner_count: number; crm_count: number }[];
+}
+export function setCrmRep(orgId: string, repId: string | null) {
+  if (!getCrmClub(orgId)) return false;
+  if (repId === null) {
+    db.prepare("DELETE FROM crm_assignments WHERE organization_id=?").run(orgId);
+    return true;
+  }
+  if (!db.prepare("SELECT 1 FROM users WHERE id=? AND role='rep'").get(repId)) return false;
+  db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?) ON CONFLICT(organization_id) DO UPDATE SET rep_id=excluded.rep_id").run(orgId, repId);
+  return true;
 }
 export const crmAreas = ["Area to confirm", "Brooklyn", "Bronx", "Queens", "Manhattan", "Staten Island", "Long Island", "Westchester", "Hudson Valley", "Capital District", "Connecticut"] as const;
 export function setCrmClassification(orgId: string, segment: string, area: string) {

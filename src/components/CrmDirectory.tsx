@@ -8,7 +8,7 @@ import { CrmLogo } from "@/components/CrmLogo";
 const areaOrder = ["Brooklyn", "Bronx", "Queens", "Manhattan", "Staten Island", "Long Island", "Westchester", "Hudson Valley", "Capital District", "Connecticut", "Area to confirm"];
 
 function ClubRows({ clubs }: { clubs: CrmClub[] }) {
-  return <div className="partner-list">{clubs.map(club => <Link className="partner-row" href={`/crm/${club.id}`} key={club.id}><CrmLogo name={club.name} path={club.logo_path} /><span className="partner-main"><strong>{club.name}</strong><small>{club.area}{club.sources ? ` · ${club.sources}` : ""}</small></span><span className="partner-next"><small>NEXT ACTION</small><strong>{club.next_action || "No next action yet"}</strong></span><span className="row-arrow" aria-hidden="true">↗</span></Link>)}</div>;
+  return <div className="partner-list">{clubs.map(club => <Link className="partner-row" href={`/crm/${club.id}`} key={club.id}><CrmLogo name={club.name} path={club.logo_path} /><span className="partner-main"><strong>{club.name}</strong><small>{club.area}{club.assigned_rep_name ? ` · ${club.assigned_rep_name}` : ""}{club.sources ? ` · ${club.sources}` : ""}</small></span><span className="partner-next"><small>NEXT ACTION</small><strong>{club.next_action || "No next action yet"}</strong></span><span className="row-arrow" aria-hidden="true">↗</span></Link>)}</div>;
 }
 
 export function CrmDirectory({ clubs }: { clubs: CrmClub[] }) {

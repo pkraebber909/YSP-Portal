@@ -17,6 +17,26 @@ test("seed contains only confirmed Cyclones details and pending assignments", ()
   assert.equal(partner.partnership.draft_status, "Not started");
   assert.equal(data.listPartnersForRep("phineas").length, 1);
   assert.equal(data.listPartnersForRep("other-rep").length, 0);
+  assert.deepEqual(data.listSalesReps().map(rep => [rep.name, rep.partner_count, rep.crm_count]), [
+    ["Phineas Kraebber", 1, 0],
+    ["Chris Anderson", 0, 0],
+    ["Jason Ortega", 0, 0],
+    ["Sebastian Maymi", 0, 0],
+  ]);
+});
+
+test("CRM club assignments appear in the chosen rep's book and persist", async () => {
+  assert.equal(data.setCrmRep("06-united-new-york", "chris-anderson"), true);
+  assert.equal(data.setCrmRep("06-united-new-york", "unknown-rep"), false);
+  assert.equal(data.setCrmRep("cyclones", "chris-anderson"), false);
+  assert.equal(data.listCrmClubsForRep("chris-anderson").length, 1);
+  assert.equal(data.listSalesReps().find(rep => rep.id === "chris-anderson").crm_count, 1);
+  assert.equal(data.listPartnersForRep("phineas")[0].name, "Coney Island Cyclones Soccer Club");
+  const reopened = await import("../src/lib/db.ts?rep-assignment-reseed");
+  assert.equal(reopened.getCrmClub("06-united-new-york").assigned_rep_name, "Chris Anderson");
+  assert.equal(reopened.listCrmClubsForRep("chris-anderson")[0].id, "06-united-new-york");
+  assert.equal(reopened.setCrmRep("06-united-new-york", null), true);
+  assert.equal(reopened.listCrmClubsForRep("chris-anderson").length, 0);
 });
 
 test("partner projection excludes internal communications and files", () => {

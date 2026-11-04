@@ -1,7 +1,7 @@
 "use server";
 
 import { getSession } from "@/lib/auth";
-import { addCrmNote, getCrmClub, setCrmNextAction, setCrmClassification } from "@/lib/db";
+import { addCrmNote, getCrmClub, setCrmNextAction, setCrmClassification, setCrmRep } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 async function requireCrmRep(form: FormData) {
@@ -33,4 +33,13 @@ export async function saveCrmClassification(form: FormData) {
   if (!setCrmClassification(orgId, String(form.get("segment") || ""), String(form.get("area") || ""))) throw new Error("Invalid club grouping");
   revalidatePath("/crm");
   revalidatePath(`/crm/${orgId}`);
+}
+
+export async function saveCrmRep(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  const repId = String(form.get("repId") || "");
+  if (!setCrmRep(orgId, repId || null)) throw new Error("Invalid rep assignment");
+  revalidatePath("/crm");
+  revalidatePath(`/crm/${orgId}`);
+  revalidatePath("/rep");
 }
