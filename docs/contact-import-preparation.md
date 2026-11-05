@@ -1,10 +1,10 @@
 # Youth soccer contact import preparation
 
-Status: local preparation only. No workbook contact rows have been imported. Do not run a real import until the current workbook has been reviewed, production authentication and storage controls are in place, and the owner approves the reconciliation.
+Status: the full workbook contact import remains preparation only. The owner later authorized adding individually reviewed club contacts to the pushed portal, starting with Jose Romero Aguilar at 5 Star Soccer Academy. Do not treat that direction as approval to import all workbook rows at once.
 
 ## Access and storage gate
 
-The CRM login still accepts the public demo role picker without credentials. The resulting session reaches the internal CRM. SQLite and uploads live on local disk; the project has no production identity provider, access administration, audit trail, or managed encrypted storage. Real workbook contacts are therefore blocked from import. The workbook and all real contact data must stay out of GitHub.
+The CRM login still accepts the public demo role picker without credentials. The resulting session reaches the internal CRM. SQLite and uploads live on local disk; the project has no production identity provider, access administration, audit trail, or managed encrypted storage. The owner explicitly overrode the earlier GitHub restriction for individually selected contact records and asked for those changes to be pushed. This does not make the CRM access restricted or the contact data private. The workbook and bulk exports remain out of GitHub.
 
 ## Attached workbook and reconciliation
 

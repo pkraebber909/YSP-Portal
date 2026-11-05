@@ -418,6 +418,22 @@ try {
     const updated = !hasLocations && db.prepare("UPDATE crm_classification SET area='Queens',area_basis='Staff set' WHERE organization_id=? AND area_basis='Unverified'").run(clubId).changes;
     if (updated) db.prepare("INSERT INTO crm_locations(organization_id,area,basis) VALUES (?,'Queens','Staff set')").run(clubId);
   }
+  if (seedState.run("crm-5-star-jose-romero-aguilar-2026-11-05").changes) {
+    const clubId = "directory-5-star-soccer-academy";
+    const contactId = `${clubId}:jose-romero-aguilar`;
+    const email = "5starsocceracademy@gmail.com";
+    const inserted = db.prepare(`INSERT OR IGNORE INTO crm_contacts(id,organization_id,name,email,phone,is_primary)
+      SELECT ?,?,'Jose Romero Aguilar',?,'(347) 353-5307',0
+      WHERE NOT EXISTS (SELECT 1 FROM crm_contacts WHERE organization_id=? AND lower(trim(name))='jose romero aguilar' AND lower(email)=?)`)
+      .run(contactId, clubId, email, clubId, email).changes;
+    if (inserted) {
+      db.prepare("INSERT INTO crm_contact_affiliations(contact_id,role) VALUES (?,'President')").run(contactId);
+      db.prepare(`INSERT INTO crm_contact_sources(contact_id,workbook_version,tab,row_number,decision,original_values)
+        VALUES (?,?,'CJSL',12,'owner_approved_contact',?)`).run(contactId,
+        "2026 YS Database Phin + Rei (1).xlsx / f5d6c8dc817502beb39364b6242a3259d7c96e71432f7fc043f12d4cea907443",
+        JSON.stringify({ club: "5 Star Soccer Academy", role: "President", first_name: "Jose", last_name: "Romero aguilar", email, phone: "13473535307" }));
+    }
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");

@@ -25,6 +25,18 @@ test("staff-confirmed Queens tag appears on 5 Star Soccer Academy", () => {
   assert.deepEqual(club.locations, ["Queens"]);
 });
 
+test("Jose is a separate secondary 5 Star contact with workbook provenance", () => {
+  const clubId = "directory-5-star-soccer-academy";
+  const contacts = data.listCrmContacts(clubId);
+  assert.equal(contacts.length, 1);
+  assert.equal(contacts[0].name, "Jose Romero Aguilar");
+  assert.equal(contacts[0].is_primary, false);
+  assert.deepEqual(contacts[0].roles, ["President"]);
+  const raw = new DatabaseSync(process.env.YSP_DB_PATH);
+  assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM crm_contact_sources WHERE contact_id=? AND tab='CJSL' AND row_number=12").get(contacts[0].id).n, 1);
+  raw.close();
+});
+
 test("club locations support multiple tags without changing YSP status and survive restart", async () => {
   const id = "directory-ct-rush";
   const before = data.getCrmClub(id);
@@ -72,8 +84,8 @@ test("staff can add, edit, and remove club contacts without losing those changes
 test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   const counts = raw.prepare("SELECT COUNT(*) AS contacts,COUNT(DISTINCT organization_id) AS clubs FROM crm_contacts").get();
-  assert.equal(counts.contacts, 75);
-  assert.equal(counts.clubs, 45);
+  assert.equal(counts.contacts, 76);
+  assert.equal(counts.clubs, 46);
   for (const [orgId, , email] of chrisAndersonContacts) {
     assert.ok(data.listCrmPrimaryContacts(orgId).some(contact => contact.email === email), `${email} belongs to ${orgId}`);
     assert.equal(data.getCrmClub(orgId).assigned_rep_name, "Chris Anderson");
