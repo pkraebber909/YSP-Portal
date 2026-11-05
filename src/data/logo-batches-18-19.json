@@ -1,0 +1,114 @@
+{
+  "summary": {
+    "submitted_images": 6,
+    "added_to_placeholders": 6,
+    "held": 0
+  },
+  "logos": [
+    {
+      "batch": 18,
+      "club_name_exact": "Catskill Soccer Club",
+      "portal_club_id": "directory-catskill-soccer-club",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/catskill-soccer-club--685daf42b508.jpg",
+      "image_filename": "logos/catskill-soccer-club--685daf42b508.jpg",
+      "sha256": "685daf42b508b325d7a3325c806e9d8cc61767608f4f8700ff18176e4b9ef489",
+      "source_url": "https://www.facebook.com/p/Catskill-Soccer-Club-100064642061576/",
+      "source_image_url": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/304842877_454337150064350_3166798640409076768_n.jpg?stp=dst-jpg_tt6&cstp=mx968x844&ctp=s720x720&_nc_cat=102&ccb=1-7&_nc_sid=3ab345&_nc_ohc=Gs9NflojJJgQ7kNvwE2FQyi&_nc_oc=AdoNrtbqkLmlFZ4yP6GVw8Kl6d-SFmrcmRKzVe3usBUv9ePpgoRuoPhBNViBrM8PxYLl48n_h4E6CzGocj2KZQ7L&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=2ZN8YNREzeUuZrDkwQ5oKw&_nc_ss=7920f&oh=00_AQSTv4SCPsTp1JdKDpEydV815tGL_Un_YpG2Er-pThQGCw&oe=6AF29EB6",
+      "location": "Catskill, New York",
+      "known_aliases": [
+        "Catskill S.C.",
+        "Catskill Soccer Club Inc."
+      ],
+      "image_quality_notes": "Native web-source JPEG, not a print-ready master; do not upscale. The top arc and leftmost lettering border meet the source edges. Preserve the original white background and tight framing. Not the separate Catskill High School C mark.",
+      "identity_evidence_summary": "Current public Facebook metadata directly names Catskill Soccer Club | Catskill NY and describes Catskill S.C. as a not-for-profit corporation located in Catskill, NY. The complete badge spells CATSKILL SOCCER CLUB INC. Earlier independently indexed official travel and 2026 recreation pages identify the current www.catskillsoccerclub.org club, CDYSL and Catskill location; this is not the school C logo or regional tournament imagery."
+    },
+    {
+      "batch": 18,
+      "club_name_exact": "Lansingburgh",
+      "portal_club_id": "directory-lansingburgh",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/lansingburgh--b3261ff7ad49.jpg",
+      "image_filename": "logos/lansingburgh--b3261ff7ad49.jpg",
+      "sha256": "b3261ff7ad49090304b92882e63e1d9deb7fb004872d9fe6827895d58828fde9",
+      "source_url": "https://www.facebook.com/p/Lansingburgh-Youth-Soccer-Club-100063798031550/",
+      "source_image_url": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/624537904_1458827359587185_1763980228447383755_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s720x720&_nc_cat=100&ccb=1-7&_nc_sid=3ab345&_nc_ohc=QFLqBRP6GMYQ7kNvwH8PZp3&_nc_oc=AdpDmneHZrP7gmuGprOTDLFrpIqOqNdBADet96NWRZ8Mso-9ZcDb3fLTBV7RzYCnCFJZv_ChaL6F91EXLLUsw6jn&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=3wSllQhSBK4_I8FugYu8kw&_nc_ss=7920f&oh=00_AQSVTJSO2GA1MBeJgPNj1eUcy92mlon1HCOPNRMMMzf7Iw&oe=6AF2C2BD",
+      "location": "Lansingburgh / Troy, New York",
+      "known_aliases": [
+        "Lansingburgh SC",
+        "Lansingburgh Youth Soccer Club"
+      ],
+      "image_quality_notes": "Preserve native white field and 720px source; no reconstruction, crop, color adjustment or upscale. Soccer youth club in Troy/Lansingburgh, not Lansingburgh school athletics.",
+      "identity_evidence_summary": "The current public Facebook club page directly names Lansingburgh Youth Soccer Club in Troy, NY and describes itself as the club community page for news/events. Its current native crest spells LANSINGBURGH SC, bridging the full youth-club name to the exact Lansingburgh SC listing in the current CDYSL directory and the requested short name Lansingburgh. The school Knights logo is unrelated and excluded."
+    },
+    {
+      "batch": 18,
+      "club_name_exact": "Southern Ulster FC",
+      "portal_club_id": "directory-southern-ulster-fc",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/southern-ulster-fc--c2b070e03204.jpg",
+      "image_filename": "logos/southern-ulster-fc--c2b070e03204.jpg",
+      "sha256": "c2b070e03204329726b5e39a601daf725d850e86d680481bec6e44e6539339d2",
+      "source_url": "https://x.com/SUFC_Soccer",
+      "source_image_url": "https://pbs.twimg.com/profile_images/842555268051488769/NJKpRxxr_400x400.jpg",
+      "location": "Wallkill / Modena, Ulster County, New York",
+      "known_aliases": [
+        "SUFC"
+      ],
+      "image_quality_notes": "HTTP 200 direct image from the currently embedded profile asset. Native 400 x 400 JPEG, 16,685 bytes. Complete white-and-blue quartered shield, New York silhouette, ball, SU/FC lettering and SOUTHERN ULSTER text. Original white margins and all thin shield edges visible. No cropping, upscaling, recolouring or reconstruction.",
+      "identity_evidence_summary": "Direct public X profile retrieved successfully on 2026-11-05. Its title, account handle and description identify Southern Ulster FC in Wallkill, NY as the travel soccer programme of Wallkill Area Youth Soccer (WAYS), playing in EHYSL. The profile currently embeds the exact original image URL in its visible profile and og:image metadata and links southernulsterfc.org. Wallkill Central School District 2025 facility records independently identify Southern Ulster FC youth travel teams. Current 2026 competition records support the same exact club identity. No parent WAYS mark or similarly named Ulster club substituted."
+    },
+    {
+      "batch": 19,
+      "club_name_exact": "Dover / SC Harlem Valley",
+      "portal_club_id": "directory-dover-sc-harlem-valley",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/dover-sc-harlem-valley--93e06cbe367d.jpg",
+      "image_filename": "logos/dover-sc-harlem-valley--93e06cbe367d.jpg",
+      "sha256": "93e06cbe367d5b869f38f2bc5705856c58b5f637a53647754c31c402ecaa45bc",
+      "source_url": "https://doverunited.wixsite.com/doverunited",
+      "source_image_url": "https://static.wixstatic.com/media/d1e8eb_682158d8daee439c98b0ac8b2920a4d8~mv2.jpg",
+      "location": "Wingdale / Dover Plains, New York",
+      "known_aliases": [
+        "SC Harlem Valley",
+        "SCHV"
+      ],
+      "image_quality_notes": "This is the travel-division SCHV badge for the requested composite entry. Do not substitute the orange Dover United parent/town crest or map all Dover programmes to this artwork. Preserve the native dark-grey background; no crop, redraw, recoloring, transparency conversion or enlargement performed.",
+      "identity_evidence_summary": "Live official Dover United Youth Soccer Club homepage directly embeds two distinct badge assets, one titled Dover United Crest and the other explicitly titled SCHV Crest.jpg. Official programmes page distinguishes town and travel soccer, and club page states that all travel teams train/play at Boyce Park, Wingdale. Reviewer independently observed the exact official Facebook 2025-2026 tryout flyer (media 1133504978570257, May 8/May 13), which explicitly reads SC HARLEM VALLEY and DUYSC TRAVEL DIVISION. That primary poster observation supplies the explicit relationship; it is not attributed to the separate 2026/27 video. Existing HVYSL listings corroborate the requested composite Dover/SC Harlem Valley target."
+    },
+    {
+      "batch": 19,
+      "club_name_exact": "La Celeste Soccer Academy Inc",
+      "portal_club_id": "directory-la-celeste-soccer-academy-inc",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/la-celeste-soccer-academy-inc--ee69078ae01e.png",
+      "image_filename": "logos/la-celeste-soccer-academy-inc--ee69078ae01e.png",
+      "sha256": "ee69078ae01efd4a7b2a43f473d709ffec09860f6c91fa850e53e0fe307eee6c",
+      "source_url": "https://www.baysl.com/staff_members/52242",
+      "source_image_url": "https://lacelestesoccerclub.com/wp-content/uploads/2025/04/Original-Logo.png",
+      "location": "New York City, New York; Glendale, Queens in the independent nonprofit listing",
+      "known_aliases": [
+        "La Celeste Soccer Club"
+      ],
+      "image_quality_notes": "Complete native 3000 x 3000 RGB PNG with native blue background, source shading and ample margins. All source bytes preserved.",
+      "identity_evidence_summary": "The current official Big Apple Youth Soccer League entry explicitly names La Celeste Soccer Academy Inc and associates it with lacelestesoccerclub@gmail.com, 646-731-4117 and a club-specific sun-and-ball image. The same public phone is on the current La Celeste Soccer Club website, and the same email and phone appear in the 2024 report of the Uruguayan Consulate in New York promoting that club. The website names Diego Perez and current youth programmes. This connects the exact Academy Inc request to the local Club artwork through organization-specific contacts, not name similarity. A secondary IRS-derived listing corroborates Glendale, New York locality only."
+    },
+    {
+      "batch": 19,
+      "club_name_exact": "Munay",
+      "portal_club_id": "directory-munay",
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/munay--84366f8e8ded.jpg",
+      "image_filename": "logos/munay--84366f8e8ded.jpg",
+      "sha256": "84366f8e8ded39a987ac94547c956bb41bf7d509b7a3f048336046dad03bafd3",
+      "source_url": "https://linktr.ee/munaysocceracademy",
+      "source_image_url": "https://ugc.production.linktr.ee/zuVE7CYRX2ohaFFqxYmw_IMG_2291.JPG",
+      "location": "Ossining, New York",
+      "known_aliases": [
+        "Munay Soccer Academy"
+      ],
+      "image_quality_notes": "Opaque JPEG with a baked-in black field, not transparent. Preserve that background and all original bytes. Native 600px web-use image; do not upscale, remove background, sharpen or claim a transparent/high-resolution master. The previously blocked 575 x 591 WordPress PNG was not retried.",
+      "identity_evidence_summary": "The exact Munay Soccer Academy Linktree identifies itself as official and links the known club domain, named academy Instagram, Facebook, registration, summer camp and supplier store. Its native crest explicitly spells MUNAY SOCCER ACADEMY and OSSINING, NY. A permitted direct read of the linked Instagram profile independently identifies itself as Official Instagram of Munay Soccer Academy with matching tagline Love the game. Develop your skills. Earlier official indexed domain evidence establishes the requested Munay academy; no other geographic branch is inferred."
+    }
+  ]
+}

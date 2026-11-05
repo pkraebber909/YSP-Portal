@@ -18,11 +18,11 @@ export function Shell({ kind, name, children, active = kind === "rep" ? "partner
         <Image className="site-crest" src="/nycfc-crest.png" alt="" width={54} height={54} priority />
         <span className="site-wordmark"><strong>NYCFC</strong><small>YOUTH SOCCER PARTNERSHIP</small></span>
       </Link>
-      {(!isRep || active === "crm" || active === "experiences") && <span className="site-header-label">{active === "crm" ? "YSP Internal CRM" : active === "experiences" ? "Experiences" : "Partner workspace"}</span>}
+      {(!isRep || active === "crm" || active === "experiences") && <span className="site-header-label">{active === "crm" ? "Youth Soccer Club CRM" : active === "experiences" ? "Experiences" : "Partner workspace"}</span>}
       <div className="site-account"><span className="account-name">{name}</span><form action="/api/logout" method="post"><button className="sign-out" type="submit">Sign out</button></form></div>
     </header>
     <div className="sky-band"><span>SPRING 2027</span><span>YOUTH SOCCER PARTNERSHIPS</span></div>
-    <div className="page-masthead"><div className="masthead-inner"><span className="masthead-kicker">NEW YORK CITY FC</span><p>{active === "crm" ? "YSP Internal CRM" : active === "experiences" ? "Sprint Season Experiences" : isRep ? "Rep Workspace" : "Partner Workspace"}</p></div></div>
+    <div className="page-masthead"><div className="masthead-inner"><span className="masthead-kicker">NEW YORK CITY FC</span><p>{active === "crm" ? "Youth Soccer Club CRM" : active === "experiences" ? "Sprint Season Experiences" : isRep ? "Rep Workspace" : "Partner Workspace"}</p></div></div>
     <nav className="workspace-nav" aria-label="Workspace navigation"><div className="workspace-nav-inner">
       {isRep ? active === "experiences" ? <Link href="/login">← Portal home</Link> : <Link href="/rep" aria-current={active === "partners" ? "page" : undefined}>Partners</Link>
       : <>

@@ -14,6 +14,7 @@ import { logoAssignments07to08 } from "../data/logo-batches-07-08.ts";
 import { logoAssignments09to11 } from "../data/logo-batches-09-11.ts";
 import { logoAssignments12to13 } from "../data/logo-batches-12-13.ts";
 import logoBatches14to17 from "../data/logo-batches-14-17.json" with { type: "json" };
+import logoBatches18to19 from "../data/logo-batches-18-19.json" with { type: "json" };
 import { logoBackgroundCleanups } from "../data/logo-background-cleanups.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
@@ -39,13 +40,21 @@ CREATE TABLE IF NOT EXISTS crm_records (organization_id TEXT PRIMARY KEY REFEREN
 CREATE TABLE IF NOT EXISTS crm_assignments (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), rep_id TEXT NOT NULL REFERENCES users(id));
 CREATE TABLE IF NOT EXISTS crm_seed_state (key TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS crm_locations (organization_id TEXT NOT NULL REFERENCES organizations(id), area TEXT NOT NULL, basis TEXT NOT NULL DEFAULT 'Imported area', PRIMARY KEY(organization_id,area));
 CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
 CREATE TABLE IF NOT EXISTS crm_aliases (organization_id TEXT NOT NULL REFERENCES organizations(id), alias TEXT NOT NULL, PRIMARY KEY (organization_id,alias));
 CREATE TABLE IF NOT EXISTS crm_contacts (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), name TEXT NOT NULL, email TEXT, phone TEXT, ticketing_id TEXT, is_primary INTEGER NOT NULL DEFAULT 1, sort_order INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS crm_contact_emails (contact_id TEXT NOT NULL REFERENCES crm_contacts(id) ON DELETE CASCADE, email TEXT NOT NULL, sort_order INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(contact_id,email));
+CREATE TABLE IF NOT EXISTS crm_contact_affiliations (contact_id TEXT NOT NULL REFERENCES crm_contacts(id) ON DELETE CASCADE, role TEXT NOT NULL DEFAULT '', team TEXT NOT NULL DEFAULT '', PRIMARY KEY(contact_id,role,team));
+CREATE TABLE IF NOT EXISTS crm_contact_sources (contact_id TEXT NOT NULL REFERENCES crm_contacts(id) ON DELETE CASCADE, workbook_version TEXT NOT NULL, tab TEXT NOT NULL, row_number INTEGER NOT NULL, decision TEXT NOT NULL, visibility_status TEXT NOT NULL DEFAULT 'unverified', original_values TEXT NOT NULL, PRIMARY KEY(contact_id,workbook_version,tab,row_number));
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
 CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
 CREATE INDEX IF NOT EXISTS idx_communications_org ON communications(organization_id);
 `);
+const contactSourceColumns = db.prepare("PRAGMA table_info(crm_contact_sources)").all() as { name: string }[];
+if (!contactSourceColumns.some(column => column.name === "visibility_status")) {
+  db.exec("ALTER TABLE crm_contact_sources ADD COLUMN visibility_status TEXT NOT NULL DEFAULT 'unverified'");
+}
 
 db.exec("BEGIN IMMEDIATE;");
 try {
@@ -331,6 +340,9 @@ try {
   for (const logo of logoBatches14to17.logos) {
     if (logo.decision === "add_to_placeholder" && logo.portal_logo_path) fillLogo.run(logo.portal_logo_path, logo.portal_club_id);
   }
+  for (const logo of logoBatches18to19.logos) {
+    if (logo.decision === "add_to_placeholder" && logo.portal_logo_path) fillLogo.run(logo.portal_logo_path, logo.portal_club_id);
+  }
   // Replace only these known seed paths. A later staff-selected crest wins.
   db.prepare("UPDATE organizations SET logo_path=? WHERE id='portchester' AND kind='crm_club' AND logo_path=?")
     .run("/club-logos/port-chester-sc--c8582426f9a2.png", "/club-logos/portchester.png");
@@ -396,6 +408,9 @@ try {
   // This record stays searchable, but its crest is intentionally removed.
   db.prepare("UPDATE organizations SET logo_path=NULL WHERE id='directory-westchester-sc' AND kind='crm_club' AND logo_path=?")
     .run("/club-logos/westchester-sc--90b797a456ab.png");
+  if (seedState.run("crm-locations-from-existing-area-2026-11-05").changes) {
+    db.exec("INSERT OR IGNORE INTO crm_locations(organization_id,area,basis) SELECT organization_id,area,area_basis FROM crm_classification WHERE area<>'Area to confirm'");
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");
@@ -407,13 +422,15 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
-export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string; aliases: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
+export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; locations: string[]; sources: string; aliases: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
 export type CrmContact = { id: string; name: string; email: string | null; phone: string | null; ticketing_id: string | null };
+export type CrmContactDisplay = CrmContact & { is_primary: boolean; emails: string[]; roles: string[]; teams: string[] };
 
 const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
   COALESCE(c.segment,'directory') AS segment,COALESCE(c.area,'Area to confirm') AS area,
   COALESCE(c.area_basis,'Unverified') AS area_basis,
+  COALESCE((SELECT GROUP_CONCAT(area,'|') FROM (SELECT area FROM crm_locations l WHERE l.organization_id=o.id ORDER BY area)),'') AS locations_csv,
   a.rep_id AS assigned_rep_id,u.name AS assigned_rep_name,
   COALESCE((SELECT GROUP_CONCAT(source, ' · ') FROM (SELECT source FROM crm_sources s WHERE s.organization_id=o.id ORDER BY source)),'') AS sources,
   COALESCE((SELECT GROUP_CONCAT(alias, ' · ') FROM (SELECT alias FROM crm_aliases a WHERE a.organization_id=o.id ORDER BY alias)),'') AS aliases
@@ -421,14 +438,20 @@ const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
   LEFT JOIN crm_classification c ON c.organization_id=o.id
   LEFT JOIN crm_assignments a ON a.organization_id=o.id
   LEFT JOIN users u ON u.id=a.rep_id WHERE o.kind='crm_club'`;
+type CrmClubRow = Omit<CrmClub, "locations"> & { locations_csv: string };
+function projectCrmClub(row: CrmClubRow): CrmClub {
+  const { locations_csv, ...club } = row;
+  return { ...club, locations: locations_csv ? locations_csv.split("|") : [] };
+}
 export function listCrmClubs() {
-  return db.prepare(`${crmSelect} ORDER BY o.name COLLATE NOCASE`).all() as CrmClub[];
+  return (db.prepare(`${crmSelect} ORDER BY o.name COLLATE NOCASE`).all() as CrmClubRow[]).map(projectCrmClub);
 }
 export function getCrmClub(orgId: string) {
-  return db.prepare(`${crmSelect} AND o.id=?`).get(orgId) as CrmClub | undefined;
+  const row = db.prepare(`${crmSelect} AND o.id=?`).get(orgId) as CrmClubRow | undefined;
+  return row ? projectCrmClub(row) : undefined;
 }
 export function listCrmClubsForRep(repId: string) {
-  return db.prepare(`${crmSelect} AND a.rep_id=? ORDER BY o.name COLLATE NOCASE`).all(repId) as CrmClub[];
+  return (db.prepare(`${crmSelect} AND a.rep_id=? ORDER BY o.name COLLATE NOCASE`).all(repId) as CrmClubRow[]).map(projectCrmClub);
 }
 export function listSalesReps() {
   return db.prepare(`SELECT u.id,u.name,
@@ -453,9 +476,34 @@ export function setCrmRep(orgId: string, repId: string | null) {
   return true;
 }
 export const crmAreas = ["Area to confirm", "Brooklyn", "Bronx", "Queens", "Manhattan", "Staten Island", "Long Island", "Westchester", "Hudson Valley", "Capital District", "Connecticut"] as const;
+export function setCrmSegment(orgId: string, segment: string) {
+  if (!getCrmClub(orgId) || !["current_ysp", "directory"].includes(segment)) return false;
+  db.prepare("UPDATE crm_classification SET segment=? WHERE organization_id=?").run(segment, orgId);
+  return true;
+}
+export function setCrmLocations(orgId: string, areas: string[]) {
+  if (!getCrmClub(orgId) || areas.some(area => area === "Area to confirm" || !crmAreas.includes(area as typeof crmAreas[number]))) return false;
+  const unique = [...new Set(areas)];
+  db.exec("SAVEPOINT crm_location_edit");
+  try {
+    db.prepare("DELETE FROM crm_locations WHERE organization_id=?").run(orgId);
+    const insert = db.prepare("INSERT INTO crm_locations(organization_id,area,basis) VALUES (?,?,'Staff set')");
+    for (const area of unique) insert.run(orgId, area);
+    db.prepare("UPDATE crm_classification SET area=?,area_basis='Staff set' WHERE organization_id=?").run(unique[0] || "Area to confirm", orgId);
+    db.exec("RELEASE crm_location_edit");
+    return true;
+  } catch (error) {
+    db.exec("ROLLBACK TO crm_location_edit");
+    db.exec("RELEASE crm_location_edit");
+    throw error;
+  }
+}
 export function setCrmClassification(orgId: string, segment: string, area: string) {
   if (!getCrmClub(orgId) || !["current_ysp", "directory"].includes(segment) || !crmAreas.includes(area as typeof crmAreas[number])) return false;
   db.prepare("INSERT INTO crm_classification (organization_id,segment,area,area_basis) VALUES (?,?,?,'Staff set') ON CONFLICT(organization_id) DO UPDATE SET segment=excluded.segment,area=excluded.area,area_basis='Staff set'").run(orgId, segment, area);
+  // Keep the original single-area API in sync with location tags for older callers.
+  if (area === "Area to confirm") db.prepare("DELETE FROM crm_locations WHERE organization_id=?").run(orgId);
+  else db.prepare("INSERT OR IGNORE INTO crm_locations(organization_id,area,basis) VALUES (?,?,'Staff set')").run(orgId, area);
   return true;
 }
 export function listCrmNotes(orgId: string) {
@@ -463,6 +511,17 @@ export function listCrmNotes(orgId: string) {
 }
 export function listCrmPrimaryContacts(orgId: string) {
   return db.prepare("SELECT id,name,email,phone,ticketing_id FROM crm_contacts WHERE organization_id=? AND is_primary=1 ORDER BY sort_order,name COLLATE NOCASE").all(orgId) as CrmContact[];
+}
+export function listCrmContacts(orgId: string): CrmContactDisplay[] {
+  const contacts = db.prepare("SELECT id,name,email,phone,ticketing_id,is_primary FROM crm_contacts WHERE organization_id=? ORDER BY is_primary DESC,sort_order,name COLLATE NOCASE").all(orgId) as (CrmContact & { is_primary: number })[];
+  const extraEmails = db.prepare("SELECT email FROM crm_contact_emails WHERE contact_id=? ORDER BY sort_order,email");
+  const affiliations = db.prepare("SELECT role,team FROM crm_contact_affiliations WHERE contact_id=? ORDER BY role,team");
+  return contacts.map(contact => {
+    const emails = [...(contact.email ? [contact.email] : []), ...(extraEmails.all(contact.id) as { email: string }[]).map(item => item.email)]
+      .filter((email, index, all) => all.findIndex(value => value.toLowerCase() === email.toLowerCase()) === index);
+    const details = affiliations.all(contact.id) as { role: string; team: string }[];
+    return { ...contact, is_primary: !!contact.is_primary, emails, roles: [...new Set(details.map(item => item.role).filter(Boolean))], teams: [...new Set(details.map(item => item.team).filter(Boolean))] };
+  });
 }
 export function addCrmContact(orgId: string, name: string, email: string | null, phone: string | null, ticketingId: string | null) {
   if (!getCrmClub(orgId)) return false;

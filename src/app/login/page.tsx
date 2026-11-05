@@ -29,7 +29,7 @@ export default function Login() {
             <form action="/api/login" method="post">
               <input type="hidden" name="userId" value="phineas" />
               <input type="hidden" name="destination" value="crm" />
-              <button className="button ghost" type="submit">Enter YSP Internal CRM <span>→</span></button>
+              <button className="button ghost" type="submit">Enter Youth Soccer Club CRM <span>→</span></button>
             </form>
           </div>
           <p className="small muted">Demo access is open to anyone who can reach this preview. Use test information only.</p>

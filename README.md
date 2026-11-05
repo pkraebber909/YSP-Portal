@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000` and choose **Enter rep workspace**, **Enter partner workspace**, **Enter YSP Internal CRM**, or the separate **Enter 2027 Sprint calendar** panel. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
+Open `http://localhost:3000` and choose **Enter rep workspace**, **Enter partner workspace**, **Enter Youth Soccer Club CRM**, or the separate **Enter 2027 Sprint calendar** panel. No password is required in this prototype. On first run, the app creates an ignored SQLite database in `.data`. For a production-style local check, use `npm run build && npm run start`.
 
 Optional paths are documented in [.env.example](.env.example). Copy it to `.env.local` only if you want to move the SQLite database or upload directory. Relative paths resolve from the checkout. Uploads default to `.data/uploads`.
 
@@ -34,11 +34,11 @@ The Rep page shows five selectable sales rep books: Phineas Kraebber, Chris Ande
 
 Match and experience assignments remain unconfirmed. The draft is shown as **Not started**. No contact address, match date, selected experience, or deadline is invented.
 
-## YSP Internal CRM
+## Youth Soccer Club CRM
 
-The CRM entry on the login page opens 642 club records, including 70 **Current Youth Partners (YSPs)**. The 2026 youth soccer workbook supplied club names and league-sheet sources without importing its contact columns. Confirmed logo batches are matched to stable CRM IDs; clubs still missing logos show initials. EYSA is the canonical record for Eastchester Soccer Club: its existing partner status, rep assignment, and logo are retained, along with Eastchester's three league sources and provisional Westchester area. CRM records remain separate from the Cyclones partnership workflow.
+The CRM entry on the login page opens 633 active club records, including 68 **Current Youth Partners (YSPs)**. The 2026 youth soccer workbook supplied club names and league-sheet sources without importing its contact columns. Confirmed logo batches are matched to stable CRM IDs; clubs still missing logos show initials. EYSA is the canonical record for Eastchester Soccer Club: its existing partner status, rep assignment, and logo are retained, along with Eastchester's three league sources and provisional Westchester area. CRM records remain separate from the Cyclones partnership workflow.
 
-The directory can be searched and filtered by current partner status, area, and workbook sheet. Other directory clubs are grouped by borough or area where a club name or geographic league sheet suggests one. Those areas are provisional; the remainder appear under **Area to confirm**. Staff can correct a club's grouping and area on its CRM page. The original workbook is not stored in the repository.
+The directory lists all clubs alphabetically by default and can be grouped by location or current YSP status. Search, location, status, workbook source, and rep filters can be combined. Location tags are separate from YSP status, and a club may have multiple location tags. Existing inferred areas remain provisional; staff can edit the set of locations on each club page. The original workbook is not stored in the repository.
 
 The CRM uses the open rep demo session; it is not production authentication. Salesforce is not connected, and no data sync occurs.
 
@@ -58,7 +58,7 @@ SQLite persists organizations, users, contacts, partnerships, requirements, comm
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 642 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 633 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
 
 ## Next milestone
 

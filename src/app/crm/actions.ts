@@ -1,7 +1,7 @@
 "use server";
 
 import { getSession } from "@/lib/auth";
-import { addCrmContact, addCrmNote, getCrmClub, removeCrmContact, setCrmNextAction, setCrmClassification, setCrmRep, updateCrmContact } from "@/lib/db";
+import { addCrmContact, addCrmNote, getCrmClub, removeCrmContact, setCrmNextAction, setCrmClassification, setCrmLocations, setCrmRep, setCrmSegment, updateCrmContact } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 async function requireCrmRep(form: FormData) {
@@ -31,6 +31,21 @@ export async function saveCrmNextAction(form: FormData) {
 export async function saveCrmClassification(form: FormData) {
   const { orgId } = await requireCrmRep(form);
   if (!setCrmClassification(orgId, String(form.get("segment") || ""), String(form.get("area") || ""))) throw new Error("Invalid club grouping");
+  revalidatePath("/crm");
+  revalidatePath(`/crm/${orgId}`);
+}
+
+export async function saveCrmSegment(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  if (!setCrmSegment(orgId, String(form.get("segment") || ""))) throw new Error("Invalid club status");
+  revalidatePath("/crm");
+  revalidatePath(`/crm/${orgId}`);
+}
+
+export async function saveCrmLocations(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  const areas = form.getAll("areas").map(value => String(value));
+  if (!setCrmLocations(orgId, areas)) throw new Error("Invalid club location");
   revalidatePath("/crm");
   revalidatePath(`/crm/${orgId}`);
 }

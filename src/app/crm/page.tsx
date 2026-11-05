@@ -10,7 +10,7 @@ export default async function CrmHome() {
   const clubs = listCrmClubs().map(club => ({ ...club }));
   const reps = listSalesReps().map(rep => ({ id: rep.id, name: rep.name }));
   return <Shell kind="rep" name={session.name} active="crm"><main className="content" id="main-content">
-    <div className="page-head"><div><p className="eyebrow">INTERNAL CLUB RECORDS</p><h1>YSP Internal CRM<span className="heading-dot">.</span></h1><p className="subtitle">Current Youth Partners and clubs from the 2026 directory.</p></div><div className="head-meta"><span className="number">{clubs.length.toString().padStart(2, "0")}</span><span>CLUBS</span></div></div>
+    <div className="page-head"><div><p className="eyebrow">INTERNAL CLUB RECORDS</p><h1>Youth Soccer Club CRM<span className="heading-dot">.</span></h1><p className="subtitle">Current Youth Partners and other youth clubs, listed A–Z.</p></div><div className="head-meta"><span className="number">{clubs.length.toString().padStart(2, "0")}</span><span>CLUBS</span></div></div>
     <div className="crm-notice">Internal working records. Workbook club names were imported without contact details. Area labels inferred from a league sheet or club name are provisional; Salesforce is not connected.</div>
     <section aria-labelledby="crm-clubs-title"><div className="section-head"><div><p className="eyebrow">CLUB DIRECTORY</p><h2 id="crm-clubs-title">Youth clubs</h2></div><span className="small muted">Select a club to edit its record</span></div>
       <CrmDirectory clubs={clubs} reps={reps} />

@@ -16,7 +16,24 @@ const { logoAssignments09to11 } = await import("../src/data/logo-batches-09-11.t
 const { logoAssignments12to13 } = await import("../src/data/logo-batches-12-13.ts");
 const { logoBackgroundCleanups } = await import("../src/data/logo-background-cleanups.ts");
 const { default: logoBatches14to17 } = await import("../src/data/logo-batches-14-17.json", { with: { type: "json" } });
+const { default: logoBatches18to19 } = await import("../src/data/logo-batches-18-19.json", { with: { type: "json" } });
 const cleanedLogoPathById = new Map(logoBackgroundCleanups.map(([id, , display]) => [id, `/club-logos/${display}`]));
+
+test("club locations support multiple tags without changing YSP status and survive restart", async () => {
+  const id = "directory-ct-rush";
+  const before = data.getCrmClub(id);
+  assert.equal(before.segment, "directory");
+  assert.equal(data.setCrmLocations(id, ["Bronx", "Westchester", "Bronx"]), true);
+  assert.deepEqual(data.getCrmClub(id).locations, ["Bronx", "Westchester"]);
+  assert.equal(data.getCrmClub(id).segment, "directory");
+  assert.equal(data.setCrmLocations(id, ["Not a location"]), false);
+  assert.deepEqual(data.getCrmClub(id).locations, ["Bronx", "Westchester"]);
+  const reopened = await import("../src/lib/db.ts?location-reopen");
+  assert.deepEqual(reopened.getCrmClub(id).locations, ["Bronx", "Westchester"]);
+  assert.equal(data.setCrmLocations(id, []), true);
+  assert.deepEqual(data.getCrmClub(id).locations, []);
+  assert.equal(data.getCrmClub(id).area, "Area to confirm");
+});
 
 test("staff can add, edit, and remove club contacts without losing those changes on restart", async () => {
   const clubId = "directory-bellport";
@@ -165,7 +182,7 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
   ]) assert.equal(data.getCrmClub(id).logo_path, cleanedLogoPathById.get(id) || `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
   assert.equal(data.getCrmClub("sc-gjoa").logo_path, "/club-logos/sc-gjoa--a282e8405581.jpg");
-  assert.equal(clubs.filter(club => club.logo_path).length, 481);
+  assert.equal(clubs.filter(club => club.logo_path).length, 487);
   assert.equal(logoBatches14to17.logos.length, 29);
   assert.equal(new Set(logoBatches14to17.logos.map(logo => logo.portal_club_id)).size, 29);
   for (const logo of logoBatches14to17.logos) {
@@ -173,6 +190,13 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
       assert.equal(data.getCrmClub(logo.portal_club_id).logo_path, null);
       continue;
     }
+    assert.equal(data.getCrmClub(logo.portal_club_id).logo_path, logo.portal_logo_path);
+    const bytes = fs.readFileSync(path.join(publicDir, logo.portal_logo_path.slice(1)));
+    assert.equal(crypto.createHash("sha256").update(bytes).digest("hex"), logo.sha256);
+  }
+  assert.equal(logoBatches18to19.logos.length, 6);
+  assert.equal(new Set(logoBatches18to19.logos.map(logo => logo.portal_club_id)).size, 6);
+  for (const logo of logoBatches18to19.logos) {
     assert.equal(data.getCrmClub(logo.portal_club_id).logo_path, logo.portal_logo_path);
     const bytes = fs.readFileSync(path.join(publicDir, logo.portal_logo_path.slice(1)));
     assert.equal(crypto.createHash("sha256").update(bytes).digest("hex"), logo.sha256);
