@@ -11,6 +11,7 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 const { chrisAndersonContacts } = await import("../src/data/chris-anderson-contacts.ts");
+const { acConnecticutContacts } = await import("../src/data/ac-connecticut-contacts.ts");
 const { logoAssignments07to08 } = await import("../src/data/logo-batches-07-08.ts");
 const { logoAssignments09to11 } = await import("../src/data/logo-batches-09-11.ts");
 const { logoAssignments12to13 } = await import("../src/data/logo-batches-12-13.ts");
@@ -36,6 +37,24 @@ test("Jose is 5 Star's primary contact with workbook provenance", () => {
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM crm_contact_sources WHERE contact_id=? AND tab='CJSL' AND row_number=12").get(contacts[0].id).n, 1);
   raw.close();
+});
+
+test("A.C. Connecticut keeps all ten approved rows as non-primary contacts", async () => {
+  const clubId = "directory-a-c-connecticut";
+  const contacts = data.listCrmContacts(clubId);
+  assert.equal(contacts.length, acConnecticutContacts.length);
+  assert.ok(contacts.every(contact => !contact.is_primary));
+  assert.deepEqual(data.listCrmPrimaryContacts(clubId), []);
+  const owen = contacts.find(contact => contact.name === "Owen Baillargeon");
+  assert.deepEqual(owen.emails, ["obaillargeon@acconnecticut.com"]);
+  assert.deepEqual(owen.roles, ["Coach", "Zone 1 Director"]);
+  const oswaldo = contacts.find(contact => contact.name === "Oswaldo Baculima");
+  assert.deepEqual(oswaldo.teams, ["DYSC Cuenquita 2014/15", "DYSC Cuenquita 2015/16"]);
+  const raw = new DatabaseSync(process.env.YSP_DB_PATH);
+  assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM crm_contact_sources WHERE contact_id IN (SELECT id FROM crm_contacts WHERE organization_id=?) AND tab='CJSA'").get(clubId).n, 10);
+  raw.close();
+  const reopened = await import("../src/lib/db.ts?ac-connecticut-reopen");
+  assert.equal(reopened.listCrmContacts(clubId).length, 10);
 });
 
 test("club locations support multiple tags without changing YSP status and survive restart", async () => {
@@ -85,8 +104,8 @@ test("staff can add, edit, and remove club contacts without losing those changes
 test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   const counts = raw.prepare("SELECT COUNT(*) AS contacts,COUNT(DISTINCT organization_id) AS clubs FROM crm_contacts").get();
-  assert.equal(counts.contacts, 76);
-  assert.equal(counts.clubs, 46);
+  assert.equal(counts.contacts, 86);
+  assert.equal(counts.clubs, 47);
   for (const [orgId, , email] of chrisAndersonContacts) {
     assert.ok(data.listCrmPrimaryContacts(orgId).some(contact => contact.email === email), `${email} belongs to ${orgId}`);
     assert.equal(data.getCrmClub(orgId).assigned_rep_name, "Chris Anderson");

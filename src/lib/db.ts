@@ -8,6 +8,8 @@ import { sebastianMaymiClubIds } from "../data/sebastian-maymi-club-ids.ts";
 import { jasonOrtegaClubIds } from "../data/jason-ortega-club-ids.ts";
 import { jordanDeBernardoClubIds } from "../data/jordan-debernardo-club-ids.ts";
 import { chrisAndersonContacts } from "../data/chris-anderson-contacts.ts";
+import { acConnecticutContacts } from "../data/ac-connecticut-contacts.ts";
+import { normalizeContactPhone, splitContactEmails } from "./contact-import.ts";
 import logoBatch01 from "../data/logo-batch-01.json" with { type: "json" };
 import { logoAssignments02to06 } from "../data/logo-batches-02-06.ts";
 import { logoAssignments07to08 } from "../data/logo-batches-07-08.ts";
@@ -438,6 +440,27 @@ try {
     db.prepare(`UPDATE crm_contacts SET is_primary=1
       WHERE organization_id=? AND (id=? OR (lower(trim(name))='jose romero aguilar' AND lower(email)=?))`)
       .run("directory-5-star-soccer-academy", "directory-5-star-soccer-academy:jose-romero-aguilar", "5starsocceracademy@gmail.com");
+  }
+  if (seedState.run("crm-ac-connecticut-contacts-2026-11-05").changes) {
+    const clubId = "directory-a-c-connecticut";
+    const insert = db.prepare(`INSERT OR IGNORE INTO crm_contacts(id,organization_id,name,email,phone,is_primary,sort_order)
+      SELECT ?,?,?,?,?,0,? WHERE NOT EXISTS (
+        SELECT 1 FROM crm_contacts WHERE organization_id=? AND lower(trim(name))=lower(?) AND lower(email)=lower(?)
+      )`);
+    const affiliation = db.prepare("INSERT OR IGNORE INTO crm_contact_affiliations(contact_id,role,team) VALUES (?,?,?)");
+    const source = db.prepare(`INSERT OR IGNORE INTO crm_contact_sources(contact_id,workbook_version,tab,row_number,decision,original_values)
+      VALUES (?,?,'CJSA',?,'owner_approved_contact',?)`);
+    const version = "2026 YS Database Phin + Rei (1).xlsx / f5d6c8dc817502beb39364b6242a3259d7c96e71432f7fc043f12d4cea907443";
+    for (const row of acConnecticutContacts) {
+      const name = `${row.first} ${row.last}`;
+      const email = splitContactEmails(row.email)[0];
+      const phone = normalizeContactPhone(row.phone) || null;
+      const contactId = `${clubId}:cjsa-${row.row}`;
+      if (!insert.run(contactId, clubId, name, email, phone, row.row, clubId, name, email).changes) continue;
+      for (const role of row.role.split(";").map(part => part.trim()).filter(Boolean)) affiliation.run(contactId, role, "");
+      for (const team of row.teams.split(";").map(part => part.trim()).filter(Boolean)) affiliation.run(contactId, "", team);
+      source.run(contactId, version, row.row, JSON.stringify({ club: "A.C. Connecticut", ...row }));
+    }
   }
   db.exec("COMMIT;");
 } catch (error) {

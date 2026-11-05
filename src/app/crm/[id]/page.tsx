@@ -84,7 +84,7 @@ export default async function CrmClubPage({ params }: { params: Promise<{ id: st
   const otherContacts = allContacts.filter(contact => !contact.is_primary);
   const reps = listSalesReps();
   // These club pages use the streamlined contact-focused layout.
-  if (id === "06-united-new-york" || id === "directory-5-star-soccer-academy") {
+  if (id === "06-united-new-york" || id === "directory-5-star-soccer-academy" || id === "directory-a-c-connecticut") {
     return <Shell kind="rep" name={session.name} active="crm"><main className="content detail-content" id="main-content">
     <Link className="back-link" href={club.assigned_rep_id ? `/rep?rep=${club.assigned_rep_id}` : "/crm"}>← {club.assigned_rep_name ? `${club.assigned_rep_name}'s book` : "All CRM clubs"}</Link>
     <ClubHero club={club} />
