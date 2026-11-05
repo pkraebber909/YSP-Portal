@@ -37,6 +37,7 @@ export default async function CrmClubPage({ params }: { params: Promise<{ id: st
   if (session?.role !== "rep" || session.userId !== "phineas") redirect("/login");
   const { id } = await params;
   if (id === "academy-argentina") redirect("/crm/aafny");
+  if (id === "directory-eastchester") redirect("/crm/eysa");
   const club = getCrmClub(id);
   if (!club) notFound();
   const contacts = listCrmPrimaryContacts(id);

@@ -119,6 +119,7 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-logo.large { width: 112px; height: 80px; font-size: 1.8rem; }
 .crm-logo.has-image { border: 0; background: transparent; }
 .crm-logo img { width: 100%; height: 100%; object-fit: contain; }
+.crm-logo.needs-contrast img { filter: drop-shadow(1px 0 #002d62) drop-shadow(-1px 0 #002d62) drop-shadow(0 1px #002d62) drop-shadow(0 -1px #002d62); }
 .crm-round-crop { display: block; height: 100%; aspect-ratio: 1; }
 .crm-round-crop img { display: block; clip-path: circle(48% at center); }
 .crm-search { padding: 18px 6px 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -129,11 +130,12 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-directory-filters label { min-width: 170px; display: flex; flex-direction: column; gap: 5px; color: #334857; font-size: .8rem; font-weight: 700; }
 .crm-directory-filters input, .crm-directory-filters select, .crm-classification-form select, .crm-ownership select { width: 100%; min-height: 42px; padding: 9px 10px; border: 1px solid #aab9c4; border-radius: 2px; background: #fff; color: var(--ink); font-size: .88rem; }
 .crm-directory-filters .small { margin-left: auto; }
-.crm-directory-groups { display: grid; gap: 10px; margin-top: 18px; }
-.crm-directory-groups > details { border: 1px solid var(--line); border-top: 3px solid var(--navy); background: #fff; }
+.crm-directory-groups { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-top: 18px; }
+.crm-directory-groups > details { min-width: 0; border: 1px solid var(--line); border-top: 3px solid var(--navy); background: #fff; }
 .crm-directory-groups > details > summary { padding: 15px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #f5f9fc; color: var(--navy); cursor: pointer; }
 .crm-directory-groups > details > summary span { color: #486279; font-size: .8rem; font-weight: 700; }
 .crm-directory-groups .partner-list { padding: 0 18px; }
+.crm-directory-groups .partner-main strong { overflow-wrap: anywhere; }
 .crm-directory-groups .partner-main small { max-width: 680px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .crm-classification-form { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
 .crm-classification-form > div { min-width: 210px; flex: 1; }

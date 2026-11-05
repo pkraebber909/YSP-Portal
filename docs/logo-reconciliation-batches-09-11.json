@@ -1,0 +1,2913 @@
+{
+  "source_archives": [
+    "YSP_Logos_Batch_09_2026-11-05.zip",
+    "YSP_Logos_Batch_10_2026-11-05.zip",
+    "YSP_Logos_Batch_11_2026-11-05.zip"
+  ],
+  "duplicate_archive": "YSP_Logos_Batch_08_2026-11-05 (1).zip",
+  "duplicate_of": "YSP_Logos_Batch_08_2026-11-05.zip",
+  "duplicate_archive_sha256": "0ec395305a28621b262aa53fbfa77ee28b4859fb7c9d7b61a65ae6f4082b4943",
+  "counts": {
+    "new_image_to_placeholder": 47,
+    "shared_crest_to_placeholder": 2,
+    "existing_identical_mapping_retained": 1,
+    "qualified_alias_same_record": 1,
+    "review_only_entries_by_archive": {
+      "9": 31,
+      "10": 33,
+      "11": 47
+    },
+    "duplicate_batch_08_archives_skipped": 1
+  },
+  "confirmed_images": [
+    {
+      "club_name_exact": "A.C. Connecticut",
+      "location": "Newtown, Connecticut",
+      "known_aliases": [],
+      "image_filename": "logos/a-c-connecticut--3e05128bbde5.png",
+      "source_url": "https://www.uslleaguetwo.com/live-stream",
+      "source_image_url": "https://cdn2.sportngin.com/attachments/document/0152/2813/ac_conneticut.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.uslleaguetwo.com/live-stream"
+      ],
+      "identity_evidence_summary": "Official USL image search identifies AC Connecticut and returns original blue/white oval crest; downloaded and visually matched all saved crest details. Replaces small saved thumbnail with league original.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Official USL image search identifies AC Connecticut and returns original blue/white oval crest; downloaded and visually matched all saved crest details. Replaces small saved thumbnail with league original.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes preserved. No cropping, recreation or color changes.",
+      "format": "PNG",
+      "native_dimensions": "485 x 485",
+      "width_px": 485,
+      "height_px": 485,
+      "transparency": "Present; preserved",
+      "bytes": 17425,
+      "sha256": "3e05128bbde587027f70623320de0419cb1aca7b45a48e950a3a6924a291d974",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-a-c-connecticut",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/a-c-connecticut--3e05128bbde5.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Auburndale SC (LIJSL)",
+      "location": "Queens, New York",
+      "known_aliases": [
+        "Auburndale SC"
+      ],
+      "image_filename": "logos/auburndale-sc-lijsl--f3a554cfc727.png",
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/107/original/AUBURNDALE-FINAL-LOGO-02.png?1603189780",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current LIJSL official directory associates this exact name with the linked GotSport original. Downloaded unchanged and visually inspected. This is a different A-letter variant from the saved thumbnail; use the current league original. LIJSL links the same Queens official club website, establishing the unqualified Auburndale SC alias.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Current LIJSL official directory associates this exact name with the linked GotSport original. Downloaded unchanged and visually inspected. This is a different A-letter variant from the saved thumbnail; use the current league original. LIJSL links the same Queens official club website, establishing the unqualified Auburndale SC alias.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes unchanged. Small 128x126 image, small web use only. Small image: use only at native small display size.",
+      "format": "PNG",
+      "native_dimensions": "128 x 126",
+      "width_px": 128,
+      "height_px": 126,
+      "transparency": "Present; preserved",
+      "bytes": 26402,
+      "sha256": "f3a554cfc727b7c9fc5c7d1b6420407170b5c979e96c7ebab6f1eda736a892a2",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-auburndale-sc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/auburndale-sc-lijsl--f3a554cfc727.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Babylon (LIJSL)",
+      "location": "Babylon, New York",
+      "known_aliases": [],
+      "image_filename": "logos/babylon-lijsl--192dc73cd080.jpg",
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/564/original/101.png?1655231364",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current LIJSL official directory associates this exact name with the linked GotSport original. Downloaded unchanged and visually inspected. Same orange BVSC/Babylon New York 1989 design as saved candidate; distinct from North and West Babylon.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Current LIJSL official directory associates this exact name with the linked GotSport original. Downloaded unchanged and visually inspected. Same orange BVSC/Babylon New York 1989 design as saved candidate; distinct from North and West Babylon.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes unchanged. 225x225, small web use only. Small image: use only at native small display size.",
+      "format": "JPEG",
+      "native_dimensions": "225 x 225",
+      "width_px": 225,
+      "height_px": 225,
+      "transparency": "No transparency in source",
+      "bytes": 12945,
+      "sha256": "192dc73cd080e64120dbc76edb06d87211642392dd37fb67be5948f868694c77",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-babylon",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/babylon-lijsl--192dc73cd080.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Beachside Soccer Club",
+      "location": "Norwalk, Connecticut",
+      "known_aliases": [],
+      "image_filename": "logos/beachside-soccer-club--a6aef71ddd12.png",
+      "source_url": "https://beachsidesoccer.org/",
+      "source_image_url": "https://www.nationalacademyleague.com/uploads/1/1/8/2/118210623/beachside-logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://beachsidesoccer.org/"
+      ],
+      "identity_evidence_summary": "Current official homepage uses blue-filled Beachside 1994 shield in banner. Image search recovered standalone NAL original of that design; visually compared to current banner, including white name, gold border/year and horizontal stripes. Replaces white-background alternate; no banner crop.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Current official homepage uses blue-filled Beachside 1994 shield in banner. Image search recovered standalone NAL original of that design; visually compared to current banner, including white name, gold border/year and horizontal stripes. Replaces white-background alternate; no banner crop.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes preserved. No cropping, recreation or color changes.",
+      "format": "PNG",
+      "native_dimensions": "572 x 656",
+      "width_px": 572,
+      "height_px": 656,
+      "transparency": "Present; preserved",
+      "bytes": 88873,
+      "sha256": "a6aef71ddd1242a269023698501371fbeac8f77027013b7f1f836ae1bcd2e140",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-beachside-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/beachside-soccer-club--a6aef71ddd12.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Beacon",
+      "location": "Beacon, New York",
+      "known_aliases": [],
+      "image_filename": "logos/beacon--f606a5c86c71.jpg",
+      "source_url": "https://www.beaconsoccerclub.org/",
+      "source_image_url": "https://static.wixstatic.com/media/bd02f3_ddb678b2c8a24fdc95f7465900bb44c5~mv2.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.beaconsoccerclub.org/"
+      ],
+      "identity_evidence_summary": "Live official homepage configuration identifies businessLogo asset alongside Beacon New York location and club description. Downloaded original visually matches saved green mountain/ball wordmark. Original 1800x1589 replaces saved thumbnail.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Live official homepage configuration identifies businessLogo asset alongside Beacon New York location and club description. Downloaded original visually matches saved green mountain/ball wordmark. Original 1800x1589 replaces saved thumbnail.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes preserved. No cropping, recreation or color changes.",
+      "format": "JPEG",
+      "native_dimensions": "1800 x 1589",
+      "width_px": 1800,
+      "height_px": 1589,
+      "transparency": "No transparency in source",
+      "bytes": 155879,
+      "sha256": "f606a5c86c7181f1163a28761796a3bb2d6a7c6e8846cb41c87189b9611a711d",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-beacon",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/beacon--f606a5c86c71.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Branford Soccer Club",
+      "location": "Branford, Connecticut",
+      "known_aliases": [],
+      "image_filename": "logos/branford-soccer-club--4b1603c88510.png",
+      "source_url": "https://www.branfordsoccer.org/",
+      "source_image_url": "https://www.branfordsoccer.org/Portals/50750/logo637210046234291902.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.branfordsoccer.org/"
+      ],
+      "identity_evidence_summary": "Official header original captured today at 15:59 UTC is a clean red two-player shield, EST. 1972 outside. It is a different variant from saved thumbnail; use the authoritative header original as replacement. Fresh search confirms official website still provides fall-2026 club communications.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Official header original captured today at 15:59 UTC is a clean red two-player shield, EST. 1972 outside. It is a different variant from saved thumbnail; use the authoritative header original as replacement. Fresh search confirms official website still provides fall-2026 club communications.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Only 139x131 pixels; suitable for small web display, not large display or print. Original bytes unchanged. Small image: use only at native small display size.",
+      "format": "PNG",
+      "native_dimensions": "139 x 131",
+      "width_px": 139,
+      "height_px": 131,
+      "transparency": "Present; preserved",
+      "bytes": 20816,
+      "sha256": "4b1603c88510cedce8e28bd61dba34417c691cb6fd4a64fdceab282e646f3eab",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-branford-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/branford-soccer-club--4b1603c88510.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Brookfield Soccer Club",
+      "location": "Brookfield, Connecticut",
+      "known_aliases": [],
+      "image_filename": "logos/brookfield-soccer-club--53bc696786e2.png",
+      "source_url": "https://www.brookfieldsoccer.org/",
+      "source_image_url": "https://dt5602vnjxv0c.cloudfront.net/portals/53461/images/brookfield_soccer_logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.brookfieldsoccer.org/"
+      ],
+      "identity_evidence_summary": "Original on official Board of Directors page recovered through image search. It matches current official header downloaded today (source_33 evidence), including outlined SOCCER CLUB lettering. Replaces different saved filled-letter variant.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Original on official Board of Directors page recovered through image search. It matches current official header downloaded today (source_33 evidence), including outlined SOCCER CLUB lettering. Replaces different saved filled-letter variant.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes preserved. No cropping, recreation or color changes.",
+      "format": "PNG",
+      "native_dimensions": "901 x 903",
+      "width_px": 901,
+      "height_px": 903,
+      "transparency": "Present; preserved",
+      "bytes": 66865,
+      "sha256": "53bc696786e22f4d1342623825292c9f7a7ad2538a7dc814d37df707a5c35ce1",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-brookfield-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/brookfield-soccer-club--53bc696786e2.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Canarsie Football Club",
+      "location": "Canarsie, Brooklyn, New York",
+      "known_aliases": [],
+      "image_filename": "logos/canarsie-football-club--18fa7be48c35.png",
+      "source_url": "https://www.canarsiefootballclub.com/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/6a1f343f36bb2b166c8ce8cf/a20d8b04-912a-4c8f-80ae-96810257995d/IMG_7303.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.canarsiefootballclub.com/"
+      ],
+      "identity_evidence_summary": "Current official fall-2026 club site identifies Canarsie Park and CJSL team. Image search recovered the original heron roundel; it visually matches saved crest and is corroborated on uniforms in current homepage header photograph. Replaces thumbnail with original.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Current official fall-2026 club site identifies Canarsie Park and CJSL team. Image search recovered the original heron roundel; it visually matches saved crest and is corroborated on uniforms in current homepage header photograph. Replaces thumbnail with original.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes preserved. No cropping, recreation or color changes.",
+      "format": "PNG",
+      "native_dimensions": "1500 x 1500",
+      "width_px": 1500,
+      "height_px": 1500,
+      "transparency": "Present; preserved",
+      "bytes": 103199,
+      "sha256": "18fa7be48c357e68c8ebd95697dccd83f0e47571e33c78fd692423273eceaed2",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-canarsie-football-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/canarsie-football-club--18fa7be48c35.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Connecticut FC",
+      "location": "Connecticut; CFC Park, Bethany, Connecticut",
+      "known_aliases": [
+        "Connecticut Football Club",
+        "CFC"
+      ],
+      "image_filename": "logos/connecticut-fc--5b75046acc49.png",
+      "source_url": "https://connecticutfootballclub.org/",
+      "source_image_url": "https://connecticutfootballclub.org/wp-content/uploads/2024/05/cropped-Untitled-1200-x-1200-px-18-270x270.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://connecticutfootballclub.org/",
+        "https://connecticutfootballclub.org/our-club/",
+        "https://connecticutfootballclub.org/contact-us/"
+      ],
+      "identity_evidence_summary": "Current official homepage explicitly names Connecticut FC and links this full standalone CFC shield as its site icon. Official Our Club and Contact pages identify statewide programmes and Bethany headquarters.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Downloaded original bytes from the current official page or current official league directory and visually inspected. Source file is unchanged.",
+      "branch_and_alias_caveats": "Generic parent crest only. Do not collapse CFC Arsenal, United, Legacy, Wave or Ole branch records; CFC North is separately represented in the earlier batch.",
+      "image_quality_notes": "Original source bytes and native dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "270 x 270",
+      "width_px": 270,
+      "height_px": 270,
+      "transparency": "Present; preserved",
+      "bytes": 75248,
+      "sha256": "5b75046acc4964826a80587fc76ec1ea7c702ebd13a97c586ec705bd7109c89f",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-connecticut-fc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/connecticut-fc--5b75046acc49.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "North Shore Soccer Club",
+      "location": "Glen Head, Long Island, New York",
+      "known_aliases": [],
+      "image_filename": "logos/north-shore-soccer-club--e141eb1256f0.png",
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/630/original/NSSC_LOGO.png?1655237142",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this image with North Shore Soccer Club, links northshoresoccer.com, and lists Glen Head Elementary School and Glen Head Community Center home fields.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Downloaded original bytes from the current official page or current official league directory and visually inspected. Source file is unchanged.",
+      "branch_and_alias_caveats": "Use the Long Island LIJSL member, not North Shore namesakes in other states. Current club-hosted image is CAPTCHA-protected; this independently provided league original downloaded normally.",
+      "image_quality_notes": "Original source bytes and native dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "540 x 534",
+      "width_px": 540,
+      "height_px": 534,
+      "transparency": "No transparency in source",
+      "bytes": 207666,
+      "sha256": "e141eb1256f0c6b5857166f48b06369e882830295cbb43564b1fa761535cb2cf",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-north-shore-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/north-shore-soccer-club--e141eb1256f0.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Valhalla",
+      "location": "Valhalla, Westchester, New York",
+      "known_aliases": [],
+      "image_filename": "logos/valhalla--5026c54ed66d.png",
+      "source_url": "https://www.valhallasocceracademy.com/",
+      "source_image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vj1Bwc3IrkN9DgkajiJ_2aZQ6q9Un27TfhNqRVpLrEbE6USW115CvRtj5uUijd152qik4HJdupGuj_IUPw-2-ibNsqOrnarE7f8d6fnO73zqzXXye_85zRPYcOKnLTgMCfWYuMg6FSq0zsQUawrwQfrTca_iuzclkw_pxz8rQowH6HYb5bcCrHTgDjfFY=w16383",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.valhallasocceracademy.com/",
+        "https://elements.demosphere.com/72170/teams/84290728/84321637-84290822/TEAM.html"
+      ],
+      "identity_evidence_summary": "Current official Valhalla Soccer Academy header has standalone maroon Valhalla shield. Official page explicitly identifies Valhalla school district travel program, founded 2015, WYSL. Matches WYSL historic crest and not previously delivered.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_verification_basis": "Visually inspected exact downloaded official header bytes. No editing, resizing, cropping or conversion.",
+      "branch_and_alias_caveats": "Retain exact requested name and location; no automatic record merging.",
+      "image_quality_notes": "Original source bytes and native dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "456 x 600",
+      "width_px": 456,
+      "height_px": 600,
+      "transparency": "Present; preserved",
+      "bytes": 161640,
+      "sha256": "5026c54ed66d413cd882141390a2e5e98987f5b7494f44bb247209e455442ded",
+      "source_bytes_unchanged": true,
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-valhalla",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/valhalla--5026c54ed66d.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Connecticut United FC",
+      "location": "Connecticut, USA",
+      "known_aliases": [],
+      "source_url": "https://ctunited.com/",
+      "source_image_url": "https://images.mlssoccer.com/image/upload/v1764624230/assets/mnp/club-logos/CT-United-Shield-Digital_fmufik.png",
+      "identity_evidence_urls": [
+        "https://ctunited.com/"
+      ],
+      "identity_evidence_summary": "Official current club header crest. Requested club-wide name matches; not presented as a separate academy-only logo.",
+      "image_verification_basis": "Official current club header crest. Requested club-wide name matches; not presented as a separate academy-only logo.",
+      "branch_and_alias_caveats": "Original source pixels unchanged; no trademark rights conferred.",
+      "image_filename": "logos/connecticut-united-fc--d3293b4d2407.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Original source bytes and native dimensions unchanged.",
+      "format": "PNG",
+      "native_dimensions": "480 x 480",
+      "width_px": 480,
+      "height_px": 480,
+      "transparency": "Present; preserved",
+      "bytes": 31243,
+      "sha256": "d3293b4d24077979230d9f8ab93345e031006bb51cfbe1bf26ee05b6d15bd0b1",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-connecticut-united-fc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/connecticut-united-fc--d3293b4d2407.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "CT Impact United Soccer Academy",
+      "location": "New Milford, Connecticut",
+      "known_aliases": [],
+      "source_url": "https://leagues.bluesombrero.com/Default.aspx?tabid=1675397",
+      "source_image_url": "https://leagues.bluesombrero.com/Portals/81940/logo638418696821385372.png",
+      "identity_evidence_urls": [
+        "https://leagues.bluesombrero.com/Default.aspx?tabid=1675397"
+      ],
+      "identity_evidence_summary": "Official Sports Connect current header crest; current contact page identifies New Milford.",
+      "image_verification_basis": "Official Sports Connect current header crest; current contact page identifies New Milford.",
+      "branch_and_alias_caveats": "Native 135×160 pixels only: suitable for small digital use, not large print. Original unchanged, not upscaled; no trademark rights conferred.",
+      "image_filename": "logos/ct-impact-united-soccer-academy--e173a5a3f8b1.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Original source bytes and native dimensions unchanged. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "135 x 160",
+      "width_px": 135,
+      "height_px": 160,
+      "transparency": "Present; preserved",
+      "bytes": 23370,
+      "sha256": "e173a5a3f8b18823c61d447ad60440b6321b895856bcb985e8c7d72a05b8675c",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-ct-impact-united-soccer-academy",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/ct-impact-united-soccer-academy--e173a5a3f8b1.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "DUSC",
+      "location": "New York City, New York",
+      "known_aliases": [],
+      "source_url": "https://dusc.net/",
+      "source_image_url": "https://dusc.net/wp-content/uploads/2021/08/cropped-dusc-logo-2015.png",
+      "identity_evidence_urls": [
+        "https://dusc.net/"
+      ],
+      "identity_evidence_summary": "Original 512px circular crest explicitly embedded in current official homepage.",
+      "image_verification_basis": "Original 512px circular crest explicitly embedded in current official homepage.",
+      "branch_and_alias_caveats": "Original source pixels unchanged; no trademark rights conferred.",
+      "image_filename": "logos/dusc--8b6a2a377d3c.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Original source bytes and native dimensions unchanged.",
+      "format": "PNG",
+      "native_dimensions": "512 x 512",
+      "width_px": 512,
+      "height_px": 512,
+      "transparency": "Present; preserved",
+      "bytes": 130931,
+      "sha256": "8b6a2a377d3c9022b337543e132554792e56df40c022f9a3b3ea2902b5dc8521",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-dusc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/dusc--8b6a2a377d3c.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Eastern Pike Youth Soccer Club",
+      "location": "Milford, Pennsylvania; serves PA/NY/NJ tri-state area",
+      "known_aliases": [],
+      "source_url": "https://www.easternpikesoccer.com/",
+      "source_image_url": "https://www.easternpikesoccer.com/wp-content/uploads/2020/04/EPYSC.png",
+      "identity_evidence_urls": [
+        "https://www.easternpikesoccer.com/"
+      ],
+      "identity_evidence_summary": "Current homepage original standard club crest, not the previously held 40-year anniversary candidate.",
+      "image_verification_basis": "Current homepage original standard club crest, not the previously held 40-year anniversary candidate.",
+      "branch_and_alias_caveats": "Original source pixels unchanged; no trademark rights conferred.",
+      "image_filename": "logos/eastern-pike-youth-soccer-club--14f31c569fcd.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Original source bytes and native dimensions unchanged.",
+      "format": "PNG",
+      "native_dimensions": "358 x 296",
+      "width_px": 358,
+      "height_px": 296,
+      "transparency": "Present; preserved",
+      "bytes": 95118,
+      "sha256": "14f31c569fcd2576ab1c7a8e8a2ee60c1627ebc410c938c962e885cdd7093489",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-eastern-pike-youth-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/eastern-pike-youth-soccer-club--14f31c569fcd.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "French Football Academy",
+      "location": "New York City, New York",
+      "known_aliases": [],
+      "source_url": "https://fffacademy.com/ffa",
+      "source_image_url": "https://fffacademy.com/wp-content/uploads/2020/03/4012d199-9991-4266-8339-5b118f19879d.png",
+      "identity_evidence_urls": [
+        "https://fffacademy.com/ffa"
+      ],
+      "identity_evidence_summary": "Current official NYC academy composite with two-star FFF shield and academy wordmark; no crop or reconstruction.",
+      "image_verification_basis": "Current official NYC academy composite with two-star FFF shield and academy wordmark; no crop or reconstruction.",
+      "branch_and_alias_caveats": "Original source pixels unchanged; no trademark rights conferred. Distinct from Fundamental Futbol Academy / FFA NYC and Kevin Lue Soccer Academy.",
+      "image_filename": "logos/french-football-academy--97db987deffd.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Original source bytes and native dimensions unchanged.",
+      "format": "PNG",
+      "native_dimensions": "2500 x 1235",
+      "width_px": 2500,
+      "height_px": 1235,
+      "transparency": "Present; preserved",
+      "bytes": 527360,
+      "sha256": "97db987deffdecf6f527f409b141e61eb54fae6bf046a9fce9a5bbd3dc68535c",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-french-football-academy",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/french-football-academy--97db987deffd.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Garden City (LIJSL)",
+      "location": "Garden City, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/593/original/cent_spring_2024.JPG?1692584382",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Directory explicitly pairs Garden City (LIJSL) with the Garden City Centennial S.C. lion crest, resolving the short-name mapping. Distinct from Garden City Park.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Directory explicitly pairs Garden City (LIJSL) with the Garden City Centennial S.C. lion crest, resolving the short-name mapping. Distinct from Garden City Park.",
+      "image_filename": "logos/garden-city-lijsl--8f13c8521155.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "1650 x 1650",
+      "width_px": 1650,
+      "height_px": 1650,
+      "transparency": "No transparency in source",
+      "bytes": 167842,
+      "sha256": "8f13c8521155c68312cf28178c3f3af14e846500077e403356f4241d4c571613",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-garden-city",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/garden-city-lijsl--8f13c8521155.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Islandia SC PAL",
+      "location": "Islandia / Suffolk County, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/031/172/original/pal_logo.jpg?1714575419",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Official league uses the broader Suffolk County PAL crest for this exact soccer member, and lists Central Islip PAL fields. It is not a soccer-specific crest. Do not extend this mapping to other PAL programmes.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Official league uses the broader Suffolk County PAL crest for this exact soccer member, and lists Central Islip PAL fields. It is not a soccer-specific crest. Do not extend this mapping to other PAL programmes.",
+      "image_filename": "logos/islandia-sc-pal--7e3a34b6300f.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "132 x 133",
+      "width_px": 132,
+      "height_px": 133,
+      "transparency": "No transparency in source",
+      "bytes": 25654,
+      "sha256": "7e3a34b6300fc4aac03271f1d7c450e445af163e3ddb63439ffc7795ad5e0316",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-islandia-sc-pal",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/islandia-sc-pal--7e3a34b6300f.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Jericho (LIJSL)",
+      "location": "Jericho, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/605/original/jericho.jpg?1654177078",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current soccer-specific shield replaces previously held multisport Jericho Athletic Association candidate.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current soccer-specific shield replaces previously held multisport Jericho Athletic Association candidate.",
+      "image_filename": "logos/jericho-lijsl--9976ecf4fd8e.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "198 x 294",
+      "width_px": 198,
+      "height_px": 294,
+      "transparency": "No transparency in source",
+      "bytes": 21191,
+      "sha256": "9976ecf4fd8eaa3ce68cfbc997c649016228b0cd0e69c1269fe4c3d677fba98b",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-jericho",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/jericho-lijsl--9976ecf4fd8e.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Kings Park SC",
+      "location": "Kings Park, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/606/original/KPSC_logo.JPG?1665504877",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original corroborates the 1978 KPSC crest independently of social media.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original corroborates the 1978 KPSC crest independently of social media.",
+      "image_filename": "logos/kings-park-sc--8043e9d7f2b5.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "252 x 229",
+      "width_px": 252,
+      "height_px": 229,
+      "transparency": "No transparency in source",
+      "bytes": 18285,
+      "sha256": "8043e9d7f2b50f17ffe5bea06efb8c344565961a5ac1e4558434fc9570b8c103",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-kings-park-sc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/kings-park-sc--8043e9d7f2b5.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Locust Valley Bayville Soccer Club (LIJSL)",
+      "location": "Locust Valley / Bayville, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/128/original/181.png?1655239323",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original is the green Falcons shield for this exact club.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original is the green Falcons shield for this exact club.",
+      "image_filename": "logos/locust-valley-bayville-soccer-club-lijsl--ed1b0b2264e4.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "220 x 221",
+      "width_px": 220,
+      "height_px": 221,
+      "transparency": "Present; preserved",
+      "bytes": 10637,
+      "sha256": "ed1b0b2264e4efeeb80e3df2f73ac07929b0cd2165c08411f70cca58901e4536",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-locust-valley-bayville-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/locust-valley-bayville-soccer-club-lijsl--ed1b0b2264e4.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Merrick/South Merrick PAL",
+      "location": "Merrick / South Merrick, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/125/original/Logo.jpg?1653311782",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Directory explicitly associates combined requested name with Merrick Soccer PAL crest, resolving the combined-name mapping.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Directory explicitly associates combined requested name with Merrick Soccer PAL crest, resolving the combined-name mapping.",
+      "image_filename": "logos/merrick-south-merrick-pal--69d462bdcd18.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "511 x 512",
+      "width_px": 511,
+      "height_px": 512,
+      "transparency": "No transparency in source",
+      "bytes": 108952,
+      "sha256": "69d462bdcd184d8b7ba85516d17c2bff0aef1c883f75c4861a2b451fbee2173a",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-merrick-south-merrick-pal",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/merrick-south-merrick-pal--69d462bdcd18.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Mineola (LIJSL)",
+      "location": "Mineola, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/623/original/MAA_Logo_JPEG.jpg?1755281233",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current image explicitly reads Mineola Soccer Club and EST 1956; it is not merely a generic athletic-association logo.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current image explicitly reads Mineola Soccer Club and EST 1956; it is not merely a generic athletic-association logo.",
+      "image_filename": "logos/mineola-lijsl--b77d0cdcf016.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "380 x 444",
+      "width_px": 380,
+      "height_px": 444,
+      "transparency": "No transparency in source",
+      "bytes": 57579,
+      "sha256": "b77d0cdcf016606cb1d00734465bc58889132121e291e054cb9436373d19a152",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-mineola",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/mineola-lijsl--b77d0cdcf016.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Moriches Youth (LIJSL)",
+      "location": "Moriches, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/624/original/7505.png?1655236002",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Official league uses broader MYO parent mark for exact soccer member. Not a soccer-specific crest; retain this scope caveat.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Official league uses broader MYO parent mark for exact soccer member. Not a soccer-specific crest; retain this scope caveat.",
+      "image_filename": "logos/moriches-youth-lijsl--a88fa3e073c1.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "225 x 121",
+      "width_px": 225,
+      "height_px": 121,
+      "transparency": "No transparency in source",
+      "bytes": 28262,
+      "sha256": "a88fa3e073c11e320c0978b6ef3e069293c8641ca8c2fd6c8809fa891e180565",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-moriches-youth",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/moriches-youth-lijsl--a88fa3e073c1.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Mount Sinai Youth Soccer",
+      "location": "Mount Sinai, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/625/original/IMG_20260609_142629.jpg?1781029659",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league asset is the ETA / Sinai Soccer Club shield uploaded in June 2026, rather than the old figure-and-ball candidate. No legal rename or merger inferred. Native white margins preserved.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league asset is the ETA / Sinai Soccer Club shield uploaded in June 2026, rather than the old figure-and-ball candidate. No legal rename or merger inferred. Native white margins preserved.",
+      "image_filename": "logos/mount-sinai-youth-soccer--d4d39420994a.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "1700 x 2200",
+      "width_px": 1700,
+      "height_px": 2200,
+      "transparency": "No transparency in source",
+      "bytes": 148740,
+      "sha256": "d4d39420994a4f6ea166535d19e1e680131c100706926e58bc673c97e4107b91",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-mount-sinai-youth-soccer",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/mount-sinai-youth-soccer--d4d39420994a.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "North Babylon Soccer Club (LIJSL)",
+      "location": "North Babylon, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/004/021/original/155.png?1655235804",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads North Babylon Patriot Soccer. Not Babylon or West Babylon.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads North Babylon Patriot Soccer. Not Babylon or West Babylon.",
+      "image_filename": "logos/north-babylon-soccer-club-lijsl--41928200bba0.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "240 x 210",
+      "width_px": 240,
+      "height_px": 210,
+      "transparency": "No transparency in source",
+      "bytes": 11825,
+      "sha256": "41928200bba016cf820cf9c1e437394e10733653b39da613e6264b9a4dc97de8",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-north-babylon-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/north-babylon-soccer-club-lijsl--41928200bba0.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "North Bellport Athletic Association",
+      "location": "North Bellport, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/032/724/original/Nbaa_clean_logo.jpg?1731184667",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. League explicitly pairs broader NBAA shield with exact soccer member. This is the association mark, not a soccer-only crest; native white margins preserved.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "League explicitly pairs broader NBAA shield with exact soccer member. This is the association mark, not a soccer-only crest; native white margins preserved.",
+      "image_filename": "logos/north-bellport-athletic-association--d0939425aff4.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "612 x 792",
+      "width_px": 612,
+      "height_px": 792,
+      "transparency": "No transparency in source",
+      "bytes": 98692,
+      "sha256": "d0939425aff42df7bd824b134e21118edd8cb916b0188fb3d6c9f951f3bef5b8",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-north-bellport-athletic-association",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/north-bellport-athletic-association--d0939425aff4.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Oyster Bay/East Norwich (LIJSL)",
+      "location": "Oyster Bay / East Norwich, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/635/original/OBEN_LOGO_for_gotsport.PNG?1781527441",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current purple-and-gold original names exact club and is independently paired by league.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current purple-and-gold original names exact club and is independently paired by league.",
+      "image_filename": "logos/oyster-bay-east-norwich-lijsl--426ff3fbd9c7.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "1254 x 1254",
+      "width_px": 1254,
+      "height_px": 1254,
+      "transparency": "No transparency in source",
+      "bytes": 1135918,
+      "sha256": "426ff3fbd9c79a1a6d9fca8dea46f94701a9727b5bda992a42820e4c4f860803",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-oyster-bay-east-norwich",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/oyster-bay-east-norwich-lijsl--426ff3fbd9c7.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Patchogue-Medford Youth Soccer League",
+      "location": "Patchogue / Medford, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/008/597/original/GOTSPORT_LOGO.png?1720638206",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original is PMYSL red-and-black EST 1978 shield.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original is PMYSL red-and-black EST 1978 shield.",
+      "image_filename": "logos/patchogue-medford-youth-soccer-league--a75b181c67c4.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "300 x 300",
+      "width_px": 300,
+      "height_px": 300,
+      "transparency": "Present; preserved",
+      "bytes": 46806,
+      "sha256": "a75b181c67c473827908350b8b9a191093f15be9048727ad0e096cabd82467da",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-patchogue-medford-youth-soccer-league",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/patchogue-medford-youth-soccer-league--a75b181c67c4.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Plainedge (LIJSL)",
+      "location": "Plainedge, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/638/original/158.png?1655235149",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads Plainedge Soccer Club around P and ball.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads Plainedge Soccer Club around P and ball.",
+      "image_filename": "logos/plainedge-lijsl--e2e4c697b701.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "599 x 600",
+      "width_px": 599,
+      "height_px": 600,
+      "transparency": "Present; preserved",
+      "bytes": 174409,
+      "sha256": "e2e4c697b701bd3e3e68db5e32a4e02ce780ace2e7dc152af919959d469d799f",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-plainedge",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/plainedge-lijsl--e2e4c697b701.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Port Washington Soccer Club",
+      "location": "Port Washington, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/113/original/134.png?1655234906",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original is PORT SOCCER EST 1975 shield; excludes Wisconsin namesake.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original is PORT SOCCER EST 1975 shield; excludes Wisconsin namesake.",
+      "image_filename": "logos/port-washington-soccer-club--de776fc073c0.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "221 x 228",
+      "width_px": 221,
+      "height_px": 228,
+      "transparency": "Present; preserved",
+      "bytes": 52080,
+      "sha256": "de776fc073c03c027dfd4bc616e7e1c11604975ac6f56111b53522ea305513de",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-port-washington-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/port-washington-soccer-club--de776fc073c0.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Riverhead FC Corp",
+      "location": "Riverhead, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/027/250/original/LOGO_1.2MB.jpg?1676437662",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original is the quartered Riverhead FC shield with Generosity of Self motto; the simpler earlier alternative is not used.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original is the quartered Riverhead FC shield with Generosity of Self motto; the simpler earlier alternative is not used.",
+      "image_filename": "logos/riverhead-fc-corp--87e113453a81.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "6889 x 6951",
+      "width_px": 6889,
+      "height_px": 6951,
+      "transparency": "No transparency in source",
+      "bytes": 1173500,
+      "sha256": "87e113453a81e73be33bac77610517936a2cef9f9e429cf0acd665a136e20f9d",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-riverhead-fc-corp",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/riverhead-fc-corp--87e113453a81.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Rocky Point (LIJSL)",
+      "location": "Rocky Point, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/643/original/194.png?1655234366",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current source is small flat RPYSC 2007 shield, not cropped or enlarged.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current source is small flat RPYSC 2007 shield, not cropped or enlarged.",
+      "image_filename": "logos/rocky-point-lijsl--d777f40d50f1.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "163 x 182",
+      "width_px": 163,
+      "height_px": 182,
+      "transparency": "Present; preserved",
+      "bytes": 55294,
+      "sha256": "d777f40d50f18eade425ab92cf59c78d1319074b738617577c29308b836242dc",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-rocky-point",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/rocky-point-lijsl--d777f40d50f1.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Sachem Slammers",
+      "location": "Sachem area, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/109/original/SYSL_-_Slammers_Vertical.png?1790450926",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current original is the complete league-provided SYSL / SACHEM SLAMMERS composite. Slammers label retained; old SYSL-only mark remains excluded.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current original is the complete league-provided SYSL / SACHEM SLAMMERS composite. Slammers label retained; old SYSL-only mark remains excluded.",
+      "image_filename": "logos/sachem-slammers--92b3e466b98d.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "423 x 437",
+      "width_px": 423,
+      "height_px": 437,
+      "transparency": "Present; preserved",
+      "bytes": 183183,
+      "sha256": "92b3e466b98d365329385b4a12e6fb8a3154a6e5adae5b0599cd184da8a34113",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-sachem-slammers",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/sachem-slammers--92b3e466b98d.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Smithtown Kickers SC (LIJSL)",
+      "location": "Smithtown, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/004/302/original/Smithtown-Kickers-13122b.png?1738037768",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league provides this red-and-navy Kickers arch. Club also has Slammers branding; do not infer that other colour variants or brands are interchangeable.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league provides this red-and-navy Kickers arch. Club also has Slammers branding; do not infer that other colour variants or brands are interchangeable.",
+      "image_filename": "logos/smithtown-kickers-sc-lijsl--1105c9dbdd82.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "620 x 320",
+      "width_px": 620,
+      "height_px": 320,
+      "transparency": "Present; preserved",
+      "bytes": 45700,
+      "sha256": "1105c9dbdd82a6fd78392d73d39808db6c30c044b06f302d9d01007f1812f93f",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-smithtown-kickers-sc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/smithtown-kickers-sc-lijsl--1105c9dbdd82.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "South Huntington (LIJSL)",
+      "location": "South Huntington, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/650/original/162.png?1655231295",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads South Huntington Soccer, Long Island, New York.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads South Huntington Soccer, Long Island, New York.",
+      "image_filename": "logos/south-huntington-lijsl--2dab63a9d8d6.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "227 x 266",
+      "width_px": 227,
+      "height_px": 266,
+      "transparency": "Present; preserved",
+      "bytes": 54934,
+      "sha256": "2dab63a9d8d69bc096a4cfda68491ed8522e6334488cb95a95638dc3ff5e88bc",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-south-huntington",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/south-huntington-lijsl--2dab63a9d8d6.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Southampton Soccer Club",
+      "location": "Southampton / Hampton Bays, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/009/108/original/STU_Logo_square.png?1671140344",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Exact league entry links southamptontownunited.com and explicitly uses Southampton Town United 2018 shield. This resolves current artwork mapping, without inferring a legal merger history.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Exact league entry links southamptontownunited.com and explicitly uses Southampton Town United 2018 shield. This resolves current artwork mapping, without inferring a legal merger history.",
+      "image_filename": "logos/southampton-soccer-club--d5951b764f55.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "PNG",
+      "native_dimensions": "919 x 919",
+      "width_px": 919,
+      "height_px": 919,
+      "transparency": "Present; preserved",
+      "bytes": 520025,
+      "sha256": "d5951b764f558fad713b21baedf25b5ecdd18f8459f5d05e8a624dec2046204f",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-southampton-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/southampton-soccer-club--d5951b764f55.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Three Village Soccer Club - SB",
+      "location": "Stony Brook / Three Village, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/036/565/original/3VS_logo.jpeg?1776442486",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads Three Village Soccer Club with SB initials. Preserve red square background.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads Three Village Soccer Club with SB initials. Preserve red square background.",
+      "image_filename": "logos/three-village-soccer-club-sb--73f9159437b4.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "JPEG",
+      "native_dimensions": "239 x 250",
+      "width_px": 239,
+      "height_px": 250,
+      "transparency": "No transparency in source",
+      "bytes": 18470,
+      "sha256": "73f9159437b4b2213051233e1bdc2545033a96679e58c4aa1d432b3dc2f3de09",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-three-village-soccer-club-sb",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/three-village-soccer-club-sb--73f9159437b4.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Uniondale (LIJSL)",
+      "location": "Uniondale, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/656/original/172.png?1655230560",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Exact league row pairs Uniondale (LIJSL) with New York Soccer Latin Academy NYSLA 2002 artwork and lists Jerusalem Avenue fields. This is explicit league artwork attribution, not a claim of legal renaming or an alias for Long Island Community Soccer Club.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Exact league row pairs Uniondale (LIJSL) with New York Soccer Latin Academy NYSLA 2002 artwork and lists Jerusalem Avenue fields. This is explicit league artwork attribution, not a claim of legal renaming or an alias for Long Island Community Soccer Club.",
+      "image_filename": "logos/uniondale-lijsl--0c6604d4488e.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "226 x 223",
+      "width_px": 226,
+      "height_px": 223,
+      "transparency": "Present; preserved",
+      "bytes": 109538,
+      "sha256": "0c6604d4488ea2d067987a71c2c45138b557544b3ab8c4be882dce601a070eb3",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-uniondale",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/uniondale-lijsl--0c6604d4488e.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Valley Stream (LIJSL)",
+      "location": "Valley Stream, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/657/original/164.png?1655230681",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads Valley Stream Soccer Club, LI NY.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads Valley Stream Soccer Club, LI NY.",
+      "image_filename": "logos/valley-stream-lijsl--079e324bbf8d.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "225 x 212",
+      "width_px": 225,
+      "height_px": 212,
+      "transparency": "Present; preserved",
+      "bytes": 74937,
+      "sha256": "079e324bbf8db42729f7280df61d18376b36566a72a337f840c9a3261cb86e04",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-valley-stream",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/valley-stream-lijsl--079e324bbf8d.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "W. Hempstead (LIJSL)",
+      "location": "West Hempstead, Long Island, New York",
+      "known_aliases": [],
+      "source_url": "https://lijsoccer.com/lijsl-clubs/",
+      "source_image_url": "https://system.gotsport.com/system/organizations/logos/000/007/659/original/ChiefsLogo.jpg?1658252841",
+      "identity_evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "identity_evidence_summary": "Current official LIJSL directory explicitly pairs this exact requested name with this downloaded original image. Current league original explicitly reads West Hempstead Chiefs Soccer Club, resolving abbreviated league name.",
+      "image_verification_basis": "Official league exact-name image association was inspected in current live HTML. The linked original downloaded HTTP 200, decoded successfully, and was visually reviewed. No crop, redraw, recolouring or resampling.",
+      "branch_and_alias_caveats": "Current league original explicitly reads West Hempstead Chiefs Soccer Club, resolving abbreviated league name.",
+      "image_filename": "logos/w-hempstead-lijsl--55e1947b4e0e.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions retained.",
+      "format": "JPEG",
+      "native_dimensions": "1430 x 1612",
+      "width_px": 1430,
+      "height_px": 1612,
+      "transparency": "No transparency in source",
+      "bytes": 151769,
+      "sha256": "55e1947b4e0e6254e26c30266b488e14b4da92839f8d47bd34d1ce1aeed1a5de",
+      "source_bytes_unchanged": true,
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip",
+      "portal_club_id": "directory-w-hempstead",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/w-hempstead-lijsl--55e1947b4e0e.jpg",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Goshen Soccer Club",
+      "location": "Goshen, Orange County, New York",
+      "known_aliases": [],
+      "source_url": "https://www.goshensoccerclub.org/aboutus",
+      "source_image_url": "https://cdn1.sportngin.com/attachments/photo/9e38-182863819/Goshen_Soccer_Club_logo_large_large.png",
+      "identity_evidence_urls": [
+        "https://www.goshensoccerclub.org/aboutus"
+      ],
+      "identity_evidence_summary": "Image search links exact standalone crest to current official About Us page, whose indexed text establishes Goshen NY. Original official CDN bytes downloaded and visually inspected.",
+      "image_verification_basis": "Image search links exact standalone crest to current official About Us page, whose indexed text establishes Goshen NY. Original official CDN bytes downloaded and visually inspected.",
+      "branch_and_alias_caveats": "Original raster; no edit, crop or upscale.",
+      "image_filename": "logos/goshen-soccer-club--8706267be8b4.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "1024 x 1024",
+      "width_px": 1024,
+      "height_px": 1024,
+      "transparency": "Present; preserved",
+      "bytes": 232775,
+      "sha256": "8706267be8b44bc39b1b1e0a3772432909e998b8761c932d1052c7053faa1d37",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-goshen-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/goshen-soccer-club--8706267be8b4.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Logan's FC",
+      "location": "New York City; CJSL lists under Queens",
+      "known_aliases": [
+        "Logans FC"
+      ],
+      "source_url": "https://nyccup.com/",
+      "source_image_url": "https://nyccup.com/wp-content/uploads/2026/06/Logansfc-1-1030x1030.png",
+      "identity_evidence_urls": [
+        "https://nyccup.com/",
+        "https://www.cjslsoccer.com/clubs",
+        "https://youthsoccergames.com/team/300354246"
+      ],
+      "identity_evidence_summary": "Current NYC Cup official homepage embeds named Logansfc asset in its participating club gallery. Standalone artwork spells LOGAN’S F.C.; current CJSL directory lists Logans FC in Queens; 2026 NYC Cup results independently corroborate participation. Exact original displayed asset retrieved and visually checked.",
+      "image_verification_basis": "Current NYC Cup official homepage embeds named Logansfc asset in its participating club gallery. Standalone artwork spells LOGAN’S F.C.; current CJSL directory lists Logans FC in Queens; 2026 NYC Cup results independently corroborate participation. Exact original displayed asset retrieved and visually checked.",
+      "branch_and_alias_caveats": "Tournament-served production artwork, not club-hosted. New York City identity verified; precise borough varies across league directories. No modification.",
+      "image_filename": "logos/logan-s-fc--301e1d649829.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "1030 x 1030",
+      "width_px": 1030,
+      "height_px": 1030,
+      "transparency": "No transparency in source",
+      "bytes": 177892,
+      "sha256": "301e1d649829eac5b05f0d03688515750e77990a2b0f3d13b04cc3fe0a94a3d5",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-logan-s-fc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/logan-s-fc--301e1d649829.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Minisink Youth Soccer",
+      "location": "Minisink Valley, New York",
+      "known_aliases": [],
+      "source_url": "https://minisinkvalleysc.com/",
+      "source_image_url": "https://i0.wp.com/minisinkvalleysc.com/wp-content/uploads/2024/12/MVSC-Shield-4-Color-650px.png?fit=531%2C650&ssl=1",
+      "identity_evidence_urls": [
+        "https://minisinkvalleysc.com/",
+        "https://minisinkvalleysc.com/about/"
+      ],
+      "identity_evidence_summary": "Current official site explicitly equates Minisink Valley Soccer Club with Minisink Youth Soccer Inc. Official homepage uses this full shield and carries Fall 2026 programme content.",
+      "image_verification_basis": "Current official site explicitly equates Minisink Valley Soccer Club with Minisink Youth Soccer Inc. Official homepage uses this full shield and carries Fall 2026 programme content.",
+      "branch_and_alias_caveats": "Official served WordPress CDN asset, 531×650. Full tight-boundary crest preserved unchanged.",
+      "image_filename": "logos/minisink-youth-soccer--436d66664b99.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "531 x 650",
+      "width_px": 531,
+      "height_px": 650,
+      "transparency": "Present; preserved",
+      "bytes": 57396,
+      "sha256": "436d66664b99047d909022041589074f4f5aadbc813f375bf4639d07c29aa654",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-minisink-youth-soccer",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/minisink-youth-soccer--436d66664b99.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "NECONN Soccer Club",
+      "location": "Northeastern Connecticut",
+      "known_aliases": [],
+      "source_url": "https://clubs.bluesombrero.com/neconn",
+      "source_image_url": "https://clubs.bluesombrero.com/Portals/51121/logo637843422407384878.png",
+      "identity_evidence_urls": [
+        "https://clubs.bluesombrero.com/neconn",
+        "https://clubs.bluesombrero.com/Default.aspx?tabid=1431638"
+      ],
+      "identity_evidence_summary": "Exact official NECONN site current header uses this map-and-stars mark. Its current Travel page promotes 2026/27 season and separately uses NECONN United travel shield; selected umbrella club header for exact requested NECONN Soccer Club.",
+      "image_verification_basis": "Exact official NECONN site current header uses this map-and-stars mark. Its current Travel page promotes 2026/27 season and separately uses NECONN United travel shield; selected umbrella club header for exact requested NECONN Soccer Club.",
+      "branch_and_alias_caveats": "Small 185×179 original; integral yellow frame/gray ground retained. Not upscaled. Travel-team variant not substituted.",
+      "image_filename": "logos/neconn-soccer-club--cb9e28010e4c.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "185 x 179",
+      "width_px": 185,
+      "height_px": 179,
+      "transparency": "Present; preserved",
+      "bytes": 20146,
+      "sha256": "cb9e28010e4cb5783127add42173c6da269c4ddf7520845444f539a0ce4f79fa",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-neconn-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/neconn-soccer-club--cb9e28010e4c.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "NJ Premier FC",
+      "location": "Somerset, New Jersey",
+      "known_aliases": [],
+      "source_url": "https://njpremier.org/",
+      "source_image_url": "https://njpremier.org/_assets/media/9d54803f4a69e467867fdd8a4034da09.png",
+      "identity_evidence_urls": [
+        "https://njpremier.org/",
+        "https://njpremier.org/tryoutschedule"
+      ],
+      "identity_evidence_summary": "Current official club homepage contains standalone NJ Premier Football Club 2019 roundel; 2026/27 tryouts independently indexed. Original embedded asset downloaded unchanged.",
+      "image_verification_basis": "Current official club homepage contains standalone NJ Premier Football Club 2019 roundel; 2026/27 tryouts independently indexed. Original embedded asset downloaded unchanged.",
+      "branch_and_alias_caveats": "Original raster size preserved; no modification.",
+      "image_filename": "logos/nj-premier-fc--d2c83ba4ffe8.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved.",
+      "format": "PNG",
+      "native_dimensions": "1903 x 1903",
+      "width_px": 1903,
+      "height_px": 1903,
+      "transparency": "Present; preserved",
+      "bytes": 1579500,
+      "sha256": "d2c83ba4ffe801880ed648ccfa011979c940f721f058c9f0e59b9878cbb0cc83",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-nj-premier-fc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/nj-premier-fc--d2c83ba4ffe8.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    },
+    {
+      "club_name_exact": "Northwest United Soccer Club",
+      "location": "Northwestern Connecticut (Salisbury, Sharon, Kent, Canaan, Falls Village, Cornwall)",
+      "known_aliases": [],
+      "source_url": "https://clubs.bluesombrero.com/nwunitedct",
+      "source_image_url": "https://clubs.bluesombrero.com/Portals/51621/logo637895380743209170.png",
+      "identity_evidence_urls": [
+        "https://clubs.bluesombrero.com/nwunitedct",
+        "https://clubs.bluesombrero.com/Default.aspx?tabid=927411",
+        "https://www.cjsa.org/Club-Links/"
+      ],
+      "identity_evidence_summary": "Current official Northwest United Soccer Club homepage uses this Northwest United FC EST 2010 wolf shield. Official club page explicitly identifies northwest Connecticut; CJSA directory confirms club. This is not the Washington namesake.",
+      "image_verification_basis": "Current official Northwest United Soccer Club homepage uses this Northwest United FC EST 2010 wolf shield. Official club page explicitly identifies northwest Connecticut; CJSA directory confirms club. This is not the Washington namesake.",
+      "branch_and_alias_caveats": "Original raster size preserved; no modification.",
+      "image_filename": "logos/northwest-united-soccer-club--984a85f64ed5.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_quality_notes": "Unmodified original source file; native background, padding and dimensions preserved. Small native image: use only for small display, not large cards or print.",
+      "format": "PNG",
+      "native_dimensions": "130 x 133",
+      "width_px": 130,
+      "height_px": 133,
+      "transparency": "Present; preserved",
+      "bytes": 11986,
+      "sha256": "984a85f64ed5197fa48412423440347b3bf3f114e58e4e57567b6f5a05afa027",
+      "source_bytes_unchanged": true,
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-northwest-united-soccer-club",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/northwest-united-soccer-club--984a85f64ed5.png",
+      "decision": "add_to_placeholder",
+      "decision_reason": "Exact CRM name, with LIJSL suffix removed only where the package documents the league alias; source location and branch agree."
+    }
+  ],
+  "verified_row_mappings": [
+    {
+      "club_name_exact": "Freeport PAL (LIJSL)",
+      "relationship": "same club alias",
+      "mapped_to_delivered_name": "Freeport PAL",
+      "mapped_to_sha256": "f8546771b93f8046f79e9b5e2c900446488e978ac94c2c761a01ec358635b8fc",
+      "mapped_to_image_filename": "logos/freeport-pal--f8546771b93f.jpg",
+      "asset_already_delivered": true,
+      "new_asset_count": 0,
+      "location": "Freeport, New York",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/",
+        "https://leagues.bluesombrero.com/Default.aspx?tabid=1184788"
+      ],
+      "evidence_summary": "Current LIJSL directory lists exact Freeport PAL (LIJSL). Current official 2026 Fall Intramural Soccer page shows the same soccer-specific FREEPORT SOCCER CLUB P.A.L. anchor-and-oars crest as the previously delivered Freeport PAL asset.",
+      "caveat": "The directory separately lists Freeport (LIJSL); this mapping does not cover that separate name. Do not substitute the generic multi-sport PAL header.",
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-freeport-pal",
+      "portal_existing_logo_path": "/club-logos/freeport-pal--f8546771b93f.jpg",
+      "portal_logo_path": "/club-logos/freeport-pal--f8546771b93f.jpg",
+      "decision": "keep_existing_identical",
+      "decision_reason": "This is the existing Freeport PAL CRM record; its current crest already has the documented hash."
+    },
+    {
+      "club_name_exact": "West Babylon SC (LIJSL)",
+      "relationship": "same club alias",
+      "mapped_to_delivered_name": "South Shore Soccer Club",
+      "mapped_to_sha256": "7198416227c57970e1a689af262ffdc0fdb4a8b6644f86d7bcd065f303c4dd41",
+      "mapped_to_image_filename": "logos/south-shore-soccer-club--7198416227c5.png",
+      "asset_already_delivered": true,
+      "new_asset_count": 0,
+      "location": "West Babylon, New York",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/",
+        "https://southshoresoccerclub.com/your-club/"
+      ],
+      "evidence_summary": "Current LIJSL exact West Babylon SC (LIJSL) entry links directly to South Shore Soccer Club and displays its blue/orange anchor shield. Official South Shore Your Club page identifies West Babylon headquarters. Its already delivered current official asset is the appropriate shared club mark.",
+      "caveat": "This is the Long Island West Babylon club, not other South Shore clubs or leagues. Keep source request row and explicit alias mapping; do not duplicate asset or automatically merge records.",
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-west-babylon-sc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/south-shore-soccer-club--7198416227c5.png",
+      "decision": "add_verified_shared_crest",
+      "decision_reason": "Manifest row mapping documents the exact name or abbreviation and the shared crest. Separate CRM records are preserved."
+    },
+    {
+      "club_name_exact": "Auburndale SC",
+      "relationship": "same club alias",
+      "mapped_to_batch09_name": "Auburndale SC (LIJSL)",
+      "mapped_to_image_filename": "logos/auburndale-sc-lijsl--f3a554cfc727.png",
+      "mapped_to_sha256": "f3a554cfc727b7c9fc5c7d1b6420407170b5c979e96c7ebab6f1eda736a892a2",
+      "asset_already_delivered": false,
+      "new_asset_count": 0,
+      "location": "Queens, New York",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "evidence_summary": "Current LIJSL official directory associates this exact name with the linked GotSport original. Downloaded unchanged and visually inspected. This is a different A-letter variant from the saved thumbnail; use the current league original. LIJSL links the same Queens official club website, establishing the unqualified Auburndale SC alias.",
+      "caveat": "Preserve source row and alias mapping. No duplicate logo file or automatic record merge.",
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip",
+      "portal_club_id": "directory-auburndale-sc",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/auburndale-sc-lijsl--f3a554cfc727.png",
+      "decision": "same_record_as_confirmed_image",
+      "decision_reason": "The qualified LIJSL row and unqualified CRM row are the same record; the primary image assignment already covers it."
+    },
+    {
+      "club_name_exact": "Green Warriors SA",
+      "relationship": "same club abbreviated name",
+      "mapped_to_delivered_name": "Green Warriors Soccer",
+      "mapped_to_image_filename": "logos/green-warriors-soccer--337bcde48500.png",
+      "mapped_to_sha256": "337bcde48500ff6887cc1dea7b1059e0a242d5bc673ec6aca148108f1fa931b2",
+      "asset_already_delivered": true,
+      "new_asset_count": 0,
+      "location": "New Canaan / Norwalk, Connecticut",
+      "evidence_urls": [
+        "https://greenwarriorssoccer.com/",
+        "https://greenwarriorssoccer.com/programs/premier-teams/"
+      ],
+      "evidence_summary": "Current official website explicitly expands SA to Soccer Academy. Same official homepage and exact image source path as delivered Green Warriors Soccer; only CDN query parameters differ. Same 507 x 711 artwork confirmed.",
+      "caveat": "Preserve requested row and mapping. No duplicate image or automatic Portal record merge.",
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip",
+      "portal_club_id": "directory-green-warriors-sa",
+      "portal_existing_logo_path": null,
+      "portal_logo_path": "/club-logos/green-warriors-soccer--337bcde48500.png",
+      "decision": "add_verified_shared_crest",
+      "decision_reason": "Manifest row mapping documents the exact name or abbreviation and the shared crest. Separate CRM records are preserved."
+    }
+  ],
+  "review_holds": [
+    {
+      "club_name_exact": "PSC Dynamo",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Exact Prospect, Connecticut identity and PSC Dynamo CT alias confirmed by current official 2026–2027 pages. Current indexed official header contains the matching base crest but with a green outline; saved standalone is monochrome. No current standalone original verified, so the banner is not cropped or delivered.",
+      "evidence_urls": [
+        "https://www.pscdynamo.com/",
+        "https://www.pscdynamo.com/page/show/7985688-registration",
+        "https://cdn1.sportngin.com/attachments/banner_graphic/65b7-190834911/siteHeader_r1.png"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "PSC Dynamo CT",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Same verified programme identity as PSC Dynamo, but current standalone artwork remains unverified.",
+      "evidence_urls": [
+        "https://www.pscdynamo.com/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Inter Connecticut FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Alias of Inter CT FC appears supported, but current generic versus Norwalk/Litchfield/Union badge scope not resolved. Indexed old story badge alone is insufficient after a later rebrand; no image delivered.",
+      "evidence_urls": [
+        "https://www.interctfc.com/page/show/5021950-the-inter-ct-story"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Bay Shore (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current league directory still links the older striped shield, which downloads normally. Club current jersey photography appears to show a different circular maroon crest. Conflicting current artwork remains unresolved; neither promoted.",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/",
+        "https://www.bayshoresoccerclub.org/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Bellmore (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "League identity verified, but its original is a photograph of an embroidered PAL patch with fabric texture and shadows rather than a clean production logo. No photo included.",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Academia de Futbol Lobos BUAP",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search found Puebla university academy and Mexican professional club imagery; no reliable link to requested local academy. Do not use parent Mexican crest.",
+      "evidence_urls": [
+        "https://www.boletin.buap.mx/node/1420"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "American Millennium YSC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search found New York business-name reference but images are Millennium SA Indiana. No appropriate original located.",
+      "evidence_urls": [
+        "https://www.city-data.com/business-entities/Other-NY-A16.html"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Astoria Italia",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official CJSL links Italia Astoria Instagram, but image search returned coffee branding. Club identity verified; original logo not recovered.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/resources/our-clubs",
+        "https://www.instagram.com/italia_astoria/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Barboncito FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "BCC official coach biography corroborates club. Image search returned unrelated Queensboro FC. No original crest recovered.",
+      "evidence_urls": [
+        "https://bronxbroncos.com/sports/mens-soccer/roster/coaches/mohand-amokrane-ait-ihaddadene/190"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Boca Juniors \"JRS\"",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL lists Boca Juniors NYC without external club link. Image search gives Argentine professional club; do not substitute without local branding evidence.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/resources/our-clubs",
+        "https://youthsoccergames.com/team/300434793"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Brooklyn Super Stars Soccer Academy",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "2025 Big Apple Youth Soccer League report corroborates Brooklyn Super Stars. Image search instead found Soccer Stars event, no exact current original.",
+      "evidence_urls": [
+        "https://queenslatino.com/new-york-united-soccer-academy-campeon-en-flushing/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Club Madrid F.C.",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL club list corroborates Club Madrid; no local logo recovered. Search returned fictional Queens crest.",
+      "evidence_urls": [
+        "https://cjslsoccer.squarespace.com/clubs"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Cortlandt SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Town recreation PDF corroborates travel program; images are registration posters, not standalone club crest.",
+      "evidence_urls": [
+        "https://www.townofcortlandt.com/documents/recreation/Winter_Spring_2024/Winter_Spring_2024_Planner.pdf"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Crane",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Town of Chatham minutes corroborate Crane Soccer Club agreement; image result fictional Yosen Cranes rejected.",
+      "evidence_urls": [
+        "https://cms7files1.revize.com/chathamny/document_center/Town%20Board%20Minutes/2024/03-21-2024%20TB%20MT%20Minutes.pdf"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "East Ramapo",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "County official directory corroborates East Ramapo Soccer; no image result or original club asset located.",
+      "evidence_urls": [
+        "https://policereform.ny.gov/system/files/documents/2021/04/rocklancounty_policereformplan_part2.pdf"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Evirht FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Rye Brook official schedule lists Evirht FC Ajax; exact location and original crest unconfirmed. Ever Bright Chinese club image rejected.",
+      "evidence_urls": [
+        "https://www.ryebrooksoccer.org/schedule/tab_boxscores/league_instance/day/230866?day=27&month=9&subseason=963018&view=boxscores&year=2026"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "FC Impact 1854",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Connecticut media CJSA feature corroborates name; image search returns other Impact FC established 2014, not this club.",
+      "evidence_urls": [
+        "https://www.nbcconnecticut.com/video/entertainment/ct-live/ct-live-connecticut-junior-soccer-association-fc-impact-1854/3749896/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Islandia SC PAL",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "LIJSL winners and club schedule corroborate name and PAL fields; image search returns Iceland national team and must be rejected.",
+      "evidence_urls": [
+        "https://lijsoccer.com/wp-content/uploads/2025/11/FALL-2025-Division-Winners.pdf",
+        "https://www.bellportsoccer.com/_files/ugd/3fcdcb_c5e9a9da567d46c2becf9f391d66d4cb.pdf"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Kickers Jr. of Southeast Queens",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "ENY official tournament page corroborates Roy Wilkins/Kickers Jr. identity. Image search returned generic kids/DV7 photo, no standalone original.",
+      "evidence_urls": [
+        "https://www.enysoccer.com/series/roy-wilkins-kickers-jr-soccer-club-of-southeast-queens/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Martin Luther King Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSA official directory links mlksoccer.org, direct fetch failed 503. Search finds MLK New York City school badge, which is wrong entity.",
+      "evidence_urls": [
+        "https://www.cjsa.org/Club-Links/",
+        "https://www.mlksoccer.org/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "NY Eagles Hudson Valley",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Third-party directory maps to nyesc.org, but official branch equivalence not established. Existing New York Eagles Soccer Club already delivered; do not duplicate or collapse without primary evidence.",
+      "evidence_urls": [
+        "https://prosportspath.com/clubs/ny-eagles-hudson-valley",
+        "https://nyesc.org/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "NoSto Youth Soccer",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSA links North Stonington recreation; image search returned Newton Massachusetts 50th anniversary badge, wrong entity.",
+      "evidence_urls": [
+        "https://www.cjsa.org/Club-Links/",
+        "https://www.northstoningtonrec.com/info/activities/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Norwalk Community Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official CJSA/SW district corroborates exact club and website. Official homepage direct fetch returned 403. Images are Norwalk Iowa or NJSA, neither exact entity.",
+      "evidence_urls": [
+        "https://www.cjsa.org/Club-Links/",
+        "https://www.swdcjsa.org/Default.aspx?tabid=928297",
+        "https://www.norwalkcsc.org/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Onteora",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Rhinebeck official travel schedule corroborates Onteora United. Image search returns school district badge; do not substitute.",
+      "evidence_urls": [
+        "https://www.rhinebecksoccer.com/travel-schedule"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Pleasantville",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "2024 program PDF shows merger-era Pleasantville soccer and AYSO marks; current pvillesoccer.com fetch failed 503. Need current standalone program crest. Image search found only group photo.",
+      "evidence_urls": [
+        "https://cdn1.sportngin.com/attachments/document/7b2a-3179516/PYSC_Parent_Interest_Meeting_Spring_2024.pdf",
+        "https://www.pvillesoccer.com"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Poughkeepsie Saints",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "HVYSL referee assignment page names Saints separately from Poughkeepsie. No usable logo in fresh image search.",
+      "evidence_urls": [
+        "https://hvysl.org/refereeing-resources/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Schenectady",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Municipal master plan mentions Schenectady Soccer Club, but no current club/branch identification and no image result. Do not substitute Niskayuna or Fifty FC.",
+      "evidence_urls": [
+        "https://www.cityofschenectady.gov/DocumentCenter/View/2197/Steinmetz-Park-Master-Plan-2006"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Schoharie County Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Local coverage and merchandise listing corroborate club name; no standalone official original. Search image was high school player photo.",
+      "evidence_urls": [
+        "https://mountaineagle.net/articles/display/around-the-neighborhood-cobleskill-richmondville/",
+        "https://makefield.shop/products/schoharie-county-soccer-club-performance-baby-t-shirt-xqn12m"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Stars FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official Tri-State soccer page verifies Stars FC with HVYSL/EDP participation and Pawling home field. Downloaded header is parent TRI-STATE STARS brand; soccer crest seen only on uniforms. Retain candidates for evidence, do not package parent logo or crop photos.",
+      "evidence_urls": [
+        "https://www.tristatesportsgroup.com/program/soccer/10478"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Victorious Football Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "NYC field-permit directory names club but current official club source and logo unresolved. NYCFC badge image result rejected.",
+      "evidence_urls": [
+        "https://fieldpermits.com/nyc/park/m104-randall-s-island-park"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "West Point",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "HVYSL 2026 scholarship page corroborates West Point Soccer Club. Image result Army collegiate men’s soccer is distinct and rejected.",
+      "evidence_urls": [
+        "https://hvysl.org/hvysl-announces-winners-of-the-2026-scholarship-awards/",
+        "https://hvysl.org/hvysl-donates-hundreds-of-shirts-to-charity-duplicate-1/"
+      ],
+      "batch": 9,
+      "archive": "YSP_Logos_Batch_09_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Bay Shore (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "League still shows older striped crest while current club photography appears to use circular maroon crest; conflicting current artwork remains unresolved.",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Glen Cove (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current exact league original is a photograph of an embroidered patch with visible fabric and stitching, not a clean production logo.",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Terryville (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current league original is a 50-year celebratory graphic with flames and slogans, not standalone production artwork. Do not crop or recreate.",
+      "evidence_urls": [
+        "https://lijsoccer.com/lijsl-clubs/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Croton FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current official 2026/27 homepage explicitly distinguishes competitive Croton FC from AYSO Region 455. Google-hosted artwork fetch denied 403; no bypass attempted. Prior AYSO logo remains rejected.",
+      "evidence_urls": [
+        "https://www.crotonfc.com/parents-corner",
+        "https://crotonsoccer.org/information/what-is-croton-ayso/",
+        "https://www.crotonfc.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "CT Rush",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current Northeast Rush Connecticut page establishes youth regions. Image search result provides round Connecticut mark but source specifically describes WPSL expansion team; youth-wide current exact crest still unverified. Direct regional-page fetch denied 403.",
+      "evidence_urls": [
+        "https://www.instagram.com/connecticutrush/",
+        "https://www.northeastrush.com/connecticut",
+        "https://www.northeastrush.com/ct-rush-new-wpsl-expansion-team"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Cumbe FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search corroborates current Westchester WYSL teams and Ossining connection, but no authoritative clean crest source found. Do not substitute Ecuador club branding.",
+      "evidence_urls": [
+        "https://prosportspath.com/clubs/cumbe-fc",
+        "https://youthsoccergames.com/team/12305580"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Darien Soccer Association",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current official search index covers Fall 2026 age-group transition. Direct homepage 403; no clean current original obtained.",
+      "evidence_urls": [
+        "https://www.dariensoccer.org/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Deer Park (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current homepage read successfully; 2026 clinic flyers and club team thumbnails present, but no isolated verified current full crest found. Prior founding-year mismatch remains.",
+      "evidence_urls": [
+        "https://deerparksoccer.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Delaware County United",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "SportsEngine search index explicitly identifies Delhi NY and Broome County Soccer Association; same-name Indiana clubs excluded. No clean original current crest recovered.",
+      "evidence_urls": [
+        "https://www.sportsengine.com/org/delaware-county-united-youth-soccer-club"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Dix Hills SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Original club site fetch 403. New official Surf announcement and Dix Hills EST Surf website found; exact umbrella-versus-EST current branding needs resolution before replacing prior crest.",
+      "evidence_urls": [
+        "https://www.dixhillssoccerclub.com/",
+        "https://surfsoccernation.com/2025/12/16/dix-hills-est-joins-the-surf-soccer-family/",
+        "https://dixhillsestsurf.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Don Bosco Hawks",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search supports Port Chester WYSL club. Candidate direct donboscohawks.org returned 503; no current authoritative clean crest recovered.",
+      "evidence_urls": [
+        "https://prosportspath.com/clubs/don-bosco-hawks",
+        "https://socceruntangled.com/clubs/don-bosco-hawks"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Dover / SC Harlem Valley",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current listings confirm composite club name and current teams; no authoritative source mapping to a clean club crest found.",
+      "evidence_urls": [
+        "https://youthsoccergames.com/club/new-york-east/50005611",
+        "https://socceruntangled.com/clubs/dover-sc-harlem-valley"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Dunwoodie YA",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official soccer-page index explicitly establishes DYA recreational and travel soccer in Yonkers. Live page fetch denied 403; existing multisport mark not newly inspected for current exact soccer use.",
+      "evidence_urls": [
+        "https://www.instagram.com/dunwoodieyouthassociation/",
+        "https://www.dyayonkers.com/Default.aspx?tabid=580379"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "East Fishkill Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official site index and municipal source confirm East Fishkill New York; direct homepage returned 406, no clean original recovered.",
+      "evidence_urls": [
+        "https://efsc.net/",
+        "https://eastfishkillny.myrec.com/info/affiliated/default.aspx"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "East Hampton Soccer Stars",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search still identifies East Hampton local club separately from Super Soccer Stars franchise. No new official clean crest obtained.",
+      "evidence_urls": [
+        "https://www.sportsengine.com/org/east-hampton-soccer-stars",
+        "https://youthsoccergames.com/team/300451491"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Eastern Queens FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current CJSL directory identifies Eastern Queens FC; no usable current original found. Keep globe/AMSC crest mapping unresolved.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/resources/our-clubs"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "ECM Elite",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current New York youth fixtures support club existence but do not prove training-profile avatar is correct current local club mark.",
+      "evidence_urls": [
+        "https://youthsoccergames.com/team/300451815"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Edgemont",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Correct official domain edgemontsc.com identified via current 2026/27 registration index; web fetch returned 403. A guessed edgemontsoccer.com 503 did not establish identity. No new clean original.",
+      "evidence_urls": [
+        "https://www.edgemontsc.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Elites United SZ",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current league listings and Patchogue municipal record substantiate local club; no new official clean artwork recovered.",
+      "evidence_urls": [
+        "https://www.patchoguevillage.gov/AgendaCenter/ViewFile/ArchivedAgenda/_03252024-1375",
+        "https://youthsoccergames.com/team/300510401"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Ellington Parks and Recreation",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current municipality site and CJSA directory support exact department name and soccer activities; soccer-specific preferred mark remains unresolved, no new artwork promoted.",
+      "evidence_urls": [
+        "https://youth.ellington-ct.gov/dpyc/about-us/membership",
+        "https://parkrec.ellington-ct.gov/",
+        "https://parkrec.ellington-ct.gov/programs",
+        "https://www.cjsa.org/club-links/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Elmont Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Direct current official homepage again returned 403; no bypass attempted and no new original recovered.",
+      "evidence_urls": [
+        "https://www.elmontsoccer.org/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Enfield Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official Academy page fetched 200 but logo anchor is empty and title includes DONE - Enfield Soccer Club. Page text supports local ESC; no original current crest recovered. Distinct ESA mark not substituted.",
+      "evidence_urls": [
+        "https://clubs.bluesombrero.com/Default.aspx?tabid=926516"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "F.S.C. College Point",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Additional exact-name search did not yield an authoritative clean crest; prior photographed fabric candidate remains unusable.",
+      "evidence_urls": [
+        "https://www.facebook.com/FSCcollegepoint"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Farmingdale SC (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Direct official homepage returned 403; no new original recovered.",
+      "evidence_urls": [
+        "https://www.farmingdalesoccer.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "FC COPA",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Live official homepage publishes FC Copa Academy original and separate 2026/27 NJ Central, NJ West and Brooklyn locations. Club-wide mark available but requested regional branch still not resolved; not auto-promoted.",
+      "evidence_urls": [
+        "https://www.fccopa.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "FC Ossining",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official LeagueApps URL fetch succeeds but returns only JavaScript member-portal shell, no club artwork. Search image shows school boys team, not FC Ossining; excluded.",
+      "evidence_urls": [
+        "https://www.ayso201.org/",
+        "https://prosportspath.com/clubs/fc-ossining",
+        "https://fcossining.leagueapps.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "FC Somoni",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current search supports Brooklyn CJSL identity; no independent current clean original inspected. Avoid similarly named foreign clubs.",
+      "evidence_urls": [
+        "https://www.instagram.com/somonifc/",
+        "https://www.cjslsoccer.com/clubs",
+        "https://www.yuuf.org/listing/nyc-fc-somoni-fc-somoni",
+        "https://prosportspath.com/clubs/fc-somoni"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Fifty Football Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Search tool reads current official site including 2026 events, Glenville and Maalwyck Park context. Direct fetch rate-limited 429; stopped, no clean original recovered.",
+      "evidence_urls": [
+        "https://fiftyfc.com/"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Florida Youth Soccer",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current local listing identifies Florida NY; broad image/search results mostly state association, which is excluded. No new authoritative local original recovered.",
+      "evidence_urls": [
+        "https://projects.propublica.org/nonprofits/organizations/882422905",
+        "https://youthsoccergames.com/team/12334563",
+        "https://www.hellowarwickvalley.com/participate-youth-images"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Formativas Barcelona SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Direct official barcelonasc.us returned 403; no bypass attempted, no new original obtained.",
+      "evidence_urls": [
+        "https://www.barcelonasc.us/",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Foundation SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Live Foundation Sports Club homepage has FSCwestHat.png. Current competitive listings use Foundation SC West, but historical Foundation SC also spans other branches; exact submitted branch remains ambiguous.",
+      "evidence_urls": [
+        "https://foundationsoccer.com/",
+        "https://www.foundationsoccer.com/",
+        "http://static1.squarespace.com/static/5c2c2e6150a54f8c763085a4/t/5e4efc7d21fc0715d007b96e/1582234750939/FSCwestHat.png?format=1500w",
+        "https://youthsoccergames.com/team/300409062"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Fox Soccer Academy Premier",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Live parent site publishes current FSA crest with TM; this does not resolve Premier-specific current mapping identified in prior review. Keep parent candidate on hold.",
+      "evidence_urls": [
+        "https://www.foxsoccer.academy/",
+        "https://www.foxsoccer.academy/warwick",
+        "https://www.foxsoccer.academy/fsa-pathways",
+        "https://www.foxsoccer.academy/pricing-plans/list",
+        "https://www.foxsoccer.academy/post/michael-holzer-has-been-appointed-fsa-program-director"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Franklin Square Raiders Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Live official homepage explicitly identifies Raiders teams and links clean original webp. Largest original download returned 406; stopped. Existing 498x615 image is a Google thumbnail, so not promoted as an original. Current version source is now established but original download remains blocked.",
+      "evidence_urls": [
+        "https://franklinsquaresoccer.com/",
+        "https://franklinsquaresoccer.com/wp-content/uploads/2025/10/FranklinSquareRaiders-Logo.webp"
+      ],
+      "batch": 10,
+      "archive": "YSP_Logos_Batch_10_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Fulton United",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official travel-club site identifies Fulton United Force teams in the local area. Saved 947x80 file is only a thin site-title banner reading Fulton United Travel Soccer Club, not a crest. Club branding is not established by that banner.",
+      "evidence_urls": [
+        "https://fultonunitedtsc.org/LandingPage.html"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Gold Coast FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official Gold Coast FC identifies the North Shore Long Island club. Direct source read returned CAPTCHA interstitial; no current source image could be compared.",
+      "evidence_urls": [
+        "https://goldcoastfc.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Greenville",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official GotSport About Us confirms the Greenville, NY club and 2014 name change from Greenville Youth Soccer Association. Candidate is maroon/silver GSC shield, but image retrieval returned a CAPTCHA page and no current color-variant comparison could be completed. Do not infer branding from the town/name match alone.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Griswold Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current official text confirms Griswold, Connecticut and establishment in 1995. Candidate has three stars, green ribbon shield and est. 1995, but direct official image inspection was blocked by a CAPTCHA response. Exact current crest drawing remains unverified.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Harrison",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Saved Harrison Youth Soccer Club crest explicitly names youth club; submitted Harrison is abbreviated and could denote other local programmes. SportsEngine source returned 403, so precise identity/current crest not confirmed. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://harrisonyouthsoccerclub.sportngin.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Hartford Premier and Developmental",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Verified image is a league logo, not an individual club identity.",
+      "evidence_urls": [
+        "https://www.hpdlsoccer.org/",
+        "https://www.cjsa.org/Club-Links/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Henry Hudson Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official hhys.org explicitly equates Henry Hudson Soccer Club with Henry Hudson Youth Soccer serving northeast Greene County NY. Candidate ship/player round emblem is plausible, but official image downloads returned CAPTCHA HTML rather than image bytes; current exact black/white rendering cannot be approved.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Hudson Valley Youth Soccer League",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "League-wide identity, not an individual club. The separately named Hudson Valley Premier programme has its own confirmed mark.",
+      "evidence_urls": [
+        "https://hvysl.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Iconic Soccer Academy",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current Iconic Sports Lab site supports NYC youth sports organisation, and university history mentions Iconic Soccer Academy. Saved IC-style monogram lacks full name; academy-to-parent mapping and current design unconfirmed.",
+      "evidence_urls": [
+        "https://www.iconicsportslab.com/",
+        "https://bronxbroncos.com/news/2021/6/30/JordyLeon.aspx"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Inter CT FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Candidate reads INTER CONNECTICUT FC and MMXIX with gold three-loop knot at top. Official badge explanation describes a halo, and June 2023 official announcement explains distinct Norwalk, Litchfield and Union symbols. Current image retrieval is 403; exact knot variant and intended whole-club scope remain unresolved. MMXIX must not be misread as branch text.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Island FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "The Island FC official site still references the saved blue wordmark and documents a Suffolk youth pathway. The shortened Island FC input is not independently mapped to that exact organization in authoritative evidence. Current youth records also distinguish Long Island SC. Do not merge these names automatically.",
+      "evidence_urls": [
+        "https://theislandfc.com/",
+        "https://theislandfc.com/the-island-f-c-joins-mls-next-bringing-elite-youth-soccer-pathway-to-suffolk-long-island/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Islas Malvinas Int.",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Saved Islas Malvinas Internacional shield is name-consistent but official site inaccessible and no current authoritative local identity/image match established. Foreign namesakes remain a risk. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://islasmalvinasint.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "JCFC Soccer Academy",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSA and its Southwest District directory establish JCFC Soccer Academy in Stamford and link jcfcsoccer.com / JCFCsoccer social account. Candidate shield reads the exact academy name, but both canonical site image attempts were 403 and no authoritative current full-crest comparison was possible.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "JJV Soccer Academy",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL confirms JJV Soccer Academy in Queens and links its @jjv.nyc account. The saved crest reads JJV Soccer Academy NY and is served by the Vercel site, which self-identifies the same account. Two directories endorse that site, but official account access was throttled and no reverse link or independently viewed official logo established ownership/current branding. Keep both input names separate pending confirmation.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/resources/our-clubs",
+        "https://www.instagram.com/jjv.nyc/",
+        "https://jjv-soccer-academy-tg55.vercel.app/",
+        "https://www.raisingqueenskids.com/provider/jjv-soccer-academy-ny/r/rec3m667lgQ2Ldbk8/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "JJV Soccer Academy NY",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL confirms JJV Soccer Academy in Queens and links its @jjv.nyc account. The saved crest reads JJV Soccer Academy NY and is served by the Vercel site, which self-identifies the same account. Two directories endorse that site, but official account access was throttled and no reverse link or independently viewed official logo established ownership/current branding. Keep both input names separate pending confirmation.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/resources/our-clubs",
+        "https://www.instagram.com/jjv.nyc/",
+        "https://jjv-soccer-academy-tg55.vercel.app/",
+        "https://www.raisingqueenskids.com/provider/jjv-soccer-academy-ny/r/rec3m667lgQ2Ldbk8/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Kids United - NY",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL links Kids United in Queens to franchise website, while candidate provenance used Staten Island account. Generic Kids United brand may be shared, but exact submitted NY branch and authorised parent-brand use remain unconfirmed. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.kidsunited.com/",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Kings Point Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Surf Nation announcement dated February 12, 2026 says Kings Point Soccer Club immediately transitions to East Coast Kings Point Surf. Saved crest reads pre-transition Kings Point Soccer Club, so do not promote as current branding.",
+      "evidence_urls": [
+        "https://surfsoccernation.com/2026/02/12/kings-point-joins-the-east-coast-surf-family/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Kingston Area Soccer League",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official indexed KASL site explicitly combines Kingston Area Soccer League with Kingston FC, supporting saved KASL/Kingston FC naming. Original fetch timed out; exact current image unconfirmed. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.kaslsoccer.net/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "La Celeste Soccer Academy Inc",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current La Celeste Soccer Club website displays the exact banner and a larger isolated crest. Exact La Celeste Soccer Academy Inc legal-name mapping remains unresolved; original candidate is a wide banner, not an isolated logo.",
+      "evidence_urls": [
+        "https://lacelestesoccerclub.com/",
+        "https://lacelestesoccerclub.com/wp-content/uploads/2025/04/Original-Logo.png"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "La Colonia FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "ENYYSA confirms La Colonia participates in Big Apple youth soccer, but saved US-map/ball La Colonia badge lacks local identifier and competing Colony branding was previously found. Exact FC match/current image unresolved.",
+      "evidence_urls": [
+        "https://www.enysoccer.com/news/2024/07/03/big-apple-youth-soccer-league-kids-accompany-copa-america-players-onto-field/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "La Grange",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Saved LaGrange Soccer Club roundel identifies Lagrangeville NY and 1980. Original lagrangesoccer.org inaccessible; abbreviated target and current round versus shield variant remain unverified. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://lagrangesoccer.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Lansingburgh",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CDYSL supports Lansingburgh SC and fresh county evidence supports local youth club. Saved maroon LSC crest is plausible; abbreviated target/current club asset not confirmed, school Knights excluded.",
+      "evidence_urls": [
+        "https://cdysl.ottosport.ai/clubs/cdysl-member-clubs-1"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Latin Stars Soccer Academy",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Saved crest says Latin Star Soccer Academy singular; submitted name plural. Social source throttled. Relationship with LS Select and exact current name/design need confirmation. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.facebook.com/100063864558211"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Lavelle Prep SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Saved image is Lavelle Prep Wolves school mascot. This does not establish it is the correct dedicated Lavelle Prep SC mark; soccer programme-to-school branding and current crest unresolved.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "LI Futsal (LIJSL)",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current official 2027 season page explicitly identifies LI Futsal as an LIJSL recreational club and uses the saved banner. The 670x200 asset combines the club roundel with ENYYSA and US Youth Soccer logos; it is not a standalone club crest. Preserve source but obtain standalone artwork.",
+      "evidence_urls": [
+        "https://lifutsal.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "LS Select FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current LS Select FC Facebook profile displays the exact saved crest. Queens LS Select is listed in CJSL; Latin Star relationship and official profile ownership remain unresolved.",
+      "evidence_urls": [
+        "https://www.facebook.com/lsselectfc",
+        "https://www.cjslsoccer.com/clubs",
+        "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/309462797_140577588692187_6718364816875451504_n.jpg?stp=dst-jpg_tt6&cstp=mx957x959&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=5AX7O222JPYQ7kNvwHi0ftK&_nc_oc=AdqkezxlaZ8zRtV7X06GwQYokdKaih8rASKs9fYKPa5NPQ0bR9j0nIc29GaFq0x9sq7VjyDnXis5ke-7R1m23osx&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=iy56v4Ytd-OTNwPh1TJQ9w&_nc_ss=7920f&oh=00_AQRogJv1epyzM6HM4Auvj16bpoSDl0Wu7zQ98A9f5Q8Fyg&oe=6AF28C66"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Lynbrook/East Rockaway SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official Lynbrook/East Rockaway SC source supports exact local club. Direct HTTP read returned a CAPTCHA interstitial; current striped-shield image could not be compared.",
+      "evidence_urls": [
+        "https://lersc.gotsportsites.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Mahopac",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official MSA soccer page establishes Mahopac programme, and 2025 official schedule describes matching yellow/blue oval soccer mark. Current preferred mark beyond 2025 schedule remains unconfirmed.",
+      "evidence_urls": [
+        "https://msasports.org/soccer/",
+        "https://msasports.org/wp-content/uploads/2025/04/1-2-Grade-Boys-.pdf"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "MANDI Football Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Current CJSL directory includes Mandi FC in Brooklyn and Queens and links Instagram. Saved Mandi Football Club 2023 elephant crest is plausible, but exact full-name association/current design not independently inspected.",
+      "evidence_urls": [
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Manhattan Kickers",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL explicitly links Manhattan Kickers SC to manhattankickers.org, matching saved MKSC 1975 roundel. Separate Manhattan Kickers FC exists with different branding; abbreviated submitted name requires exact SC-versus-FC confirmation. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.manhattankickers.org/",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Mt Pleasant",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Candidate says Mount Pleasant AYSO Region 221. The shortened input could refer to the travel club or the AYSO organization. The AYSO origin returned HTTP 403; current independent logo pixels and exact input-program mapping were not verified.",
+      "evidence_urls": [
+        "https://www.ayso221.org/",
+        "https://prosportspath.com/clubs/mt-pleasant-valhalla-ayso-region-221",
+        "https://prosportspath.com/soccer/westchester"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Mt Vernon Prospects FC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Fresh NY youth-team records support Mount Vernon Prospects; candidate clearly spells club but official Instagram could not be read. Saved yellow-backed crest is small and current design/geography association unconfirmed. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.instagram.com/mvpfc.ny/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Munay",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official indexed Munay Soccer Academy site supports club; saved shield explicitly says Ossining NY. Original fetch timed out and indexed news is old, so present branding cannot be established. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://munaysocceracademy.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Naugatuck Youth Soccer",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Candidate is cropped at the lower shield point and outer ribbon ends. Use a complete original.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "New York Cafeteros Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Fresh records support NY Cafeteros Soccer Club, but saved crest says NY Cafeteros Soccer Academy and Instagram inaccessible. Club-versus-academy alias and present design unresolved. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.instagram.com/cafeterossocceracademy/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Newburgh Youth SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "The candidate matches the Newburgh Youth Soccer Club website header, but that site is an almost empty generic storefront without a New York location or league relationship. New York EHYSL and Indiana namesakes both exist. Current local identity/source ownership remains unresolved.",
+      "evidence_urls": [
+        "https://newburghyouthsc.com/home",
+        "https://youthsoccergames.com/team/300366883",
+        "https://newburghyouthsoccer.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "North Star",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "The terse portal name North Star cannot safely be mapped to this exact New York club/logo.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Norwalk Junior Soccer",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "The logo matches an official older registration site, but current 2026 regular-mark use remains unverified.",
+      "evidence_urls": [],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Norwich Pal",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Organization-wide PAL emblem, not a soccer-specific crest.",
+      "evidence_urls": [
+        "https://www.norwichpal.org/",
+        "https://www.cjsa.org/Club-Links/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "NY Kids S.C.",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL identifies New York Kids SC and points to AtlasfcRidgewoodNY Facebook; NYCFC article confirms subsequent Atlas partnership. Saved New York Kids shield may be legacy/shared branding; current exact logo not confirmed.",
+      "evidence_urls": [
+        "https://www.newyorkcityfc.com/news/nicole-martinez-my-father-made-me-the-player-i-am-today",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Old Greenwich Riverside CC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSA maps Old Greenwich Riverside CC to official OGRCC website. Downloaded official logo is the general OGRCC wordmark, not the saved soccer-specific badge; soccer logo current usage remains unverified.",
+      "evidence_urls": [
+        "https://www.myogrcc.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Oneonta SC",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CDYSL identifies Oneonta SC and its official contact domain. Downloaded directory graphics do not independently match the saved Oneonta EST1978 shield; exact current crest remains unverified.",
+      "evidence_urls": [
+        "https://oneontasoccerclub.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Otsego United Soccer, Inc.",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "NYSWYSA directory lists Otsego United Soccer Inc, but downloaded directory graphics are not the saved green stag shield. Exact current entity-to-crest association remains unverified.",
+      "evidence_urls": [
+        "https://www.nyswysa.org/find-a-club/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Pelham Bay Soccer Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official Pelham Bay site and CJSL establish Bronx club. Saved PB/SC tree roundel lacks full name; exact current original image match not established.",
+      "evidence_urls": [
+        "https://pelhambaysoccerclub.com/",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Predators Football Club",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "CJSL explicitly identifies Bronx Predators Football Club and links same Instagram lead. Saved FC Predators claws shield from opponent evidence still needs original match; youth-versus-adult ambiguity not resolved by shared name alone. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.instagram.com/predatorsfootballclub/",
+        "https://www.cjslsoccer.com/clubs"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "PSC Dynamo CT",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Official PSC Dynamo website explicitly names Connecticut club and 2026/27 season. Saved black/white PSC Dynamo CT shield is name-consistent; original returned 403 and exact current asset unverified. Bare PSC Dynamo alias not merged. Original-page retrieval failure is a limitation of this check, not proof the club or site is defunct.",
+      "evidence_urls": [
+        "https://www.pscdynamo.com/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    },
+    {
+      "club_name_exact": "Puebla FC Newburgh",
+      "verification_status": "withheld",
+      "image_filename": null,
+      "reason": "Fresh youth competition and local Newburgh event evidence support Puebla FC Newburgh. Saved 2014 blue shield lacks Newburgh identifier; authoritative current exact crest match not established, Mexican professional club excluded.",
+      "evidence_urls": [
+        "https://youthsoccergames.com/team/300451695",
+        "https://hudsonvalleylbc.org/"
+      ],
+      "batch": 11,
+      "archive": "YSP_Logos_Batch_11_2026-11-05.zip"
+    }
+  ]
+}

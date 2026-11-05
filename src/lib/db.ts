@@ -8,6 +8,11 @@ import { sebastianMaymiClubIds } from "../data/sebastian-maymi-club-ids.ts";
 import { jasonOrtegaClubIds } from "../data/jason-ortega-club-ids.ts";
 import { jordanDeBernardoClubIds } from "../data/jordan-debernardo-club-ids.ts";
 import { chrisAndersonContacts } from "../data/chris-anderson-contacts.ts";
+import logoBatch01 from "../data/logo-batch-01.json" with { type: "json" };
+import { logoAssignments02to06 } from "../data/logo-batches-02-06.ts";
+import { logoAssignments07to08 } from "../data/logo-batches-07-08.ts";
+import { logoAssignments09to11 } from "../data/logo-batches-09-11.ts";
+import { logoAssignments12to13 } from "../data/logo-batches-12-13.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -33,6 +38,7 @@ CREATE TABLE IF NOT EXISTS crm_assignments (organization_id TEXT PRIMARY KEY REF
 CREATE TABLE IF NOT EXISTS crm_seed_state (key TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS crm_classification (organization_id TEXT PRIMARY KEY REFERENCES organizations(id), segment TEXT NOT NULL, area TEXT NOT NULL, area_basis TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS crm_sources (organization_id TEXT NOT NULL REFERENCES organizations(id), source TEXT NOT NULL, PRIMARY KEY (organization_id,source));
+CREATE TABLE IF NOT EXISTS crm_aliases (organization_id TEXT NOT NULL REFERENCES organizations(id), alias TEXT NOT NULL, PRIMARY KEY (organization_id,alias));
 CREATE TABLE IF NOT EXISTS crm_contacts (id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id), name TEXT NOT NULL, email TEXT, phone TEXT, ticketing_id TEXT, is_primary INTEGER NOT NULL DEFAULT 1, sort_order INTEGER NOT NULL DEFAULT 0);
 CREATE INDEX IF NOT EXISTS idx_requirements_org ON requirements(organization_id);
 CREATE INDEX IF NOT EXISTS idx_files_org ON files(organization_id);
@@ -72,7 +78,7 @@ try {
     ["chronis-elite", "Chronis Elite", "chronis-elite.png"],
     ["cjsl", "CJSL", "cjsl.png"],
     ["commack-soccer", "Commack Soccer", "commack-soccer.png"],
-    ["community-sc", "Community SC", "community-sc.png"],
+    ["community-sc", "Community SC", "community-sc--4054a636411f.webp"],
     ["corona-soccer-kids-fc", "Corona Soccer Kids FC", "corona-soccer-kids-fc.webp"],
     ["croton-ayso", "Croton AYSO", "croton-ayso.webp"],
     ["dkay-henry-soccer-training", "DKAY Henry Soccer Training", "dkay-henry-soccer-training.webp"],
@@ -103,13 +109,13 @@ try {
     ["ossining-ayso", "Ossining AYSO", "ossining-ayso.png"],
     ["peruvian-american-soccer-nyc", "Peruvian American Soccer NYC", "peruvian-american-soccer-nyc.webp"],
     ["peruvian-soccer-academy", "Peruvian Soccer Academy", "peruvian-american-soccer-nyc.webp"],
-    ["portchester", "Portchester", "portchester.png"],
+    ["portchester", "Portchester", "port-chester-sc--c8582426f9a2.png"],
     ["reato-soccer-academy", "Reato Soccer Academy", "reato-soccer-academy.webp"],
     ["riverside-park", "Riverside Park", "riverside-park.png"],
     ["rivertowns-ayso", "Rivertowns AYSO", "rivertowns-ayso.png"],
     ["sachem-soccer", "Sachem Soccer", "sachem-soccer.webp"],
     ["saints-fc", "Saints FC", "saints-fc.webp"],
-    ["sc-gjoa", "SC Gjøa", "sc-gjoa.webp"],
+    ["sc-gjoa", "SC Gjøa", "sc-gjoa--a282e8405581.jpg"],
     ["sharpened-athlete", "Sharpened Athlete", "sharpened-athlete.png"],
     ["soccer-friends-usa", "Soccer Friends USA", "soccer-friends-usa.webp"],
     ["soccer-institute-wolves-nyc", "Soccer Institute Wolves NYC", "soccer-institute-wolves-nyc.webp"],
@@ -257,6 +263,79 @@ try {
     if (club.area !== "Area to confirm") fillArea.run(club.area, club.area_basis, club.id);
     for (const source of club.sources) insertSource.run(club.id, source);
   }
+  // Eastchester Soccer Club is EYSA. Keep the existing partner record as the
+  // canonical ID and migrate an older directory row before deleting it.
+  const legacyEastchesterId = "directory-eastchester";
+  const eysaId = "eysa";
+  const legacyEastchester = db.prepare("SELECT * FROM organizations WHERE id=? AND kind='crm_club'").get(legacyEastchesterId) as Organization | undefined;
+  if (legacyEastchester) {
+    const eysa = db.prepare("SELECT * FROM organizations WHERE id=? AND kind='crm_club'").get(eysaId) as Organization | undefined;
+    if (!eysa) throw new Error("EYSA canonical record missing during Eastchester merge");
+    const preservedNotes: string[] = [];
+    for (const field of ["website", "instagram", "facebook", "logo_path"] as const) {
+      const oldValue = legacyEastchester[field];
+      const canonicalValue = eysa[field];
+      if (!oldValue) continue;
+      if (!canonicalValue) db.prepare(`UPDATE organizations SET ${field}=? WHERE id=?`).run(oldValue, eysaId);
+      else if (canonicalValue !== oldValue) preservedNotes.push(`Former Eastchester ${field}: ${oldValue}`);
+    }
+    const oldClass = db.prepare("SELECT segment,area,area_basis FROM crm_classification WHERE organization_id=?").get(legacyEastchesterId) as { segment: string; area: string; area_basis: string } | undefined;
+    const eysaClass = db.prepare("SELECT segment,area,area_basis FROM crm_classification WHERE organization_id=?").get(eysaId) as { segment: string; area: string; area_basis: string } | undefined;
+    if (oldClass?.area && oldClass.area !== "Area to confirm") {
+      if (!eysaClass || eysaClass.area === "Area to confirm" || eysaClass.area_basis === "Unverified") {
+        db.prepare("UPDATE crm_classification SET area=?,area_basis=? WHERE organization_id=?").run(oldClass.area, oldClass.area_basis, eysaId);
+      } else if (eysaClass.area !== oldClass.area) {
+        preservedNotes.push(`Former Eastchester area: ${oldClass.area} (${oldClass.area_basis})`);
+      }
+    }
+    db.prepare("INSERT OR IGNORE INTO crm_sources (organization_id,source) SELECT ?,source FROM crm_sources WHERE organization_id=?").run(eysaId, legacyEastchesterId);
+    db.prepare("INSERT OR IGNORE INTO crm_aliases (organization_id,alias) SELECT ?,alias FROM crm_aliases WHERE organization_id=?").run(eysaId, legacyEastchesterId);
+    const oldRecord = db.prepare("SELECT next_action,updated_at FROM crm_records WHERE organization_id=?").get(legacyEastchesterId) as { next_action: string | null; updated_at: string | null } | undefined;
+    const eysaRecord = db.prepare("SELECT next_action FROM crm_records WHERE organization_id=?").get(eysaId) as { next_action: string | null } | undefined;
+    if (oldRecord?.next_action) {
+      if (!eysaRecord?.next_action) db.prepare("UPDATE crm_records SET next_action=?,updated_at=? WHERE organization_id=?").run(oldRecord.next_action, oldRecord.updated_at, eysaId);
+      else if (eysaRecord.next_action !== oldRecord.next_action) preservedNotes.push(`Former Eastchester next action: ${oldRecord.next_action}`);
+    }
+    const oldAssignment = db.prepare("SELECT rep_id FROM crm_assignments WHERE organization_id=?").get(legacyEastchesterId) as { rep_id: string } | undefined;
+    const eysaAssignment = db.prepare("SELECT rep_id FROM crm_assignments WHERE organization_id=?").get(eysaId) as { rep_id: string } | undefined;
+    if (oldAssignment) {
+      if (!eysaAssignment) db.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?)").run(eysaId, oldAssignment.rep_id);
+      else if (oldAssignment.rep_id !== eysaAssignment.rep_id) preservedNotes.push(`Former Eastchester rep assignment: ${oldAssignment.rep_id}`);
+    }
+    for (const table of ["users", "contacts", "partnerships", "requirements", "tasks", "communications", "files", "portal_access", "crm_activities", "crm_contacts", "experience_groups"] as const) {
+      if (db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?").get(table)) {
+        db.prepare(`UPDATE ${table} SET organization_id=? WHERE organization_id=?`).run(eysaId, legacyEastchesterId);
+      }
+    }
+    for (const note of preservedNotes) db.prepare("INSERT INTO crm_activities (id,organization_id,rep_id,note,created_at) VALUES (?,?,?,?,?)").run(crypto.randomUUID(), eysaId, null, note, new Date().toISOString());
+    for (const table of ["crm_sources", "crm_aliases", "crm_records", "crm_classification", "crm_assignments"] as const) db.prepare(`DELETE FROM ${table} WHERE organization_id=?`).run(legacyEastchesterId);
+    db.prepare("DELETE FROM organizations WHERE id=?").run(legacyEastchesterId);
+  }
+  const insertAlias = db.prepare("INSERT OR IGNORE INTO crm_aliases (organization_id,alias) VALUES (?,?)");
+  for (const alias of ["Eastchester", "Eastchester Soccer Club", "Eastchester Youth Soccer Association"]) insertAlias.run(eysaId, alias);
+  // Apply reviewed logo matches only to clubs that still have a placeholder.
+  // The batch mapping retains the source, stable ID, and held decisions.
+  for (const logo of logoBatch01.logos) {
+    if (logo.decision === "add_to_placeholder" && logo.portal_club_id && logo.portal_logo_path) {
+      fillLogo.run(logo.portal_logo_path, logo.portal_club_id);
+    }
+  }
+  // Additional confirmed batches use stable CRM IDs. Existing staff-selected
+  // logos are never overwritten by a later seed.
+  for (const [clubId, logoPath] of logoAssignments02to06) fillLogo.run(logoPath, clubId);
+  for (const [clubId, logoPath] of logoAssignments07to08) fillLogo.run(logoPath, clubId);
+  for (const [clubId, logoPath] of logoAssignments09to11) fillLogo.run(logoPath, clubId);
+  for (const [clubId, logoPath] of logoAssignments12to13) fillLogo.run(logoPath, clubId);
+  // Replace only these known seed paths. A later staff-selected crest wins.
+  db.prepare("UPDATE organizations SET logo_path=? WHERE id='portchester' AND kind='crm_club' AND logo_path=?")
+    .run("/club-logos/port-chester-sc--c8582426f9a2.png", "/club-logos/portchester.png");
+  db.prepare("UPDATE organizations SET logo_path=? WHERE id='sc-gjoa' AND kind='crm_club' AND logo_path=?")
+    .run("/club-logos/sc-gjoa--a282e8405581.jpg", "/club-logos/sc-gjoa.webp");
+  // The newer official Community SC crest is the same five-star shield in a
+  // clearer source image. Only replace the known old seed asset so any staff
+  // selection made later is preserved.
+  db.prepare("UPDATE organizations SET logo_path=? WHERE id='community-sc' AND kind='crm_club' AND logo_path=?")
+    .run("/club-logos/community-sc--4054a636411f.webp", "/club-logos/community-sc.png");
   db.prepare("INSERT OR IGNORE INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id) VALUES (?,?,?,?,?,?)").run(
     "06-united-andy-chan", "06-united-new-york", "Andy Chan", "andy.chan@06united.com", "(718) 760-0280", "1540097"
   );
@@ -305,7 +384,7 @@ export type Partnership = { id: string; organization_id: string; season: string;
 export type Requirement = { id: string; title: string; due_at: string | null; completed_at: string | null; partner_visible: number };
 export type Communication = { id: string; author: string; body: string; visibility: string; delivery_status: string; created_at: string };
 export type StoredFile = { id: string; original_name: string; mime_type: string; size: number; visibility: string; uploaded_at: string };
-export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
+export type CrmClub = { id: string; name: string; logo_path: string | null; next_action: string | null; updated_at: string | null; segment: string; area: string; area_basis: string; sources: string; aliases: string; assigned_rep_id: string | null; assigned_rep_name: string | null };
 export type CrmNote = { id: string; note: string; author: string; created_at: string };
 export type CrmContact = { id: string; name: string; email: string | null; phone: string | null; ticketing_id: string | null };
 
@@ -313,7 +392,8 @@ const crmSelect = `SELECT o.id,o.name,o.logo_path,r.next_action,r.updated_at,
   COALESCE(c.segment,'directory') AS segment,COALESCE(c.area,'Area to confirm') AS area,
   COALESCE(c.area_basis,'Unverified') AS area_basis,
   a.rep_id AS assigned_rep_id,u.name AS assigned_rep_name,
-  COALESCE((SELECT GROUP_CONCAT(source, ' · ') FROM (SELECT source FROM crm_sources s WHERE s.organization_id=o.id ORDER BY source)),'') AS sources
+  COALESCE((SELECT GROUP_CONCAT(source, ' · ') FROM (SELECT source FROM crm_sources s WHERE s.organization_id=o.id ORDER BY source)),'') AS sources,
+  COALESCE((SELECT GROUP_CONCAT(alias, ' · ') FROM (SELECT alias FROM crm_aliases a WHERE a.organization_id=o.id ORDER BY alias)),'') AS aliases
   FROM crm_records r JOIN organizations o ON o.id=r.organization_id
   LEFT JOIN crm_classification c ON c.organization_id=o.id
   LEFT JOIN crm_assignments a ON a.organization_id=o.id

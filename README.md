@@ -36,7 +36,7 @@ Match and experience assignments remain unconfirmed. The draft is shown as **Not
 
 ## YSP Internal CRM
 
-The CRM entry on the login page opens 643 club records. The 74 original CRM clubs, plus EPSC restored at the program owner's request, are grouped as **Current Youth Partners (YSPs)**. The 2026 youth soccer workbook supplied another 568 distinct clubs after matching 24 workbook names to existing CRM records. Only club names and workbook sheet names were imported; no contact names, email addresses, or phone numbers were copied. Existing logos, notes, and next actions remain in place. The supplied logos are shown for 74 clubs, including the shared Eleftheria-Pancyprian crest on EPSC, the shared Peruvian American Soccer crest on Peruvian Soccer Academy, and the supplied OCSC and New Hyde Park Wildcats crests; other clubs show initials until logos are provided. These records are separate from the Cyclones partnership workflow. Any saved EPSC notes and next actions were preserved when its record was restored.
+The CRM entry on the login page opens 642 club records, including 70 **Current Youth Partners (YSPs)**. The 2026 youth soccer workbook supplied club names and league-sheet sources without importing its contact columns. Confirmed logo batches are matched to stable CRM IDs; clubs still missing logos show initials. EYSA is the canonical record for Eastchester Soccer Club: its existing partner status, rep assignment, and logo are retained, along with Eastchester's three league sources and provisional Westchester area. CRM records remain separate from the Cyclones partnership workflow.
 
 The directory can be searched and filtered by current partner status, area, and workbook sheet. Other directory clubs are grouped by borough or area where a club name or geographic league sheet suggests one. Those areas are provisional; the remainder appear under **Area to confirm**. Staff can correct a club's grouping and area on its CRM page. The original workbook is not stored in the repository.
 
@@ -58,7 +58,7 @@ SQLite persists organizations, users, contacts, partnerships, requirements, comm
 
 **Log message** records a communication in the portal; it does not send email or SMS. The draft, match scheduling, reminder delivery, ticket issuance and photo distribution are future work. File downloads require an active session and organization/visibility checks, but local disk storage is not a production object store or signed URL service. Run this prototype only in a trusted development environment until production identity, authorization review, storage, upload scanning, audit logging and backup policies are added. Salesforce is not connected.
 
-The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 643 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
+The existing partnership UI and rep authorization remain deliberately limited to the seeded Cyclones record and Phineas Kraebber. The CRM has 642 active internal records under the same rep demo session. The schema includes organization, season, match and experience links for expansion to other clubs. CRM records are added on startup without replacing saved notes and next actions.
 
 ## Next milestone
 

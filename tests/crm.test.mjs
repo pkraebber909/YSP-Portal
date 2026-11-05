@@ -10,6 +10,9 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
 const data = await import("../src/lib/db.ts");
 const { chrisAndersonContacts } = await import("../src/data/chris-anderson-contacts.ts");
+const { logoAssignments07to08 } = await import("../src/data/logo-batches-07-08.ts");
+const { logoAssignments09to11 } = await import("../src/data/logo-batches-09-11.ts");
+const { logoAssignments12to13 } = await import("../src/data/logo-batches-12-13.ts");
 
 test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
@@ -31,9 +34,9 @@ test("Chris Anderson contact batch appears on the right club pages without dupli
 
 test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, and resolves installed logos", () => {
   const clubs = data.listCrmClubs();
-  assert.equal(clubs.length, 643);
+  assert.equal(clubs.length, 642);
   assert.equal(clubs.filter(club => club.segment === "current_ysp").length, 70);
-  assert.equal(clubs.filter(club => club.segment === "directory").length, 573);
+  assert.equal(clubs.filter(club => club.segment === "directory").length, 572);
   assert.equal(new Set(clubs.map(club => club.id)).size, clubs.length);
   for (const name of ["06 United", "AAFNY", "Alliance Athletics", "Alta FC", "SC GJOA", "Y4YFC", "Brooklyn Hares Football Club", "Soccer Kids NYC", "SYSL", "Little Neck Douglaston"]) {
     assert.ok(clubs.some(club => club.name === name), `${name} is in the directory`);
@@ -52,6 +55,12 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
   assert.match(data.getCrmClub("directory-albion-sc-brooklyn").sources, /CJSL/);
   assert.equal(data.getCrmClub("asteras").segment, "current_ysp");
   assert.match(data.getCrmClub("asteras").sources, /EDP North Atlantic/);
+  assert.equal(data.getCrmClub("directory-eastchester"), undefined);
+  assert.equal(data.getCrmClub("eysa").segment, "current_ysp");
+  assert.equal(data.getCrmClub("eysa").assigned_rep_name, "Sebastian Maymi");
+  assert.equal(data.getCrmClub("eysa").area, "Westchester");
+  assert.deepEqual(data.getCrmClub("eysa").sources.split(" · "), ["EDP North Atlantic", "EDP Tri State", "Westchester YSL"]);
+  assert.match(data.getCrmClub("eysa").aliases, /Eastchester Soccer Club/);
   assert.ok(data.getCrmClub("directory-griffin-united-soccer-club"));
   assert.equal(clubs.filter(club => club.name.toLowerCase() === "griffin united soccer club").length, 1);
   assert.ok(data.getCrmClub("peruvian-soccer-academy"));
@@ -69,7 +78,7 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
     ["chronis-elite", "chronis-elite.png"],
     ["cjsl", "cjsl.png"],
     ["commack-soccer", "commack-soccer.png"],
-    ["community-sc", "community-sc.png"],
+    ["community-sc", "community-sc--4054a636411f.webp"],
     ["croton-ayso", "croton-ayso.webp"],
     ["dkay-henry-soccer-training", "dkay-henry-soccer-training.webp"],
     ["eastern-fc", "eastern-fc.webp"],
@@ -83,7 +92,7 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
     ["levittown-soccer-club", "levittown-soccer-club.webp"],
     ["liitle-neck-douglaston", "little-neck-douglaston.png"],
     ["lindenhurst-soccer-club", "lindenhurst-soccer-club.png"],
-    ["portchester", "portchester.png"],
+    ["portchester", "port-chester-sc--c8582426f9a2.png"],
     ["nj-santos", "nj-santos.png"],
     ["no-limits", "no-limits.png"],
     ["ocsc", "ocsc.png"],
@@ -119,10 +128,26 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
     ["y4yfc", "y4yfc.png"],
   ]) assert.equal(data.getCrmClub(id).logo_path, `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
-  assert.equal(clubs.filter(club => club.logo_path).length, 74);
+  assert.equal(data.getCrmClub("sc-gjoa").logo_path, "/club-logos/sc-gjoa--a282e8405581.jpg");
+  assert.equal(clubs.filter(club => club.logo_path).length, 462);
+  assert.equal(logoAssignments07to08.length, 43);
+  for (const [id, logoPath] of logoAssignments07to08) {
+    assert.equal(data.getCrmClub(id).logo_path, logoPath, `${id} has its reviewed logo`);
+  }
+  assert.equal(logoAssignments09to11.length, 49);
+  for (const [id, logoPath] of logoAssignments09to11) {
+    assert.equal(data.getCrmClub(id).logo_path, logoPath, `${id} has its reviewed logo`);
+  }
+  assert.equal(logoAssignments12to13.length, 9);
+  for (const [id, logoPath] of logoAssignments12to13) {
+    assert.equal(data.getCrmClub(id).logo_path, logoPath, `${id} has its reviewed logo`);
+  }
+  for (const id of ["directory-big-apple-youth-soccer-league", "directory-capital-district-youth-soccer-league", "directory-hudson-valley-youth-soccer-league"]) {
+    assert.equal(data.getCrmClub(id).logo_path, null, `${id} is a league hold, not a club logo assignment`);
+  }
   for (const club of clubs) {
     if (club.logo_path) {
-      assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(jpg|png|webp)$/);
+      assert.match(club.logo_path, /^\/club-logos\/[a-z0-9-]+\.(gif|jpg|png|webp|svg)$/);
       assert.ok(fs.existsSync(path.join(publicDir, club.logo_path.slice(1))), `${club.name} logo file exists`);
     }
   }
@@ -131,6 +156,49 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM contacts").get().n, 1);
   raw.close();
+});
+
+test("Eastchester legacy record merges into EYSA without losing unique data", async () => {
+  const originalDbPath = process.env.YSP_DB_PATH;
+  const mergeDir = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-eastchester-merge-"));
+  process.env.YSP_DB_PATH = path.join(mergeDir, "test.sqlite");
+  try {
+    await import("../src/lib/db.ts?eastchester-fixture-init");
+    const legacy = new DatabaseSync(process.env.YSP_DB_PATH);
+    legacy.prepare("INSERT INTO organizations (id,name,kind,website,logo_path) VALUES (?,?,?,?,?)").run("directory-eastchester", "Eastchester", "crm_club", "https://eastchester.example", "/club-logos/asteras.png");
+    legacy.prepare("INSERT INTO crm_records (organization_id,next_action,updated_at) VALUES (?,?,?)").run("directory-eastchester", "Call former lead", "2026-10-01T00:00:00.000Z");
+    legacy.prepare("INSERT INTO crm_classification (organization_id,segment,area,area_basis) VALUES (?,?,?,?)").run("directory-eastchester", "directory", "Long Island", "Staff set");
+    legacy.prepare("INSERT INTO crm_sources (organization_id,source) VALUES (?,?)").run("directory-eastchester", "CJSL");
+    legacy.prepare("INSERT INTO crm_aliases (organization_id,alias) VALUES (?,?)").run("directory-eastchester", "Eastchester Travel");
+    legacy.prepare("INSERT INTO crm_assignments (organization_id,rep_id) VALUES (?,?)").run("directory-eastchester", "jason-ortega");
+    legacy.prepare("INSERT INTO crm_contacts (id,organization_id,name,email,phone) VALUES (?,?,?,?,?)").run("eastchester-contact", "directory-eastchester", "Taylor", "taylor@example.com", "555-0100");
+    legacy.prepare("INSERT INTO crm_activities (id,organization_id,rep_id,note,created_at) VALUES (?,?,?,?,?)").run("eastchester-note", "directory-eastchester", "phineas", "Earlier conversation", "2026-10-01T00:00:00.000Z");
+    legacy.close();
+
+    const merged = await import("../src/lib/db.ts?eastchester-fixture-merge");
+    const eysa = merged.getCrmClub("eysa");
+    assert.equal(merged.getCrmClub("directory-eastchester"), undefined);
+    assert.equal(merged.listCrmClubs().length, 642);
+    assert.equal(eysa.segment, "current_ysp");
+    assert.equal(eysa.assigned_rep_name, "Sebastian Maymi");
+    assert.equal(eysa.logo_path, "/club-logos/eysa.png");
+    assert.equal(eysa.area, "Westchester");
+    assert.match(eysa.sources, /CJSL/);
+    assert.match(eysa.sources, /EDP Tri State/);
+    assert.match(eysa.aliases, /Eastchester Travel/);
+    assert.equal(eysa.next_action, "Call former lead");
+    assert.ok(merged.listCrmPrimaryContacts("eysa").some(contact => contact.email === "taylor@example.com"));
+    const notes = merged.listCrmNotes("eysa").map(entry => entry.note);
+    for (const text of ["Earlier conversation", "Former Eastchester logo_path", "Former Eastchester area", "Former Eastchester rep assignment"]) {
+      assert.ok(notes.some(note => note.includes(text)), `${text} was preserved`);
+    }
+    const check = new DatabaseSync(process.env.YSP_DB_PATH);
+    assert.equal(check.prepare("SELECT website FROM organizations WHERE id='eysa'").get().website, "https://eastchester.example");
+    assert.equal(check.prepare("PRAGMA foreign_key_check").all().length, 0);
+    check.close();
+  } finally {
+    process.env.YSP_DB_PATH = originalDbPath;
+  }
 });
 
 test("notes and next actions persist per CRM club", () => {
@@ -157,7 +225,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   legacy.close();
 
   const merged = await import("../src/lib/db.ts?merge-legacy-action");
-  assert.equal(merged.listCrmClubs().length, 643);
+  assert.equal(merged.listCrmClubs().length, 642);
   assert.equal(merged.getCrmClub("academy-argentina"), undefined);
   assert.equal(merged.getCrmClub("aafny").next_action, "Call club director");
   assert.ok(merged.listCrmNotes("aafny").some(note => note.note === "Intro call completed"));
@@ -171,7 +239,7 @@ test("merging an existing Academia Argentina record preserves its notes and next
   const mergedAgain = await import("../src/lib/db.ts?merge-conflicting-actions");
   assert.equal(mergedAgain.getCrmClub("aafny").next_action, "Send proposal");
   assert.ok(mergedAgain.listCrmNotes("aafny").some(note => note.note === "Previous Academia Argentina next action: Schedule meeting"));
-  assert.equal(mergedAgain.listCrmClubs().length, 643);
+  assert.equal(mergedAgain.listCrmClubs().length, 642);
 });
 
 test("restoring archived EPSC preserves existing notes and actions", async () => {
@@ -184,7 +252,7 @@ test("restoring archived EPSC preserves existing notes and actions", async () =>
   const updated = await import("../src/lib/db.ts?restore-epsc");
   assert.equal(updated.getCrmClub("epsc").segment, "current_ysp");
   assert.equal(updated.getCrmClub("epsc").assigned_rep_id, "chris-anderson");
-  assert.equal(updated.listCrmClubs().length, 643);
+  assert.equal(updated.listCrmClubs().length, 642);
   const preserved = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.deepEqual({ ...preserved.prepare("SELECT o.kind,r.next_action FROM organizations o JOIN crm_records r ON r.organization_id=o.id WHERE o.id='epsc'").get() }, { kind: "crm_club", next_action: "Follow up" });
   assert.equal(preserved.prepare("SELECT note FROM crm_activities WHERE organization_id='epsc'").get().note, "Prior conversation");

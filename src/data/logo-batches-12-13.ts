@@ -1,0 +1,39 @@
+// Reviewed Batch 12 and 13 club matches. Fill only empty logo slots.
+export const logoAssignments12to13: ReadonlyArray<readonly [string, string]> = [
+  [
+    "directory-cortlandt-sc",
+    "/club-logos/cortlandt-sc--848cbbfcf53f.jpg"
+  ],
+  [
+    "directory-don-bosco-hawks",
+    "/club-logos/don-bosco-hawks--f3f67db40998.jpg"
+  ],
+  [
+    "directory-farmingdale-sc",
+    "/club-logos/farmingdale-sc-lijsl--d1365d1d279a.jpg"
+  ],
+  [
+    "directory-fc-ossining",
+    "/club-logos/fc-ossining--68b5cc6bc6f1.png"
+  ],
+  [
+    "directory-franklin-square-raiders-soccer-club",
+    "/club-logos/franklin-square-raiders-soccer-club--e3c37153409b.png"
+  ],
+  [
+    "directory-ny-phoenix-fc",
+    "/club-logos/ny-phoenix-fc--9503fac6c903.png"
+  ],
+  [
+    "directory-rivertowns-united",
+    "/club-logos/rivertowns-united--cff58b70e2eb.png"
+  ],
+  [
+    "directory-terryville-youth-soccer-club",
+    "/club-logos/terryville-youth-soccer-club--4b5db2bcb406.png"
+  ],
+  [
+    "directory-torrington-youth-soccer-club",
+    "/club-logos/torrington-youth-soccer-club--e42d48ffb3bc.jpg"
+  ]
+];

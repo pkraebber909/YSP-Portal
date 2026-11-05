@@ -1,0 +1,237 @@
+{
+  "package": "YSP_Google_Images_Batch_34_2026-11-05.zip",
+  "review_date": "2026-11-05",
+  "manifest": "sources.csv",
+  "readme": "README.txt",
+  "package_warning": "README says all ten files are Google Images review candidates, not verified official-source portal matches. No asset assignment is authorized by this package alone.",
+  "asset_convention": "public/club-logos/<filename> with /club-logos/<filename> database path; existing CrmLogo component preserves aspect ratio.",
+  "assignments_made": 0,
+  "entries": [
+    {
+      "submitted_name": "New York Futsal SC (LIJSL)",
+      "portal_club_id": "directory-new-york-futsal-sc",
+      "portal_name": "New York Futsal SC",
+      "portal_area": "Long Island",
+      "portal_sources": [
+        "LIJSL"
+      ],
+      "match_basis": "exact portal name with qualifier",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Exact SC suffix and LIJSL affiliation remain unverified; distinguish other futsal programs.",
+      "archive_path": "candidates/new_york_futsal_sc_lijsl.jpg",
+      "width": 697,
+      "height": 286,
+      "sha256": "95dd163f11c083cdd54a849f620f791c8239aff0eb0a78ec4ee414a19b10767d",
+      "source_note": "Google Images NEW YORK FUTSAL official Internship and Volunteers page: red-black full wordmark and NY-shirt player. Eastern NY Youth Soccer articles corroborate this futsal brand. Exact SC suffix and LIJSL affiliation in portal remain unverified; do not publish until reconciled. Excluded LI Futsal separate club and New York Soccer Club futsal program.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoflkqSGOw7lC1s6E7TBXTn2HAw-WzMq7Mda0FrRmABA&s=10"
+    },
+    {
+      "submitted_name": "North East Reds FC - Long Island",
+      "portal_club_id": "directory-north-east-reds-fc-long-island",
+      "portal_name": "North East Reds FC - Long Island",
+      "portal_area": "Area to confirm",
+      "portal_sources": [
+        "EDP North Atlantic",
+        "NYCSL"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Confirm the crest is the Long Island branch mark; the image has no branch subtitle.",
+      "archive_path": "candidates/north_east_reds_fc_long_island.jpg",
+      "width": 447,
+      "height": 447,
+      "sha256": "cc8ec5aec3ace0d917598844dada5ffac8f180e02d63b7aea7aecbcde6edc34c",
+      "source_note": "Recovered lost batch13 candidate through fresh Google Images. Exact North East Reds FC Long Island YouTube clean white shield red-gold skyline/water and green text. Long Island Instagram and Elite Academy League announcement corroborate branch. Clean mark lacks Long Island subtitle; branch-specific source recorded. Not SoCal Reds crest.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7utuPfV84z0pJzCsUBpCXz5LAO8W4wlff9q-iEHC38w&s=10"
+    },
+    {
+      "submitted_name": "North Fork (LIJSL)",
+      "portal_club_id": "directory-north-fork",
+      "portal_name": "North Fork",
+      "portal_area": "Long Island",
+      "portal_sources": [
+        "LIJSL"
+      ],
+      "match_basis": "exact portal name with qualifier",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Confirm portal short name is the North Fork United SC represented by the image.",
+      "archive_path": "candidates/north_fork_lijsl.jpg",
+      "width": 447,
+      "height": 447,
+      "sha256": "14faa496250c26c2b99d58b7b2568c233512bc1eb98d3e7fe472667151930366",
+      "source_note": "Recovered lost batch13 candidate from fresh Google Images. Exact @northforkunitedsc Instagram blue-white-black circular ball/waves logo. Club Facebook and North Fork Sun story corroborate local youth club. Short portal North Fork name requires alias review. Excluded North Shore United and North Union clubs.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKGFqjG5HX-G9T9Gciztr2jfQ-aAtQd_bcOI-ai5gT7w&s=10"
+    },
+    {
+      "submitted_name": "North Haven Soccer Club",
+      "portal_club_id": "directory-north-haven-soccer-club",
+      "portal_name": "North Haven Soccer Club",
+      "portal_area": "Connecticut",
+      "portal_sources": [
+        "CJSA"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Image is a soft 139×131 Google thumbnail; request the clean original.",
+      "archive_path": "candidates/north_haven_soccer_club.jpg",
+      "width": 139,
+      "height": 131,
+      "sha256": "9f90460e86d048621b00474a8243e9c499fa3ab39356ce6a2348adfe950b0a6f",
+      "source_note": "Google Images official North Haven Soccer Club Sports Connect store/home: maroon-white shield ball ribbon Est1971. 2026 camp and Friday Night Skills flyers match. Thumbnail has background and softness; request clean club original. Excluded older metallic NHSC round logo, school NH monogram and team Heat flaming ball.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS409XHBYF5sWJ4LCMUHFccRftlNxRTLcXDl4l3YK2mOw&s=10"
+    },
+    {
+      "submitted_name": "North Shore Soccer Club",
+      "portal_club_id": "directory-north-shore-soccer-club",
+      "portal_name": "North Shore Soccer Club",
+      "portal_area": "Long Island",
+      "portal_sources": [
+        "LIJSL"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Confirm current maroon and gold shield versus older round wordmark.",
+      "archive_path": "candidates/north_shore_soccer_club.png",
+      "width": 247,
+      "height": 300,
+      "sha256": "60411278c15e0a991a26ddb635612011185c684adf66e7b3c9fd1a847f3a9481",
+      "source_note": "Recovered lost batch13 target through fresh Google Images. Official North Shore Soccer Club About page newer maroon-gold shield, 1973, ball and waves. Glen Head NY Facebook has older round wordmark variant. Preferred current version should be confirmed. Excluded North Shore United, Houston FC and school Viking.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy-m6U6WUyxJtpEQ-j4BUocB1FPMyBQ_hvqKO7xf0khQ&s=10"
+    },
+    {
+      "submitted_name": "North Star",
+      "portal_club_id": "directory-north-star",
+      "portal_name": "North Star",
+      "portal_area": "Area to confirm",
+      "portal_sources": [
+        "EDP North Atlantic",
+        "NYCSL"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Portal location is unverified; confirm this is North Star Soccer New York.",
+      "archive_path": "candidates/north_star.jpg",
+      "width": 445,
+      "height": 449,
+      "sha256": "1cc20d0e99d432acec562606d2c71b3b9ab53961c008c9a2e86353811b99ab4c",
+      "source_note": "Google Images North Star Soccer New York NY Facebook: navy-green-gold star and ball shield NEW YORK. SportsEngine North Star Soccer New York listing has older green shield. Portal only says North Star, so identity is provisional and needs town/URL confirmation. Excluded Minnesota North Star FC, Premier compass and other Northstars academies.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEllitbNpVI23JxAhQEGa8faoJa_oZ8wXSq8jITi6d3g&s=10"
+    },
+    {
+      "submitted_name": "Northeast United Soccer Club",
+      "portal_club_id": "directory-northeast-united-soccer-club",
+      "portal_name": "Northeast United Soccer Club",
+      "portal_area": "Connecticut",
+      "portal_sources": [
+        "CJSA"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Confirm portal club is the Storrs CT Premier Soccer organization; image is soft.",
+      "archive_path": "candidates/northeast_united_soccer_club.jpg",
+      "width": 447,
+      "height": 447,
+      "sha256": "7b0a370542dab882715ebb96529d9be959ae4f6b3952c475405c3200b8859e05",
+      "source_note": "Google Images Northeast United Premier Soccer Club Storrs CT Facebook: navy-red-white NEU Premier Soccer shield with three balls. Official northeastunited.org matches; Connecticut context supported. Thumbnail dark/soft needs clean original. Excluded NECONN United, Minnesota North East United and Indian professional club.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQde9p_D5IiqiuXSvhNY0W1ugUYE9QVgeEJ4iyNGneVKQ&s=10"
+    },
+    {
+      "submitted_name": "Northern United Soccer Club",
+      "portal_club_id": "directory-northern-united-soccer-club",
+      "portal_name": "Northern United Soccer Club",
+      "portal_area": "Capital District",
+      "portal_sources": [
+        "Capital District"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Confirm two-star red and black crest is current; official header appears maroon and starless.",
+      "archive_path": "candidates/northern_united_soccer_club.jpg",
+      "width": 447,
+      "height": 447,
+      "sha256": "d94bf8dd85706161fd5979d92d2e1b053b3513b71bfc4feb4209ac12a0764c26",
+      "source_note": "Google Images @northernutdsc Instagram Queensbury NY: red-black-white flying-ball shield with two gold stars. Official northernunitedsc.com and NY Facebook corroborate; official header/Facebook appear maroon and starless, so exact current version needs review. Excluded Minnesota North United and orange NUFC namesake.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwg-n9iYR5Ublbr3syWiwIfIlGu1zMNzdUCpn2Yzw_Mg&s=10"
+    },
+    {
+      "submitted_name": "Northwest United Soccer Club",
+      "portal_club_id": "directory-northwest-united-soccer-club",
+      "portal_name": "Northwest United Soccer Club",
+      "portal_area": "Connecticut",
+      "portal_sources": [
+        "CJSA"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Original-host image was not obtained; supplied file is a 130×133 Google thumbnail.",
+      "archive_path": "candidates/northwest_united_soccer_club.png",
+      "width": 130,
+      "height": 133,
+      "sha256": "7e2f51cb3fc7f1268ffd4f06262c6c160435ac25f51683599336ace7b2052e12",
+      "source_note": "Google Images official The Club page https://clubs.bluesombrero.com/Default.aspx?tabid=927411. Directly viewed source confirms Northwest United CT serving Salisbury Sharon Kent Canaan Falls Village Cornwall. Navy-grey wolf-ball shield EST2010 is displayed in its header. Original-host image download timed out, Google thumbnail saved instead. Excluded Skagit red tulip and unrelated league marks.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJqJN6JAsUmvpw8wL-EFAO-S5p8I_4RlgUoeUJTxTlxw&s"
+    },
+    {
+      "submitted_name": "Norwalk Junior Soccer",
+      "portal_club_id": "directory-norwalk-junior-soccer",
+      "portal_name": "Norwalk Junior Soccer",
+      "portal_area": "Connecticut",
+      "portal_sources": [
+        "CJSA"
+      ],
+      "match_basis": "exact portal name",
+      "manifest_status": "review_candidate",
+      "current_logo_path": null,
+      "decision": "hold_for_review",
+      "review_question": "Official club material appears to match, but package still marks this Google thumbnail review_candidate.",
+      "archive_path": "candidates/norwalk_junior_soccer.jpg",
+      "width": 554,
+      "height": 554,
+      "sha256": "84d2e1a6b73d8e39e30da63ba144ae57a699175d792f5dbe7b1eafb24a18d109",
+      "source_note": "Recovered fourth lost batch13 download from fresh Google Images. Official NJSA cropped-NJSA-NEW-LOGO-2017 image page: red-blue-white circular N and star-ball crest. Official 2026/27 travel flyer and merchandise confirm continued regular mark use. Excluded 50th-anniversary 1975-2025 frame, Norwalk Community and purple Norwalk Soccer Club.",
+      "source_page": null,
+      "retrieval_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKd9uhzv2c05eeVdmNnbPFv7rWjSc71X0tD73_gtisLQ&s=10"
+    }
+  ],
+  "holdouts": [
+    {
+      "club": "NoSto Youth Soccer",
+      "reason": "Revisited NoSto, North Stonington NoSto, and quoted North Stonington soccer queries. No exact youth club logo. Results are unrelated North Olmsted/Novato and Stonington Soccer Club or Wheeler school; do not substitute. Need exact club URL or original attachment.",
+      "portal_club_id": "directory-nosto-youth-soccer",
+      "decision": "no_image_in_archive"
+    },
+    {
+      "club": "Norwalk Community Soccer Club",
+      "reason": "Two fresh Google Images queries identify norwalkcsc.org, CT Facebook and ActivityHero, but only team photos or cropped wordmark/flyers. Do not substitute NJSA round logo, unrelated purple Norwalk Soccer Club or Norwalk FC partner shield. Needs clean NCSC wordmark/logo attachment.",
+      "portal_club_id": "directory-norwalk-community-soccer-club",
+      "decision": "no_image_in_archive"
+    }
+  ]
+}

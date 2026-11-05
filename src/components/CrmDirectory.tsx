@@ -19,7 +19,7 @@ export function CrmDirectory({ clubs, reps }: { clubs: CrmClub[]; reps: { id: st
   const [owner, setOwner] = useState("");
   const sources = [...new Set(clubs.flatMap(club => club.sources ? club.sources.split(" · ") : []))].sort();
   const visible = clubs.filter(club =>
-    club.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())
+    (club.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()) || club.aliases.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
     && (!segment || club.segment === segment)
     && (!area || club.area === area)
     && (!source || club.sources.split(" · ").includes(source))

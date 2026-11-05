@@ -143,7 +143,7 @@ export const workbookClubs2026 = [
   {"id":"directory-east-meadow-soccer-club","name":"East Meadow Soccer Club","sources":["EDP North Atlantic","EDP Tri State","LIJSL","NYCSL"],"area":"Long Island","area_basis":"League sheet (provisional)"},
   {"id":"directory-east-ramapo","name":"East Ramapo","sources":["EDP North Atlantic","NYCSL","Westchester YSL"],"area":"Westchester","area_basis":"League sheet (provisional)"},
   {"id":"directory-east-windsor-soccer-club","name":"East Windsor Soccer Club","sources":["CJSA"],"area":"Connecticut","area_basis":"League sheet (provisional)"},
-  {"id":"directory-eastchester","name":"Eastchester","sources":["EDP North Atlantic","EDP Tri State","Westchester YSL"],"area":"Westchester","area_basis":"League sheet (provisional)"},
+  {"id":"eysa","name":"Eastchester","sources":["EDP North Atlantic","EDP Tri State","Westchester YSL"],"area":"Westchester","area_basis":"League sheet (provisional)"},
   {"id":"eastern-fc","name":"Eastern FC","sources":["CJSL","EDP North Atlantic"],"area":"Area to confirm","area_basis":"Unverified"},
   {"id":"directory-eastern-pike-youth-soccer-club","name":"Eastern Pike Youth Soccer Club","sources":["Hudson Valley Soccer League"],"area":"Hudson Valley","area_basis":"League sheet (provisional)"},
   {"id":"directory-eastern-queens-fc","name":"Eastern Queens FC","sources":["CJSL"],"area":"Queens","area_basis":"Club name (provisional)"},

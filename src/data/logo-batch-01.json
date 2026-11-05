@@ -1,0 +1,1875 @@
+{
+  "batch": "YSP_Logos_Batch_01_2026-11-05",
+  "source_archive": "YSP_Logos_Batch_01_2026-11-05.zip",
+  "source_manifest": "manifest.json",
+  "decisions": {
+    "add_to_placeholder": 48,
+    "keep_existing_same_mark_higher_resolution": 2,
+    "hold_ambiguous_existing_records": 0
+  },
+  "logos": [
+    {
+      "club_name_exact": "5 Star Soccer Academy",
+      "location": "Astoria, Queens, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/5-star-soccer-academy--b1b292003779.png",
+      "source_url": "https://www.5starsocceracademy.com/",
+      "source_image_url": "https://static.wixstatic.com/media/163ef8_8969615e48214912a0a0e12190bf1adb~mv2_d_2550_2538_s_4_2.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.5starsocceracademy.com/"
+      ],
+      "identity_evidence_summary": "The official academy homepage identifies its Astoria, Queens location and displays the 5 Star mark.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Astoria NYC identity; full original PNG.",
+      "format": "PNG",
+      "native_dimensions": "2550 x 2538",
+      "width_px": 2550,
+      "height_px": 2538,
+      "transparency": "Present; preserved",
+      "bytes": 220002,
+      "sha256": "b1b2920037793062e1d7635566ccac008bc29f78e85b5e0f234f72c58506e3d8",
+      "submitted_entry_ids": "B9-002",
+      "portal_club_id": "directory-5-star-soccer-academy",
+      "portal_candidate_ids": [
+        "directory-5-star-soccer-academy"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/5-star-soccer-academy--b1b292003779.png"
+    },
+    {
+      "club_name_exact": "Ajax",
+      "location": "Bristol, Connecticut, USA",
+      "known_aliases": [
+        "AJAX Premier"
+      ],
+      "image_filename": "logos/ajax--d21933a51277.png",
+      "source_url": "https://wronasoccer.com/",
+      "source_image_url": "https://wronasoccer.com/wp-content/uploads/2022/09/ajax-premier-white.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://wronasoccer.com/"
+      ],
+      "identity_evidence_summary": "The official Leszek Wrona Soccer Academy homepage identifies AJAX Premier as its competitive programme and supplies its Bristol, Connecticut address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Connecticut AJAX Premier only. Not Amsterdam Ajax or Berkshire Ajax. White crest needs a dark background.",
+      "image_quality_notes": "Connecticut AJAX Premier at Leszek Wrona Soccer Academy; white crest requires dark background. Not Amsterdam Ajax.",
+      "format": "PNG",
+      "native_dimensions": "307 x 316",
+      "width_px": 307,
+      "height_px": 316,
+      "transparency": "Present; preserved",
+      "bytes": 56568,
+      "sha256": "d21933a51277132cddc722679c3a55a506f30161605458a7bf036b9ba76b4a9d",
+      "submitted_entry_ids": "B8-002",
+      "portal_club_id": "directory-ajax",
+      "portal_candidate_ids": [
+        "directory-ajax"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/ajax--d21933a51277.png"
+    },
+    {
+      "club_name_exact": "Alba",
+      "location": "Bronx, New York, USA",
+      "known_aliases": [
+        "Alba Soccer Club",
+        "Alba FC"
+      ],
+      "image_filename": "logos/alba--c68ea7fa38cc.png",
+      "source_url": "https://www.albasoccer.com/alba-fc",
+      "source_image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72s5Db_j94hmhD3JAgUk2vYmEKbDfMl8AsfFBIQF2wY70_HziCNPbXJQQgj43-QbOcZB4DErooA-s1Jl4RsvNfKppTiynoK_Q2g7zebQsNWzbMovPqAowaujK5Grkj1ZZA_0iJT5N6NjylXgzMFpFfELdn_5XYvzyRz5bKg1DpThV6ggaROvUIKs-LmrR4M=w16383",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.albasoccer.com/alba-fc"
+      ],
+      "identity_evidence_summary": "The official Alba page identifies the Bronx youth soccer club, its Alba FC name and WYSL travel programmes.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "The original is 100 by 99 pixels. Do not enlarge it.",
+      "image_quality_notes": "Official Bronx WYSL club; 100px source is small, replacement recommended for large display. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "100 x 99",
+      "width_px": 100,
+      "height_px": 99,
+      "transparency": "Present; preserved",
+      "bytes": 25010,
+      "sha256": "c68ea7fa38cc216c1a588008fc1437b5660c0dd6a388f37e1637d12ab7f80196",
+      "submitted_entry_ids": "B4-001",
+      "portal_club_id": "directory-alba",
+      "portal_candidate_ids": [
+        "directory-alba"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/alba--c68ea7fa38cc.png"
+    },
+    {
+      "club_name_exact": "Albertson Soccer Club",
+      "location": "Long Island, New York, USA",
+      "known_aliases": [
+        "Albertson Soccer",
+        "Albertson SC"
+      ],
+      "image_filename": "logos/albertson-soccer-club--556a94717e78.png",
+      "source_url": "https://albertsonsoccer.com/",
+      "source_image_url": "https://albertsonsoccer.com/wp-content/uploads/2018/05/ASC-LOGO.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://albertsonsoccer.com/",
+        "https://albertsonsoccer.com/wp-content/uploads/2024/04/Albertson-SC-NEAL.pdf"
+      ],
+      "identity_evidence_summary": "The official site names Albertson Soccer Club. Its official crest says Long Island New York; the club presentation distinguishes ASC from the separate SUSA pathway.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Albertson Soccer Club only. Do not use for an Albertson SUSA record.",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "250 x 280",
+      "width_px": 250,
+      "height_px": 280,
+      "transparency": "Present; preserved",
+      "bytes": 33093,
+      "sha256": "556a94717e78bda27293bfa92f1ef86769ad57645b49ba01765b8b632ab8974b",
+      "submitted_entry_ids": "B1-001",
+      "portal_club_id": "directory-albertson-soccer-club",
+      "portal_candidate_ids": [
+        "directory-albertson-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/albertson-soccer-club--556a94717e78.png"
+    },
+    {
+      "club_name_exact": "ALBION SC Brooklyn",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [
+        "Albion Brooklyn SC"
+      ],
+      "image_filename": "logos/albion-sc-brooklyn--01d893be4a62.png",
+      "source_url": "https://www.albionscbrooklyn.org/",
+      "source_image_url": "https://www.albionscbrooklyn.org/_templates/Home/images/logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.albionscbrooklyn.org/",
+        "https://raffle.albionscbrooklyn.org/"
+      ],
+      "identity_evidence_summary": "The Brooklyn-specific official site and crest identify the Brooklyn branch. Its linked official raffle site supplies a Brooklyn address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Brooklyn branch only. Do not use for other ALBION branches.",
+      "image_quality_notes": "Original PNG bytes preserved; extension matches actual detected format.",
+      "format": "PNG",
+      "native_dimensions": "290 x 330",
+      "width_px": 290,
+      "height_px": 330,
+      "transparency": "Present; preserved",
+      "bytes": 41194,
+      "sha256": "01d893be4a62b3421cea0ce6d21388f505968acfbe4e9bb0a9a8b07003a63652",
+      "submitted_entry_ids": "B2-001",
+      "portal_club_id": "directory-albion-sc-brooklyn",
+      "portal_candidate_ids": [
+        "directory-albion-sc-brooklyn"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/albion-sc-brooklyn--01d893be4a62.png"
+    },
+    {
+      "club_name_exact": "Asphalt Green",
+      "location": "New York City, New York, USA",
+      "known_aliases": [
+        "Asphalt Green Soccer Club"
+      ],
+      "image_filename": "logos/asphalt-green--e2d038c012f8.png",
+      "source_url": "https://www.agsoccerclub.com/",
+      "source_image_url": "https://static.wixstatic.com/media/97fb2c_2fbac604cedf4475a3960c73aa872b19~mv2.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.agsoccerclub.com/"
+      ],
+      "identity_evidence_summary": "The soccer-specific official site identifies Asphalt Green Soccer Club in New York City and lists Upper East Side and Brooklyn programmes.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Club-wide soccer mark. No separate campus record is inferred.",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant.",
+      "format": "PNG",
+      "native_dimensions": "2137 x 2138",
+      "width_px": 2137,
+      "height_px": 2138,
+      "transparency": "Present; preserved",
+      "bytes": 213739,
+      "sha256": "e2d038c012f838d842e2f7d5d994022e831f1a39284cfbc2c84a8a79d57c4a84",
+      "submitted_entry_ids": "B1-005",
+      "portal_club_id": "directory-asphalt-green",
+      "portal_candidate_ids": [
+        "directory-asphalt-green"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/asphalt-green--e2d038c012f8.png"
+    },
+    {
+      "club_name_exact": "Baldwin (LIJSL)",
+      "location": "Baldwin, New York, USA",
+      "known_aliases": [
+        "Baldwin Eagles Soccer Club",
+        "BESC"
+      ],
+      "image_filename": "logos/baldwin-lijsl--bdc315e0c5c9.png",
+      "source_url": "https://baldwineagles.us/",
+      "source_image_url": "https://baldwineagles.us/wp-content/uploads/2023/05/Logo_long4-e1683036589564.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://baldwineagles.us/"
+      ],
+      "identity_evidence_summary": "The official site names Baldwin Eagles Soccer Club and gives its Baldwin, New York address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Wide original canvas with substantial blank space is preserved.",
+      "image_quality_notes": "Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "600 x 211",
+      "width_px": 600,
+      "height_px": 211,
+      "transparency": "Present; preserved",
+      "bytes": 38814,
+      "sha256": "bdc315e0c5c9adcd3dbf383e8285487c3e4813e408a2da0e8ec4c21dd97a4d9f",
+      "submitted_entry_ids": "B3-004",
+      "portal_club_id": "directory-baldwin",
+      "portal_candidate_ids": [
+        "directory-baldwin"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/baldwin-lijsl--bdc315e0c5c9.png"
+    },
+    {
+      "club_name_exact": "Ball Masters",
+      "location": "Lower Manhattan, New York, USA",
+      "known_aliases": [
+        "Ball Masters Football Academy"
+      ],
+      "image_filename": "logos/ball-masters--213756ae4f4f.svg",
+      "source_url": "https://ballmasters.net/",
+      "source_image_url": "https://ballmasters.net/#inline-svg-bmlion",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://ballmasters.net/"
+      ],
+      "identity_evidence_summary": "The official academy site identifies Ball Masters Football Academy and gives Lower Manhattan, New York as its location.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Original inline SVG preserved, including intrinsic whitespace.",
+      "image_quality_notes": "Exact inline SVG extracted from official HTML; original viewBox 370x510, width140 without height may cause excess whitespace. Use aspect ratio 370:510 when embedding. Original SVG preserved; XML parsed and rendering checked. No scripts, event handlers or external resource links found. Preserve its viewBox and aspect ratio. Source has substantial intrinsic whitespace; the badge appears small within its original SVG canvas. No crop or alteration has been applied.",
+      "format": "SVG",
+      "native_dimensions": "Vector, original viewBox preserved",
+      "width_px": null,
+      "height_px": null,
+      "transparency": "SVG vector; original unpainted areas preserved",
+      "bytes": 5466,
+      "sha256": "213756ae4f4fe0f269a1eb7e30637fe4dc960d1f23a86302e9b46fc2d982bf47",
+      "submitted_entry_ids": "B1-008",
+      "portal_club_id": "directory-ball-masters",
+      "portal_candidate_ids": [
+        "directory-ball-masters"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/ball-masters--213756ae4f4f.svg"
+    },
+    {
+      "club_name_exact": "Ballston Spa",
+      "location": "Ballston Spa, New York, USA",
+      "known_aliases": [
+        "Ballston Spa Soccer Club",
+        "BSSC"
+      ],
+      "image_filename": "logos/ballston-spa--f87a59371291.png",
+      "source_url": "https://www.ballstonspasc.com/",
+      "source_image_url": "https://static.wixstatic.com/media/d7e2af_a26c2f54ec91486e801d7128789f2225~mv2.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.ballstonspasc.com/"
+      ],
+      "identity_evidence_summary": "The official club homepage identifies Ballston Spa Soccer Club and its service area in Ballston Spa, New York.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant.",
+      "format": "PNG",
+      "native_dimensions": "256 x 315",
+      "width_px": 256,
+      "height_px": 315,
+      "transparency": "Present; preserved",
+      "bytes": 142119,
+      "sha256": "f87a593712913cec1054d1c996494e4f37b649d9c98a21cbfc23a800ab67d018",
+      "submitted_entry_ids": "B1-009",
+      "portal_club_id": "directory-ballston-spa",
+      "portal_candidate_ids": [
+        "directory-ballston-spa"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/ballston-spa--f87a59371291.png"
+    },
+    {
+      "club_name_exact": "Bedford",
+      "location": "Bedford, New York, USA",
+      "known_aliases": [
+        "Bedford Youth Soccer Club",
+        "BYSC"
+      ],
+      "image_filename": "logos/bedford--12843449d7ab.png",
+      "source_url": "https://bedfordyouthsoccerclub.teampages.com/",
+      "source_image_url": "https://bedfordyouthsoccerclub.teampages.com/p/organizations/19403/1791565227/message.pic",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://bedfordyouthsoccerclub.teampages.com/"
+      ],
+      "identity_evidence_summary": "The official TeamPages site explicitly identifies Bedford Youth Soccer Club in Bedford, NY and its in-house and travel programmes.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Very small original: 61 by 80 pixels. Do not enlarge it.",
+      "image_quality_notes": "Very small 61x80 crest; replacement recommended. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "61 x 80",
+      "width_px": 61,
+      "height_px": 80,
+      "transparency": "Present; preserved",
+      "bytes": 12232,
+      "sha256": "12843449d7ab9a0f7951437ac551790919f89fe99b48373912dd087cb716707e",
+      "submitted_entry_ids": "B1-012",
+      "portal_club_id": "directory-bedford",
+      "portal_candidate_ids": [
+        "directory-bedford"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/bedford--12843449d7ab.png"
+    },
+    {
+      "club_name_exact": "Berkshire Ajax Soccer Club",
+      "location": "Berkshire County, Massachusetts, USA",
+      "known_aliases": [
+        "Berkshire Ajax"
+      ],
+      "image_filename": "logos/berkshire-ajax-soccer-club--85b383664e5e.png",
+      "source_url": "https://www.berkshireajax.com/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/5dd6c7be81d01160099f186d/1576017740652-DJ5J434MSTS4CNB0WN25/berkshire+ajax.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.berkshireajax.com/",
+        "https://www.berkshireajax.com/our-facilities"
+      ],
+      "identity_evidence_summary": "The official site identifies Berkshire County’s club; its facilities page locates all home games and practices at Williams College fields in the Berkshires.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Distinct from AJAX Premier in Bristol, Connecticut.",
+      "image_quality_notes": "",
+      "format": "PNG",
+      "native_dimensions": "1202 x 1225",
+      "width_px": 1202,
+      "height_px": 1225,
+      "transparency": "Present; preserved",
+      "bytes": 85942,
+      "sha256": "85b383664e5ebf60643ce2346ecd28acce584d4bfcbbdf5853b1e65127fbea9d",
+      "submitted_entry_ids": "B7-002",
+      "portal_club_id": "directory-berkshire-ajax-soccer-club",
+      "portal_candidate_ids": [
+        "directory-berkshire-ajax-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/berkshire-ajax-soccer-club--85b383664e5e.png"
+    },
+    {
+      "club_name_exact": "Blau Weiss Gottschee",
+      "location": "Middle Village, Queens, New York, USA",
+      "known_aliases": [
+        "Blau Weiss Gottschee Soccer Club",
+        "BW Gottschee"
+      ],
+      "image_filename": "logos/blau-weiss-gottschee--5c758a13fc44.png",
+      "source_url": "https://www.bwgottschee.org/team/girls",
+      "source_image_url": "https://www.bwgottschee.org/largest-logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.bwgottschee.org/team/girls",
+        "https://www.bwgottschee.org/"
+      ],
+      "identity_evidence_summary": "The official club homepage explicitly identifies the youth club as based in Middle Village, Queens, New York.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "The source page is a girls-programme page, but the file is the common official club crest, also displayed on the club homepage.",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant.",
+      "format": "PNG",
+      "native_dimensions": "1280 x 1280",
+      "width_px": 1280,
+      "height_px": 1280,
+      "transparency": "Present; preserved",
+      "bytes": 86853,
+      "sha256": "5c758a13fc449a9ca1aa04d0ea4b8a50c2929c312bfe677e08e10c9346e96669",
+      "submitted_entry_ids": "B1-016",
+      "portal_club_id": "directory-blau-weiss-gottschee",
+      "portal_candidate_ids": [
+        "directory-blau-weiss-gottschee"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/blau-weiss-gottschee--5c758a13fc44.png"
+    },
+    {
+      "club_name_exact": "Blessed Sacrament",
+      "location": "Staten Island, New York, USA",
+      "known_aliases": [
+        "Blessed Sacrament Soccer"
+      ],
+      "image_filename": "logos/blessed-sacrament--e3e2d926ec04.png",
+      "source_url": "https://www.siysl.org/about-us/member-clubs",
+      "source_image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72u8R6yzN_ZLJ4gnf3oDpWAokGsMEzQ-0QzdGfiiwdaX2LH-_CIU92nv9Vu5nHtdR1jCRa3wUfUqZogWHxp9NbQS2jOxBG_ZQLCHGaFoWHcCQxIL9ikvs5F5Iz3GjYjEOfIdNvycwIAA2Gh6XcslX0aA63oJLIs68czfpfwdJcGY-w00wFnGU6b3znrP8jI=w1280",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.siysl.org/about-us/member-clubs",
+        "https://www.siysl.org/"
+      ],
+      "identity_evidence_summary": "The official Staten Island Youth Soccer League member directory pairs Blessed Sacrament Soccer with the soccer-labelled crest. The league homepage establishes the Staten Island scope.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Soccer member-club mark only. No generic parish or school athletics mark substituted.",
+      "image_quality_notes": "League-listed mark; some school/parish marks represent broader athletics, not exclusively soccer. Soccer-labelled mark as displayed in the official SIYSL member directory; no broader school/athletics substitution included.",
+      "format": "PNG",
+      "native_dimensions": "1280 x 1280",
+      "width_px": 1280,
+      "height_px": 1280,
+      "transparency": "No transparency in source",
+      "bytes": 366100,
+      "sha256": "e3e2d926ec04522ae6b0ee329c574552366e315bb3addcb9f306d96036ac5583",
+      "submitted_entry_ids": "B6-001",
+      "portal_club_id": "directory-blessed-sacrament",
+      "portal_candidate_ids": [
+        "directory-blessed-sacrament"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/blessed-sacrament--e3e2d926ec04.png"
+    },
+    {
+      "club_name_exact": "Brentwood SC (LIJSL)",
+      "location": "Brentwood, New York, USA",
+      "known_aliases": [
+        "Brentwood Youth Soccer Club, Inc.",
+        "Brentwood SC",
+        "Brentwood Soccer"
+      ],
+      "image_filename": "logos/brentwood-sc-lijsl--2484ddaddae4.png",
+      "source_url": "https://brentwoodyouthsoccer.com/",
+      "source_image_url": "https://brentwoodyouthsoccer.com/wp-content/uploads/2018/06/logo-130.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://brentwoodyouthsoccer.com/"
+      ],
+      "identity_evidence_summary": "The official club homepage gives Brentwood Youth Soccer Club, Inc. and a Brentwood, New York address, and uses Brentwood SC in club announcements.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Small native source; unchanged bytes and aspect ratio. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "130 x 130",
+      "width_px": 130,
+      "height_px": 130,
+      "transparency": "Present; preserved",
+      "bytes": 25508,
+      "sha256": "2484ddaddae47560d20ebb65f10aaf2b9bf4a428ba81ff19888461557c2b7587",
+      "submitted_entry_ids": "B2-005",
+      "portal_club_id": "directory-brentwood-sc",
+      "portal_candidate_ids": [
+        "directory-brentwood-sc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/brentwood-sc-lijsl--2484ddaddae4.png"
+    },
+    {
+      "club_name_exact": "Brewster FC",
+      "location": "Brewster, New York, USA",
+      "known_aliases": [
+        "Brewster F.C."
+      ],
+      "image_filename": "logos/brewster-fc--b49e925cc94d.png",
+      "source_url": "https://brewsterfc.org/",
+      "source_image_url": "https://brewsterfc.org/wp-content/uploads/2026/06/BCFFBADD-447A-46C5-8410-27B3FD1DA963-e1782577550123.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://brewsterfc.org/",
+        "https://brewsterfc.org/contact-us/"
+      ],
+      "identity_evidence_summary": "The official club contact page gives Brewster FC and a Brewster, NY address. The site distinguishes its in-house and travel programmes under the same club.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Small source resolution; suitable only for small display. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "125 x 123",
+      "width_px": 125,
+      "height_px": 123,
+      "transparency": "Present; preserved",
+      "bytes": 23569,
+      "sha256": "b49e925cc94d4bda55d1aa3c2af0a06cfe42be4647aa278cc4fd2f9aeb8ce55c",
+      "submitted_entry_ids": "B2-006",
+      "portal_club_id": "directory-brewster-fc",
+      "portal_candidate_ids": [
+        "directory-brewster-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/brewster-fc--b49e925cc94d.png"
+    },
+    {
+      "club_name_exact": "Briarcliff",
+      "location": "Briarcliff Manor, New York, USA",
+      "known_aliases": [
+        "Briarcliff Youth Soccer Club",
+        "BYSC"
+      ],
+      "image_filename": "logos/briarcliff--d9017b9b01b4.png",
+      "source_url": "https://www.briarcliffsoccer.org/",
+      "source_image_url": "https://www.briarcliffsoccer.org/bysc-logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.briarcliffsoccer.org/"
+      ],
+      "identity_evidence_summary": "The official homepage explicitly identifies Briarcliff Manor, NY and Briarcliff Youth Soccer Club, with the matching BYSC crest.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "",
+      "format": "PNG",
+      "native_dimensions": "352 x 370",
+      "width_px": 352,
+      "height_px": 370,
+      "transparency": "Present; preserved",
+      "bytes": 147052,
+      "sha256": "d9017b9b01b4eb467a8d5936fa8c2e395e26f5b009f10d730b141bc2bd55e18f",
+      "submitted_entry_ids": "B4-003",
+      "portal_club_id": "directory-briarcliff",
+      "portal_candidate_ids": [
+        "directory-briarcliff"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/briarcliff--d9017b9b01b4.png"
+    },
+    {
+      "club_name_exact": "Bridgeview Soccer Academy",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/bridgeview-soccer-academy--1adecbfa78e5.webp",
+      "source_url": "https://www.bridgeviewsoccer.com/",
+      "source_image_url": "https://www.bridgeviewsoccer.com/themes/go/assets/images/logo.webp",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.bridgeviewsoccer.com/"
+      ],
+      "identity_evidence_summary": "The official Bridgeview Soccer Academy homepage explicitly locates the academy in Brooklyn.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Small original: 208 by 252 pixels. White castle detail needs a suitable background.",
+      "image_quality_notes": "Small 208x252 header image; white castle detail blends into light backgrounds. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "WEBP",
+      "native_dimensions": "208 x 252",
+      "width_px": 208,
+      "height_px": 252,
+      "transparency": "Present; preserved",
+      "bytes": 28626,
+      "sha256": "1adecbfa78e50cc1506f3cee13c303cb318b110213947c53f4bd76eb777d1434",
+      "submitted_entry_ids": "B1-017",
+      "portal_club_id": "directory-bridgeview-soccer-academy",
+      "portal_candidate_ids": [
+        "directory-bridgeview-soccer-academy"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/bridgeview-soccer-academy--1adecbfa78e5.webp"
+    },
+    {
+      "club_name_exact": "Brooklyn Italians",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [
+        "Brooklyn Italians Soccer Club"
+      ],
+      "image_filename": "logos/brooklyn-italians--bd43dd2b3557.png",
+      "source_url": "https://www.brooklynitalians.org/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/5e8f500a4cf532032c6e8505/8035de5d-2da8-43af-a1d9-00f96b700bf2/BrooklynItalians_Primary_Logo.webp?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.brooklynitalians.org/"
+      ],
+      "identity_evidence_summary": "The official Brooklyn Italians website identifies the soccer club and its Brooklyn, New York base.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Original PNG bytes preserved; extension matches actual detected format.",
+      "format": "PNG",
+      "native_dimensions": "500 x 500",
+      "width_px": 500,
+      "height_px": 500,
+      "transparency": "Present; preserved",
+      "bytes": 40086,
+      "sha256": "bd43dd2b35575fab8466158196978e2b2f132a60313d2d96a3ba4b0c4e7cfbd8",
+      "submitted_entry_ids": "B2-008",
+      "portal_club_id": "directory-brooklyn-italians",
+      "portal_candidate_ids": [
+        "directory-brooklyn-italians"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/brooklyn-italians--bd43dd2b3557.png"
+    },
+    {
+      "club_name_exact": "Capital CIty FC",
+      "location": "Albany / Capital Region, New York, USA",
+      "known_aliases": [
+        "Capital City FC"
+      ],
+      "image_filename": "logos/capital-city-fc--a4a4645ee39c.png",
+      "source_url": "https://www.capcityfc.com/",
+      "source_image_url": "https://www.capcityfc.com/files/A_Transparent.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.capcityfc.com/",
+        "https://www.capcityfc.com/tryouts"
+      ],
+      "identity_evidence_summary": "The official tryouts page identifies the Capital Region club and gives its 2026-27 trial location in Albany, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Preserves the submitted capitalization Capital CIty FC. No unrelated Capital City club is matched.",
+      "image_quality_notes": "Capital Region identity additionally corroborated by official tryouts page, which locates the club in Albany, New York: https://www.capcityfc.com/tryouts",
+      "format": "PNG",
+      "native_dimensions": "1076 x 1201",
+      "width_px": 1076,
+      "height_px": 1201,
+      "transparency": "Present; preserved",
+      "bytes": 38442,
+      "sha256": "a4a4645ee39c62a118aff6b685fb79647134910fb495feee7968eb8a88ec5616",
+      "submitted_entry_ids": "B7-003",
+      "portal_club_id": "directory-capital-city-fc",
+      "portal_candidate_ids": [
+        "directory-capital-city-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/capital-city-fc--a4a4645ee39c.png"
+    },
+    {
+      "club_name_exact": "Caribbiana FC",
+      "location": "Hudson Valley, New York, USA",
+      "known_aliases": [
+        "Caribbiana Football Club"
+      ],
+      "image_filename": "logos/caribbiana-fc--00cc6aabbd2f.png",
+      "source_url": "https://www.caribbianafc.com/about",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/638c6fc35d25ea7a45633162/d137dd59-94d3-4455-a7b8-5932bbe009e2/Caribbiana+fc+logo3.png?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.caribbianafc.com/about"
+      ],
+      "identity_evidence_summary": "The official about page identifies the club’s Hudson Valley youth soccer service area. The original crest spells out Caribbiana Football Club.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Regional location only; no specific town is inferred.",
+      "image_quality_notes": "Official header crest; unchanged original",
+      "format": "PNG",
+      "native_dimensions": "500 x 500",
+      "width_px": 500,
+      "height_px": 500,
+      "transparency": "Present; preserved",
+      "bytes": 63125,
+      "sha256": "00cc6aabbd2f859f743ccce67bcf5774d37b14aee6be3ef0f9affdebdfcf285b",
+      "submitted_entry_ids": "B2-010",
+      "portal_club_id": "directory-caribbiana-fc",
+      "portal_candidate_ids": [
+        "directory-caribbiana-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/caribbiana-fc--00cc6aabbd2f.png"
+    },
+    {
+      "club_name_exact": "Cedar Stars Academy Hudson Valley",
+      "location": "Chester, Hudson Valley, New York, USA",
+      "known_aliases": [
+        "Cedar Stars Academy HV",
+        "Cedar Stars Hudson Valley"
+      ],
+      "image_filename": "logos/cedar-stars-academy-hudson-valley--b6cd5e854b57.png",
+      "source_url": "https://www.usl-youth.com/league-directory/",
+      "source_image_url": "https://www.usl-youth.com/wp-content/uploads/sites/150/2024/03/cedar_stars_rush_200x200.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.usl-youth.com/league-directory/",
+        "https://www.cedarstars.com/csa-hudson-valley"
+      ],
+      "identity_evidence_summary": "The official USL Youth directory pairs its saved crest with Cedar Stars Academy HV. The official Hudson Valley division page identifies this specific branch and Capelli Sport Complex in Chester.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Shared academy design, explicitly paired with Hudson Valley by the league source. Do not assign it to a different Cedar Stars branch.",
+      "image_quality_notes": "Official USL Youth directory pairs this crest with the named youth club. Original bytes retained. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "200 x 200",
+      "width_px": 200,
+      "height_px": 200,
+      "transparency": "Present; preserved",
+      "bytes": 6155,
+      "sha256": "b6cd5e854b57da910796abe95e8d5af648894c103120ba7c50295a2679bfdfee",
+      "submitted_entry_ids": "B1-019",
+      "portal_club_id": "directory-cedar-stars-academy-hudson-valley",
+      "portal_candidate_ids": [
+        "directory-cedar-stars-academy-hudson-valley"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/cedar-stars-academy-hudson-valley--b6cd5e854b57.png"
+    },
+    {
+      "club_name_exact": "Centaurus FC",
+      "location": "Upper East Side, Manhattan, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/centaurus-fc--5b1c6a3eec32.png",
+      "source_url": "https://www.jouksoccer.com/centaurus",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/5d0684b88252430001389412/77f431f5-c152-4731-9f5e-c83a7e910e27/Centaurus+logo_Main.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.jouksoccer.com/centaurus"
+      ],
+      "identity_evidence_summary": "The official JOÜK Centaurus page identifies Centaurus FC travel teams and says they train on New York’s Upper East Side.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Centaurus-specific crest. Do not substitute a generic JOÜK mark.",
+      "image_quality_notes": "Club-specific crest from JOÜK travel program page.",
+      "format": "PNG",
+      "native_dimensions": "1001 x 1001",
+      "width_px": 1001,
+      "height_px": 1001,
+      "transparency": "Present; preserved",
+      "bytes": 94359,
+      "sha256": "5b1c6a3eec32e94a5cb582097468c0b997a5af8ef905ba40fb8ec76f5de35cc4",
+      "submitted_entry_ids": "B9-009",
+      "portal_club_id": "directory-centaurus-fc",
+      "portal_candidate_ids": [
+        "directory-centaurus-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/centaurus-fc--5b1c6a3eec32.png"
+    },
+    {
+      "club_name_exact": "Central Brooklyn Soccer Club",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/central-brooklyn-soccer-club--c1592f747aa4.png",
+      "source_url": "https://www.centralbrooklynsoccerclub.com/residences-bryant",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/58ae01b16a49638da75866b3/1487800111346-6SJFFKRCBVQBU4BNCCRA/CBSClogo.png?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.centralbrooklynsoccerclub.com/residences-bryant"
+      ],
+      "identity_evidence_summary": "The official club about page identifies Central Brooklyn Soccer Club and says it serves youth in Brooklyn, New York City.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Original PNG bytes preserved. ",
+      "format": "PNG",
+      "native_dimensions": "1500 x 1500",
+      "width_px": 1500,
+      "height_px": 1500,
+      "transparency": "Present; preserved",
+      "bytes": 105698,
+      "sha256": "c1592f747aa403bef74e26c450dd67c5346c68e308338b002f23a9caffaf9c42",
+      "submitted_entry_ids": "B2-011",
+      "portal_club_id": "directory-central-brooklyn-soccer-club",
+      "portal_candidate_ids": [
+        "directory-central-brooklyn-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/central-brooklyn-soccer-club--c1592f747aa4.png"
+    },
+    {
+      "club_name_exact": "Chappaqua",
+      "location": "Chappaqua / Millwood, New York, USA",
+      "known_aliases": [
+        "Chappaqua Youth Soccer Club",
+        "CYSC"
+      ],
+      "image_filename": "logos/chappaqua--49758e559da1.png",
+      "source_url": "https://www.chappaquasoccer.org/",
+      "source_image_url": "https://www.chappaquasoccer.org/uploads/1/3/3/1/133129656/editor/chappaqua-sc-logo-white-clear-background-3.png?1664807039",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.chappaquasoccer.org/",
+        "https://www.chappaquasoccer.org/club-contacts--corporate-info.html"
+      ],
+      "identity_evidence_summary": "Official site names CYSC and Chappaqua Youth Soccer Club; corporate contact page gives Millwood, NY address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Distinct from the separately linked Chappaqua AYSO.",
+      "image_quality_notes": "Official Chappaqua Youth Soccer Club crest; small 206px source, avoid enlargement. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "206 x 224",
+      "width_px": 206,
+      "height_px": 224,
+      "transparency": "Present; preserved",
+      "bytes": 32296,
+      "sha256": "49758e559da141cba087139a551e8983273d4af6533358ac47fb5ddddb42762d",
+      "submitted_entry_ids": "B1-020",
+      "portal_club_id": "directory-chappaqua",
+      "portal_candidate_ids": [
+        "directory-chappaqua"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/chappaqua--49758e559da1.png"
+    },
+    {
+      "club_name_exact": "Chernomorets",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [
+        "Chernomorets USA",
+        "Black Sea Soccer Academy"
+      ],
+      "image_filename": "logos/chernomorets--63ffb7eb54e2.jpg",
+      "source_url": "https://www.chernomorets.org/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/5c5d06fc8dfc8c48c6be6577/d095aae4-480a-428e-8604-5fd0813a71b4/923434_563051430401231_1709973017_n+%281%29.jpg",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.chernomorets.org/"
+      ],
+      "identity_evidence_summary": "Saved official homepage identifies Chernomorets / Black Sea Soccer Academy and gives 336 Ave Y, Brooklyn, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Brooklyn club, not an overseas Chernomorets club.",
+      "image_quality_notes": "Brooklyn official club header mark; source white-background JPEG unchanged.",
+      "format": "JPEG",
+      "native_dimensions": "433 x 415",
+      "width_px": 433,
+      "height_px": 415,
+      "transparency": "No transparency in source",
+      "bytes": 40222,
+      "sha256": "63ffb7eb54e290eca9538492bc70aed57f723fe42114f96fd2252b8cb121eba9",
+      "submitted_entry_ids": "B9-010",
+      "portal_club_id": "directory-chernomorets",
+      "portal_candidate_ids": [
+        "directory-chernomorets"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/chernomorets--63ffb7eb54e2.jpg"
+    },
+    {
+      "club_name_exact": "Clifton Park",
+      "location": "Clifton Park, New York, USA",
+      "known_aliases": [
+        "Clifton Park Soccer Club"
+      ],
+      "image_filename": "logos/clifton-park--49de5ff73baa.png",
+      "source_url": "https://cliftonparksoccerclub.com/",
+      "source_image_url": "https://img1.wsimg.com/isteam/ip/de0c9a16-ee80-4cc9-800c-b418fdc2a577/Clifton%20Park%20Soccer%20Club%20Crest%20updated%20Sep%2030.png/:/rs=w:571,h:600,cg:true,m/cr=w:571,h:600/qt=q:95",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://cliftonparksoccerclub.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage explicitly describes youth and adult soccer programs in Clifton Park, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Official crest; original declared 3x image.",
+      "format": "PNG",
+      "native_dimensions": "571 x 600",
+      "width_px": 571,
+      "height_px": 600,
+      "transparency": "Present; preserved",
+      "bytes": 35712,
+      "sha256": "49de5ff73baa33293e3b4f2bffad00f9f336504ff3bb702f7a8b1ef368546f26",
+      "submitted_entry_ids": "B1-024",
+      "portal_club_id": "directory-clifton-park",
+      "portal_candidate_ids": [
+        "directory-clifton-park"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/clifton-park--49de5ff73baa.png"
+    },
+    {
+      "club_name_exact": "Cold Spring Harbor Huntington (LIJSL)",
+      "location": "Cold Spring Harbor / Huntington, New York, USA",
+      "known_aliases": [
+        "Cold Spring Harbor Huntington Soccer Club",
+        "CSHHSC"
+      ],
+      "image_filename": "logos/cold-spring-harbor-huntington-lijsl--ab2a403c6cf0.png",
+      "source_url": "https://cshh-soccer.ottosport.ai/",
+      "source_image_url": "https://cshh-soccer.ottosport.ai/_templates/Home/images/logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://cshh-soccer.ottosport.ai/",
+        "https://cshh-soccer.ottosport.ai/programs/-pre-travel-intramural/winter-soccer-pre-travel",
+        "https://www.sysl.org/wp-content/uploads/2026/05/Spring-2026-Travel-Schedule.pdf"
+      ],
+      "identity_evidence_summary": "Official club homepage identifies full club name and CSHHSC; official program page locates sessions in Huntington, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Cedar Stars partnership is not an alias or permission to substitute its crest.",
+      "image_quality_notes": "Small native source; unchanged bytes and aspect ratio. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "220 x 250",
+      "width_px": 220,
+      "height_px": 250,
+      "transparency": "Present; preserved",
+      "bytes": 44738,
+      "sha256": "ab2a403c6cf08cf0e54dd221a7f0716bbacd0cb095010867d0f9807acec61f10",
+      "submitted_entry_ids": "B1-025",
+      "portal_club_id": "directory-cold-spring-harbor-huntington",
+      "portal_candidate_ids": [
+        "directory-cold-spring-harbor-huntington"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/cold-spring-harbor-huntington-lijsl--ab2a403c6cf0.png"
+    },
+    {
+      "club_name_exact": "Colonie",
+      "location": "Colonie, New York, USA (Albany postal address)",
+      "known_aliases": [
+        "Colonie Soccer Club"
+      ],
+      "image_filename": "logos/colonie--594a617364f2.png",
+      "source_url": "https://coloniesoccer.org/",
+      "source_image_url": "https://coloniesoccer.org/wp-content/uploads/2025/05/cropped-New-CSC-Logo-2025.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://coloniesoccer.org/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names Colonie Soccer Club and lists Lisha Kill Sports Complex, 288 Consaul Road, Albany, NY 12205.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "",
+      "format": "PNG",
+      "native_dimensions": "512 x 512",
+      "width_px": 512,
+      "height_px": 512,
+      "transparency": "Present; preserved",
+      "bytes": 105697,
+      "sha256": "594a617364f2e48752920f392fee3b411d2c1bc1c68e56191cff9e077145cea4",
+      "submitted_entry_ids": "B7-027",
+      "portal_club_id": "directory-colonie",
+      "portal_candidate_ids": [
+        "directory-colonie"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/colonie--594a617364f2.png"
+    },
+    {
+      "club_name_exact": "Commack Soccer",
+      "location": "Commack, New York, USA",
+      "known_aliases": [
+        "Commack Soccer League"
+      ],
+      "image_filename": "logos/commack-soccer--20ffd7ae2394.png",
+      "source_url": "https://www.commacksoccer.com/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/5b7385f296e76f7df6fe92aa/1534534812801-8TDV06BLKGFBDD33KYMJ/CSL-Logo-200px.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.commacksoccer.com/",
+        "https://www.commacksoccer.com/fields",
+        "https://www.commacksoccer.com/scholarship26"
+      ],
+      "identity_evidence_summary": "Official fields page gives 202 Burr Road, Commack, NY; official scholarship page uses Commack Soccer League.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Small native source; unchanged bytes and aspect ratio. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "200 x 160",
+      "width_px": 200,
+      "height_px": 160,
+      "transparency": "Present; preserved",
+      "bytes": 30900,
+      "sha256": "20ffd7ae2394ebd36dfa749b819fb21cafe09f041f50a89c6885b323fc89e226",
+      "submitted_entry_ids": "B1-026",
+      "portal_club_id": "commack-soccer",
+      "portal_candidate_ids": [
+        "commack-soccer"
+      ],
+      "portal_existing_logo_path": "/club-logos/commack-soccer.png",
+      "decision": "keep_existing_same_mark_higher_resolution",
+      "portal_logo_path": "/club-logos/commack-soccer.png"
+    },
+    {
+      "club_name_exact": "Connetquot United Soccer Club (LIJSL)",
+      "location": "Ronkonkoma / Connetquot area, Long Island, New York, USA",
+      "known_aliases": [
+        "Connetquot United Soccer Club"
+      ],
+      "image_filename": "logos/connetquot-united-soccer-club-lijsl--68918ecc65e1.png",
+      "source_url": "https://www.nyempirefc.com/connetquot",
+      "source_image_url": "https://static.wixstatic.com/media/83ab02_9471274f6073408593d6f819173c20ac~mv2.png/v1/fill/w_186,h_189,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/27752021e959067abcb3aeff64cfc30e2698c8ba.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.nyempirefc.com/connetquot",
+        "https://soccer.travelsports.com/clubs/connetquot-united-soccer-club",
+        "https://www.sysl.org/wp-content/uploads/2026/05/Spring-2026-Travel-Schedule.pdf"
+      ],
+      "identity_evidence_summary": "NY Empire FC official partner page expressly identifies Connetquot United Soccer Club; current Sachem schedule places its teams in LIJSL; directory lists Ronkonkoma.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Image source is a club-specific partner page. Exact locality supported by secondary directory; no merger with similarly named youth associations inferred.",
+      "image_quality_notes": "Crest on official training partner NY Empire Connetquot-specific page; low resolution186x189. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "186 x 189",
+      "width_px": 186,
+      "height_px": 189,
+      "transparency": "No transparency in source",
+      "bytes": 36341,
+      "sha256": "68918ecc65e1dcbc3b4edad52379246fa304e8a39c4107ec8400df8a72b2744e",
+      "submitted_entry_ids": "B1-029",
+      "portal_club_id": "directory-connetquot-united-soccer-club",
+      "portal_candidate_ids": [
+        "directory-connetquot-united-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/connetquot-united-soccer-club-lijsl--68918ecc65e1.png"
+    },
+    {
+      "club_name_exact": "Coventry Soccer",
+      "location": "Coventry, Connecticut, USA",
+      "known_aliases": [
+        "Coventry Soccer, Inc."
+      ],
+      "image_filename": "logos/coventry-soccer--823a685f8152.png",
+      "source_url": "https://www.csisoccer.org/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/6a4f8fdc3c450a438f0f1791/c97a1412-32f6-4e33-87eb-7cbc2ec9ccbb/CSI+Logo+Transparent.png?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.csisoccer.org/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names Coventry Soccer, Inc. and gives Coventry, Connecticut 06238 postal address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Not Coventry, Rhode Island or UK namesakes.",
+      "image_quality_notes": "Coventry Connecticut; transparent crest.",
+      "format": "PNG",
+      "native_dimensions": "1500 x 1831",
+      "width_px": 1500,
+      "height_px": 1831,
+      "transparency": "Present; preserved",
+      "bytes": 175100,
+      "sha256": "823a685f8152a82209a622d9350e6236daa25db8fd2813aac70e8b182df4069d",
+      "submitted_entry_ids": "B8-037",
+      "portal_club_id": "directory-coventry-soccer",
+      "portal_candidate_ids": [
+        "directory-coventry-soccer"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/coventry-soccer--823a685f8152.png"
+    },
+    {
+      "club_name_exact": "Dynamo Soccer Club",
+      "location": "Sheepshead Bay, Brooklyn, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/dynamo-soccer-club--55d70d21f9f6.png",
+      "source_url": "https://www.dynamosoccerclub.com/",
+      "source_image_url": "https://static.wixstatic.com/media/227658_15b74ea5662c4b2e839a805f7f2c9b1d~mv2.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.dynamosoccerclub.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage explicitly identifies Brooklyn youth soccer club and describes founder establishing the Sheepshead Bay club in 1999.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Not Pittsburgh Dynamo or other Dynamo namesakes.",
+      "image_quality_notes": "Brooklyn club; not Virginia or California namesakes.",
+      "format": "PNG",
+      "native_dimensions": "1463 x 1741",
+      "width_px": 1463,
+      "height_px": 1741,
+      "transparency": "Present; preserved",
+      "bytes": 364705,
+      "sha256": "55d70d21f9f6e8dbbddc489da4c5516efed96591dc4781dc5260cef700f95f47",
+      "submitted_entry_ids": "B9-011",
+      "portal_club_id": "directory-dynamo-soccer-club",
+      "portal_candidate_ids": [
+        "directory-dynamo-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/dynamo-soccer-club--55d70d21f9f6.png"
+    },
+    {
+      "club_name_exact": "East Meadow Soccer Club",
+      "location": "East Meadow, Long Island, New York, USA (office: North Bellmore)",
+      "known_aliases": [
+        "East Meadow SC"
+      ],
+      "image_filename": "logos/east-meadow-soccer-club--05651fb25794.png",
+      "source_url": "https://www.eastmeadowsoccer.com/",
+      "source_image_url": "https://www.eastmeadowsoccer.com/_templates/Home-2024/images/logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.eastmeadowsoccer.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names East Meadow Soccer Club / East Meadow SC, shows LIJSL affiliation and gives 1836 Newbridge Road, North Bellmore, NY 11710.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Office mailing locality differs from club community name.",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant.",
+      "format": "PNG",
+      "native_dimensions": "320 x 320",
+      "width_px": 320,
+      "height_px": 320,
+      "transparency": "Present; preserved",
+      "bytes": 46993,
+      "sha256": "05651fb257941df327a0ee789a175b3e901fa725f8149ec6c1e6e958dc9b5c64",
+      "submitted_entry_ids": "B1-034",
+      "portal_club_id": "directory-east-meadow-soccer-club",
+      "portal_candidate_ids": [
+        "directory-east-meadow-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/east-meadow-soccer-club--05651fb25794.png"
+    },
+    {
+      "club_name_exact": "Eastchester",
+      "location": "Eastchester, New York, USA",
+      "known_aliases": [
+        "Eastchester Youth Soccer Association",
+        "EYSA",
+        "Eastchester Soccer Club",
+        "Eastchester Youth Soccer"
+      ],
+      "image_filename": "logos/eastchester--c07a6e8b9402.png",
+      "source_url": "https://eysoccer.com/",
+      "source_image_url": "https://eysoccer.com/wp-content/uploads/2019/03/eysLogo-1.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://eysoccer.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage explicitly states Eastchester Youth Soccer Association is the Eastchester Soccer Club and describes operation under Town of Eastchester Recreation Department.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Small 165px source image. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "165 x 165",
+      "width_px": 165,
+      "height_px": 165,
+      "transparency": "Present; preserved",
+      "bytes": 16275,
+      "sha256": "c07a6e8b940274e40687c15ad42e742df3e3f5c3c4a603c159da65f6c2b7d9e6",
+      "submitted_entry_ids": "B4-008",
+      "portal_club_id": "eysa",
+      "portal_candidate_ids": [
+        "eysa"
+      ],
+      "portal_existing_logo_path": "/club-logos/eysa.png",
+      "decision": "keep_existing_same_mark_higher_resolution",
+      "portal_logo_path": "/club-logos/eysa.png",
+      "merged_from_portal_club_id": "directory-eastchester"
+    },
+    {
+      "club_name_exact": "Elite Champions FC",
+      "location": "Queens, New York City, New York, USA (also serves Manhattan)",
+      "known_aliases": [
+        "ECFC"
+      ],
+      "image_filename": "logos/elite-champions-fc--e590e6345153.png",
+      "source_url": "https://www.elitechampions.org/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/6a149f617d8f00779bb3dd11/25282a91-3d11-40ea-9c5f-f928771234fb/Elite+Champions+FC-03.png?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.elitechampions.org/",
+        "https://www.cjslsoccer.com/news/cjsl-welcomes-elite-champions-fc"
+      ],
+      "identity_evidence_summary": "Official club site uses ECFC; CJSL welcome article confirms Queens-based academy serving Queens and Manhattan and names Bayside and Whitestone fields.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Queens/Manhattan academy confirmed by official CJSL welcome page.",
+      "format": "PNG",
+      "native_dimensions": "1500 x 1796",
+      "width_px": 1500,
+      "height_px": 1796,
+      "transparency": "Present; preserved",
+      "bytes": 95659,
+      "sha256": "e590e6345153de18204d16c1e71edefb80ff374a9e0368772da07f51b35daca8",
+      "submitted_entry_ids": "B9-013",
+      "portal_club_id": "directory-elite-champions-fc",
+      "portal_candidate_ids": [
+        "directory-elite-champions-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/elite-champions-fc--e590e6345153.png"
+    },
+    {
+      "club_name_exact": "Elwood (LIJSL)",
+      "location": "Elwood / Huntington, New York, USA",
+      "known_aliases": [
+        "Elwood Soccer Club",
+        "Elwood Youth Soccer Club",
+        "Elwood Soccer"
+      ],
+      "image_filename": "logos/elwood-lijsl--d95ad2de5abd.jpg",
+      "source_url": "https://elwoodsoccer.com/pages/about-elwood-soccer-ny",
+      "source_image_url": "https://elwoodsoccer.com/cdn/shop/files/1000033931.jpg?height=100&v=1758973931",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://elwoodsoccer.com/pages/about-elwood-soccer-ny",
+        "https://elwoodsoccer.com/blogs/our-programs/travel"
+      ],
+      "identity_evidence_summary": "Official about page identifies Elwood, NY and home fields in Huntington and East Northport; travel page explicitly confirms LIJSL.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Small native source; preserve original aspect ratio. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "JPEG",
+      "native_dimensions": "109 x 100",
+      "width_px": 109,
+      "height_px": 100,
+      "transparency": "No transparency in source",
+      "bytes": 7149,
+      "sha256": "d95ad2de5abd90385c2e8a0ffd79ccb7b2b279c2f7e3b5c032f79b85fe23b421",
+      "submitted_entry_ids": "B3-012",
+      "portal_club_id": "directory-elwood",
+      "portal_candidate_ids": [
+        "directory-elwood"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/elwood-lijsl--d95ad2de5abd.jpg"
+    },
+    {
+      "club_name_exact": "English American EAFC",
+      "location": "Westchester County, New York, USA",
+      "known_aliases": [
+        "English American Football Club",
+        "EAFC"
+      ],
+      "image_filename": "logos/english-american-eafc--e6385534552e.jpg",
+      "source_url": "https://linktr.ee/eafc.soccer",
+      "source_image_url": "https://ugc.production.linktr.ee/9474d305-ef79-468e-9e09-fde0710cc6be_ff73a7ef75fdbf53b0d3fe21041a1f49-tplv-tiktokx-cropcenter-1080-1080.jpeg?io=true&size=avatar-v3_0",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://linktr.ee/eafc.soccer"
+      ],
+      "identity_evidence_summary": "Official club social hub expressly identifies English American Football Club as a youth soccer club in Westchester, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Only county-level location verified.",
+      "image_quality_notes": "Club social hub identifies English American Football Club, Westchester NY. 200px JPEG avatar; small quality flag. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "JPEG",
+      "native_dimensions": "200 x 200",
+      "width_px": 200,
+      "height_px": 200,
+      "transparency": "No transparency in source",
+      "bytes": 15347,
+      "sha256": "e6385534552e4c0d27690bbd3256fc5595ab67101100fb40d8c17849d904e04a",
+      "submitted_entry_ids": "B1-039",
+      "portal_club_id": "directory-english-american-eafc",
+      "portal_candidate_ids": [
+        "directory-english-american-eafc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/english-american-eafc--e6385534552e.jpg"
+    },
+    {
+      "club_name_exact": "EPC-BK (Elite Players Center Brooklyn)",
+      "location": "Brooklyn, New York City, New York, USA",
+      "known_aliases": [
+        "Elite Players Center Brooklyn",
+        "EPCBK"
+      ],
+      "image_filename": "logos/epc-bk-elite-players-center-brooklyn--086fbf060620.png",
+      "source_url": "https://www.epcbrooklyn.org/tryouts",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/64585aff86b7aa00c679d35f/c492188d-f41d-4f39-9148-6fbd7b836573/epclogo.png?format=1500w",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.epcbrooklyn.org/tryouts"
+      ],
+      "identity_evidence_summary": "Saved official tryouts page names Elite Players Center Brooklyn, EPCBK and Parade Ground in Brooklyn.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Source page advertises UPSL team tryouts; identity and Brooklyn branch verified, but no distinct youth-only crest is claimed.",
+      "image_quality_notes": "Original PNG bytes preserved.  Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "258 x 225",
+      "width_px": 258,
+      "height_px": 225,
+      "transparency": "Present; preserved",
+      "bytes": 51877,
+      "sha256": "086fbf060620e79479c4e4f657c7a44a2a92e84842c3e6ae6a284d80818b1313",
+      "submitted_entry_ids": "B1-040",
+      "portal_club_id": "directory-epc-bk-elite-players-center-brooklyn",
+      "portal_candidate_ids": [
+        "directory-epc-bk-elite-players-center-brooklyn"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/epc-bk-elite-players-center-brooklyn--086fbf060620.png"
+    },
+    {
+      "club_name_exact": "Excelsior New York Academy",
+      "location": "Queens, New York City, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/excelsior-new-york-academy--84fb9c6a474b.png",
+      "source_url": "https://www.excelsiornysoccer.com/youth",
+      "source_image_url": "https://static.wixstatic.com/media/eb1976_5f7a27f5ce4742d795ef41705ba1a9c9~mv2.png/v1/fill/w_154,h_147,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ENY%20logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.excelsiornysoccer.com/youth"
+      ],
+      "identity_evidence_summary": "Saved official youth page is titled Youth Soccer Academy Queens and expressly names Excelsior New York Academy and its pathway to the first team.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Academy identity verified from youth-specific page; shared club crest is not a separate first-team record.",
+      "image_quality_notes": "Native original; small source. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "154 x 147",
+      "width_px": 154,
+      "height_px": 147,
+      "transparency": "Present; preserved",
+      "bytes": 34793,
+      "sha256": "84fb9c6a474bd36477d9292326b3a3371d3de35c9aa9c16ce65a369e843d7b71",
+      "submitted_entry_ids": "B3-013",
+      "portal_club_id": "directory-excelsior-new-york-academy",
+      "portal_candidate_ids": [
+        "directory-excelsior-new-york-academy"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/excelsior-new-york-academy--84fb9c6a474b.png"
+    },
+    {
+      "club_name_exact": "FC Westchester",
+      "location": "Westchester County, New York, USA",
+      "known_aliases": [
+        "FCW"
+      ],
+      "image_filename": "logos/fc-westchester--084c0f887dee.png",
+      "source_url": "https://fcwestchester.com/",
+      "source_image_url": "https://fcwestchester.com/wp-content/uploads/2023/06/cropped-fcw_logo23_852x867-1.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://fcwestchester.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage identifies FC Westchester New York and separately distinguishes Westchester and Hudson Valley pathways.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Westchester parent/main club only; do not relabel as FC Hudson Valley.",
+      "image_quality_notes": "Original bytes preserved. Current site asset, not a license grant.",
+      "format": "PNG",
+      "native_dimensions": "512 x 512",
+      "width_px": 512,
+      "height_px": 512,
+      "transparency": "Present; preserved",
+      "bytes": 66999,
+      "sha256": "084c0f887dee3aede9959b5c472d9d93e0bd40b58714c57d8796844dd1e19ccb",
+      "submitted_entry_ids": "B1-043",
+      "portal_club_id": "directory-fc-westchester",
+      "portal_candidate_ids": [
+        "directory-fc-westchester"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/fc-westchester--084c0f887dee.png"
+    },
+    {
+      "club_name_exact": "Floral Park (LIJSL)",
+      "location": "Floral Park, New York, USA",
+      "known_aliases": [
+        "Floral Park Soccer Club",
+        "FPSC"
+      ],
+      "image_filename": "logos/floral-park-lijsl--54eac639e057.png",
+      "source_url": "https://floralparksoccerclub.org/",
+      "source_image_url": "https://floralparksoccerclub.org/img/logos/Logo2026.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://floralparksoccerclub.org/",
+        "https://www.floralparksoccerclub.org/Fields"
+      ],
+      "identity_evidence_summary": "Saved official homepage identifies Floral Park Soccer Club / FPSC; official fields page gives Floral Park, NY 11001.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Soccer division of Floral Park Indians Athletic Club; the broader athletic club is not an interchangeable soccer alias.",
+      "image_quality_notes": "Original image bytes preserved. Native source has a dimension below 256 pixels; avoid enlargement.",
+      "format": "PNG",
+      "native_dimensions": "1200 x 1200",
+      "width_px": 1200,
+      "height_px": 1200,
+      "transparency": "Present; preserved",
+      "bytes": 313209,
+      "sha256": "54eac639e057506658972720ad227cd3c0f038159d934e83c3a82deef729d504",
+      "submitted_entry_ids": "B3-015",
+      "portal_club_id": "directory-floral-park",
+      "portal_candidate_ids": [
+        "directory-floral-park"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/floral-park-lijsl--54eac639e057.png"
+    },
+    {
+      "club_name_exact": "Force FC",
+      "location": "Monroe / Woodbury, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/force-fc--de05a8650104.png",
+      "source_url": "https://mwsoccer.com/",
+      "source_image_url": "https://mwsoccer.com/_templates/Home/images/logo-force.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://mwsoccer.com/"
+      ],
+      "identity_evidence_summary": "Saved official MW Soccer homepage identifies Force FC specifically as the competitive program within Monroe Woodbury United Soccer Club.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Do not substitute the adjacent MWUSC recreational logo; parent club name is not an exact alias.",
+      "image_quality_notes": "Force FC New York original, not MWUSC adjacent logo.",
+      "format": "PNG",
+      "native_dimensions": "440 x 300",
+      "width_px": 440,
+      "height_px": 300,
+      "transparency": "Present; preserved",
+      "bytes": 65688,
+      "sha256": "de05a865010434d9ec2a4a5a4c4ed31186fc7fb60df38e575a538d54986f870b",
+      "submitted_entry_ids": "B1-045",
+      "portal_club_id": "directory-force-fc",
+      "portal_candidate_ids": [
+        "directory-force-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/force-fc--de05a8650104.png"
+    },
+    {
+      "club_name_exact": "FSA FC",
+      "location": "Farmington, Connecticut, USA",
+      "known_aliases": [],
+      "image_filename": "logos/fsa-fc--a7a99fceafe1.png",
+      "source_url": "https://fsafc.com/",
+      "source_image_url": "https://b3430801.assetcdn.net/2.0/3430801/wp-content/uploads/2019/03/fsafclogo.png?lossy=2&strip=1&webp=1",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://fsafc.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage explicitly states FSA FC, established 2009, Farmington CT.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Original PNG bytes preserved; extension matches detected format.",
+      "format": "PNG",
+      "native_dimensions": "435 x 500",
+      "width_px": 435,
+      "height_px": 500,
+      "transparency": "Present; preserved",
+      "bytes": 41848,
+      "sha256": "a7a99fceafe1cdb0314bc0ede8d9b4cb206cd6612602d47504c99a460d9219f2",
+      "submitted_entry_ids": "B8-062",
+      "portal_club_id": "directory-fsa-fc",
+      "portal_candidate_ids": [
+        "directory-fsa-fc"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/fsa-fc--a7a99fceafe1.png"
+    },
+    {
+      "club_name_exact": "Future Stars Futbol",
+      "location": "Brooklyn, New York, USA",
+      "known_aliases": [],
+      "image_filename": "logos/future-stars-futbol--89a8036ad08f.png",
+      "source_url": "https://www.futurestarsfutbol.com/",
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/64b55ebd41e49a6ba77a6eb1/abc48a8d-8f0b-41c3-b1a2-07bee7c92ffa/FSF+White+Logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.futurestarsfutbol.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage footer states Future Stars Futbol, Brooklyn NY, established 2010.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "White transparent crest; use dark background.",
+      "format": "PNG",
+      "native_dimensions": "500 x 500",
+      "width_px": 500,
+      "height_px": 500,
+      "transparency": "Present; preserved",
+      "bytes": 129906,
+      "sha256": "89a8036ad08ff19d0b331dabcceed46caf4369266117627fd525a7c2dc804d48",
+      "submitted_entry_ids": "B1-047",
+      "portal_club_id": "directory-future-stars-futbol",
+      "portal_candidate_ids": [
+        "directory-future-stars-futbol"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/future-stars-futbol--89a8036ad08f.png"
+    },
+    {
+      "club_name_exact": "Galway",
+      "location": "Galway, New York, USA",
+      "known_aliases": [
+        "Galway Soccer Club"
+      ],
+      "image_filename": "logos/galway--dfb02c98c4e7.png",
+      "source_url": "https://galwaysoccerclub.com/",
+      "source_image_url": "https://img1.wsimg.com/isteam/ip/2ab50004-507b-46bb-8be2-be525c7838e7/Galway%20Soccer%20Club%20Logo-3a4cb7c.png/:/rs=h:316,cg:true,m/qt=q:95",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://galwaysoccerclub.com/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names Galway Soccer Club and gives 5078 Sacandaga Road, Galway, NY.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Not Galway, Ireland.",
+      "image_quality_notes": "",
+      "format": "PNG",
+      "native_dimensions": "313 x 316",
+      "width_px": 313,
+      "height_px": 316,
+      "transparency": "Present; preserved",
+      "bytes": 15763,
+      "sha256": "dfb02c98c4e737b8b45f5a27b7ced66ed5c605013bac5a00dd59861b6d509f17",
+      "submitted_entry_ids": "B7-022",
+      "portal_club_id": "directory-galway",
+      "portal_candidate_ids": [
+        "directory-galway"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/galway--dfb02c98c4e7.png"
+    },
+    {
+      "club_name_exact": "Glastonbury Hartwell Soccer Club",
+      "location": "Glastonbury, Connecticut, USA",
+      "known_aliases": [
+        "GHSC",
+        "Hartwell Soccer"
+      ],
+      "image_filename": "logos/glastonbury-hartwell-soccer-club--c8ace3594c6f.png",
+      "source_url": "https://www.glastonburysoccer.org/",
+      "source_image_url": "https://www.glastonburysoccer.org/_templates/Home/images/logo.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.glastonburysoccer.org/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names Glastonbury Hartwell Soccer Club, GHSC and Hartwell Soccer and lists Glastonbury, CT 06033 mailing address.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "",
+      "image_quality_notes": "Original bytes preserved; no license grant implied.",
+      "format": "PNG",
+      "native_dimensions": "370 x 320",
+      "width_px": 370,
+      "height_px": 320,
+      "transparency": "Present; preserved",
+      "bytes": 1761086,
+      "sha256": "c8ace3594c6f427bd808065d889f7b460fdd7a59926c56fe383cecb6d3150857",
+      "submitted_entry_ids": "B8-066",
+      "portal_club_id": "directory-glastonbury-hartwell-soccer-club",
+      "portal_candidate_ids": [
+        "directory-glastonbury-hartwell-soccer-club"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/glastonbury-hartwell-soccer-club--c8ace3594c6f.png"
+    },
+    {
+      "club_name_exact": "Global Foutbol Stars 11 Academy",
+      "location": "Spring Valley, New York, USA",
+      "known_aliases": [
+        "GFS 11 Academy",
+        "GFS11 Academy",
+        "Global Foutbòl Stars 11 Academy"
+      ],
+      "image_filename": "logos/global-foutbol-stars-11-academy--c3ea0bd7f2a0.png",
+      "source_url": "https://gfs11academy.com/",
+      "source_image_url": "https://gfs11academy.com/wp-content/uploads/2024/03/cropped-cropped-GSF-11-Mod-5.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://gfs11academy.com/",
+        "https://www.ncsanj.com/clubContactDetails.cfm?cid=282",
+        "https://gfs11academy.com/about/"
+      ],
+      "identity_evidence_summary": "Official website supplies GFS naming variants; NCSA club directory names the exact club, links gfs11academy.com and lists Spring Valley, NY 10977.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Exact submitted spelling Foutbol preserved.",
+      "image_quality_notes": "Official header crest; small 150x169. Native source has a dimension below 256 px; avoid enlargement and review at the intended display size.",
+      "format": "PNG",
+      "native_dimensions": "150 x 169",
+      "width_px": 150,
+      "height_px": 169,
+      "transparency": "Present; preserved",
+      "bytes": 11932,
+      "sha256": "c3ea0bd7f2a03502ac8075ca9a7afb7492848dfdab4e0b43cbd6719de1066b0c",
+      "submitted_entry_ids": "B1-050",
+      "portal_club_id": "directory-global-foutbol-stars-11-academy",
+      "portal_candidate_ids": [
+        "directory-global-foutbol-stars-11-academy"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/global-foutbol-stars-11-academy--c3ea0bd7f2a0.png"
+    },
+    {
+      "club_name_exact": "Gotham Girls",
+      "location": "New York City, New York, USA",
+      "known_aliases": [
+        "Gotham Girls FC",
+        "GGFC"
+      ],
+      "image_filename": "logos/gotham-girls--7776d9ff915b.png",
+      "source_url": "https://gothamgirls.org/",
+      "source_image_url": "https://gothamgirls.org/wp-content/uploads/2019/03/GGFC2color-01.png",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://gothamgirls.org/"
+      ],
+      "identity_evidence_summary": "Saved official homepage calls itself Gotham Girls FC / GGFC and a New York City girls soccer club.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Not the professional NJ/NY Gotham FC organization.",
+      "image_quality_notes": "Original PNG bytes preserved; visually verified.",
+      "format": "PNG",
+      "native_dimensions": "1475 x 1972",
+      "width_px": 1475,
+      "height_px": 1972,
+      "transparency": "Present; preserved",
+      "bytes": 141188,
+      "sha256": "7776d9ff915b2694e86d80727c5d935d9b0a806d0e0ee8d3c50a3f5828678cf6",
+      "submitted_entry_ids": "B2-026",
+      "portal_club_id": "directory-gotham-girls",
+      "portal_candidate_ids": [
+        "directory-gotham-girls"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/gotham-girls--7776d9ff915b.png"
+    },
+    {
+      "club_name_exact": "Great Kills",
+      "location": "Staten Island, New York City, New York, USA",
+      "known_aliases": [
+        "Great Kills Soccer Club"
+      ],
+      "image_filename": "logos/great-kills--1bd1b2316b5a.jpg",
+      "source_url": "https://www.siysl.org/about-us/member-clubs",
+      "source_image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uao5jA3Pj4UeF7hoka6YE-QGVopVsa3P2MBob7VPCaSSfzJXbV37bkiMRQ2jU2ytql42xiz7CTMkn6RQFtHhdK3sQ0aqU8MaU1twpO5y0cv-UZyCahK7JrxPz94iEzfqTYkcpNwxT7Vcei7AcTUZlPaT_v0vQGc7DcLNni9ur7KUJXHAsoEUlr3S9f4tzrksL8TeFXje13iliqPAuh8lYnCavNUuAwz0WTB2l-t1c=w1280",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://www.siysl.org/about-us/member-clubs",
+        "https://www.greatkillssoccer.com/"
+      ],
+      "identity_evidence_summary": "Saved official club homepage explicitly identifies Great Kills Soccer Club as a Staten Island recreational youth organization within SIYSL; packaged crest source is the SIYSL member directory.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Soccer-specific league-listed mark only; no broader athletics substitution.",
+      "image_quality_notes": "League-listed mark; some school/parish marks represent broader athletics, not exclusively soccer. Soccer-labelled mark as displayed in the official SIYSL member directory; no broader school/athletics substitution included.",
+      "format": "JPEG",
+      "native_dimensions": "453 x 453",
+      "width_px": 453,
+      "height_px": 453,
+      "transparency": "No transparency in source",
+      "bytes": 32645,
+      "sha256": "1bd1b2316b5ad85518fb21552a49154119ad2b9df834f9a98304e7c43ec6597a",
+      "submitted_entry_ids": "B6-002",
+      "portal_club_id": "directory-great-kills",
+      "portal_candidate_ids": [
+        "directory-great-kills"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/great-kills--1bd1b2316b5a.jpg"
+    },
+    {
+      "club_name_exact": "Green Warriors Soccer",
+      "location": "Southwestern Connecticut, USA (precise town unresolved)",
+      "known_aliases": [
+        "Green Warriors Soccer Academy",
+        "GWSA"
+      ],
+      "image_filename": "logos/green-warriors-soccer--337bcde48500.png",
+      "source_url": "https://greenwarriorssoccer.com/",
+      "source_image_url": "https://b3436134.assetcdn.net/2.0/3436134/wp-content/uploads/2023/07/greenwarriors-1.png?lossy=2&strip=1&webp=1",
+      "verification_status": "confirmed_club_and_branch",
+      "identity_evidence_urls": [
+        "https://greenwarriorssoccer.com/",
+        "https://www.swdcjsa.org/Default.aspx?tabid=928297",
+        "https://greenwarriorssoccer.com/contact-us-2/"
+      ],
+      "identity_evidence_summary": "Saved official homepage names Green Warriors Soccer Academy / GWSA. Southwest District CJSA club directory lists that club and links its exact official domain.",
+      "identity_checked_date_utc": "2026-11-05",
+      "image_source_collection_date": "2026-11-04",
+      "image_verification_basis": "Previously reviewed official-source original; byte identity, decoding and visual mapping rechecked for this batch.",
+      "branch_and_alias_caveats": "Secondary directories disagree between Norwalk and New Canaan; retain regional location rather than assert a town. Green Warriors SA is not separately verified as an alias.",
+      "image_quality_notes": "Official site identifies Green Warriors Soccer Academy; Green Warriors SA is a likely alias, not automatically merged.",
+      "format": "PNG",
+      "native_dimensions": "507 x 711",
+      "width_px": 507,
+      "height_px": 711,
+      "transparency": "Present; preserved",
+      "bytes": 63293,
+      "sha256": "337bcde48500ff6887cc1dea7b1059e0a242d5bc673ec6aca148108f1fa931b2",
+      "submitted_entry_ids": "B8-077",
+      "portal_club_id": "directory-green-warriors-soccer",
+      "portal_candidate_ids": [
+        "directory-green-warriors-soccer"
+      ],
+      "portal_existing_logo_path": null,
+      "decision": "add_to_placeholder",
+      "portal_logo_path": "/club-logos/green-warriors-soccer--337bcde48500.png"
+    }
+  ],
+  "review_without_images": [
+    {
+      "club_name_exact": "Bellport",
+      "location": "Not established for this batch",
+      "known_aliases": [
+        "Bellport Soccer Club"
+      ],
+      "image_filename": "",
+      "source_url": "https://www.bellportsoccer.com/",
+      "candidate_image_url": "https://static.wixstatic.com/media/3fcdcb_698bff64ace84109881f9ec0f6ed6794~mv2.png/v1/fill/w_118,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/belllport-travel-soccer-logoHD.png",
+      "verification_status": "review_required_not_included",
+      "review_reason": "The official site displays the saved crest under Travel and Pre-Travel, while Intramural has a different image. The submitted name Bellport does not establish which programme mark is intended.",
+      "next_step": "Confirm the intended programme and preferred club-wide mark. No image included.",
+      "evidence_urls": [
+        "https://www.bellportsoccer.com/",
+        "https://www.bellportsoccer.com/contact-9"
+      ]
+    },
+    {
+      "club_name_exact": "Capital District Youth Soccer League",
+      "location": "Not established for this batch",
+      "known_aliases": [
+        "CDYSL"
+      ],
+      "image_filename": "",
+      "source_url": "https://cdysl.ottosport.ai/",
+      "candidate_image_url": "https://cdysl.ottosport.ai/_templates/Home/images/logo.png",
+      "verification_status": "review_required_not_included",
+      "review_reason": "The official site identifies a youth soccer league, not a distinct club. Excluded from the club batch pending a decision on whether league records belong in this collection.",
+      "next_step": "League entry, not a club. No image included.",
+      "evidence_urls": [
+        "https://cdysl.ottosport.ai/"
+      ]
+    },
+    {
+      "club_name_exact": "Connecticut United FC",
+      "location": "Connecticut, USA; current club office in Stamford",
+      "known_aliases": [
+        "CT United FC"
+      ],
+      "image_filename": "",
+      "source_url": "https://ctunited.com/",
+      "candidate_image_url": "https://images.mlssoccer.com/image/upload/v1764624230/assets/mnp/club-logos/CT-United-Shield-Digital_fmufik.png",
+      "verification_status": "review_required_not_included",
+      "review_reason": "Saved official site establishes current Connecticut United FC / CT United FC, Stamford office, and academy menu.",
+      "next_step": "Current MLS NEXT Pro organization is identifiable, but submitted name alone does not establish whether the requested record means this academy or an older namesake. Hold for review; do not certify the historical identity.",
+      "evidence_urls": [
+        "https://ctunited.com/"
+      ]
+    },
+    {
+      "club_name_exact": "FC COPA",
+      "location": "New Jersey and Brooklyn, New York, USA; branch unresolved",
+      "known_aliases": [
+        "FC Copa Academy"
+      ],
+      "image_filename": "",
+      "source_url": "https://www.fccopa.com/",
+      "candidate_image_url": "https://static.wixstatic.com/media/333ccb_d1dfe882bd334df79cde01722489cb56~mv2.png/v1/fill/w_102,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/FCCOPANEWLOGO.png",
+      "verification_status": "review_required_not_included",
+      "review_reason": "Saved official homepage lists separate NJ Central, NJ West and NY Brooklyn programs.",
+      "next_step": "Submitted FC COPA does not identify branch. A generic shared crest is insufficient to select Brooklyn or either NJ branch.",
+      "evidence_urls": [
+        "https://www.fccopa.com/"
+      ]
+    },
+    {
+      "club_name_exact": "Ginga FC",
+      "location": "Connecticut, USA; branch unresolved",
+      "known_aliases": [],
+      "image_filename": "",
+      "source_url": "https://gingafc.com/tryouts/",
+      "candidate_image_url": "https://gingafc.com/wp-content/uploads/2023/03/1274568_510458712362873_459304618_o-1.png",
+      "verification_status": "review_required_not_included",
+      "review_reason": "Saved official tryouts page identifies Ginga FC, includes branches navigation and separate Coastal / Woodbridge registration references.",
+      "next_step": "Main organization branding verified, but no branch established for the submitted record; do not map to Coastal or Hamden United.",
+      "evidence_urls": [
+        "https://gingafc.com/tryouts/"
+      ]
+    }
+  ]
+}
