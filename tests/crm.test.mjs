@@ -25,12 +25,13 @@ test("staff-confirmed Queens tag appears on 5 Star Soccer Academy", () => {
   assert.deepEqual(club.locations, ["Queens"]);
 });
 
-test("Jose is a separate secondary 5 Star contact with workbook provenance", () => {
+test("Jose is 5 Star's primary contact with workbook provenance", () => {
   const clubId = "directory-5-star-soccer-academy";
   const contacts = data.listCrmContacts(clubId);
   assert.equal(contacts.length, 1);
   assert.equal(contacts[0].name, "Jose Romero Aguilar");
-  assert.equal(contacts[0].is_primary, false);
+  assert.equal(contacts[0].is_primary, true);
+  assert.equal(data.listCrmPrimaryContacts(clubId)[0].id, contacts[0].id);
   assert.deepEqual(contacts[0].roles, ["President"]);
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   assert.equal(raw.prepare("SELECT COUNT(*) AS n FROM crm_contact_sources WHERE contact_id=? AND tab='CJSL' AND row_number=12").get(contacts[0].id).n, 1);

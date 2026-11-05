@@ -423,7 +423,7 @@ try {
     const contactId = `${clubId}:jose-romero-aguilar`;
     const email = "5starsocceracademy@gmail.com";
     const inserted = db.prepare(`INSERT OR IGNORE INTO crm_contacts(id,organization_id,name,email,phone,is_primary)
-      SELECT ?,?,'Jose Romero Aguilar',?,'(347) 353-5307',0
+      SELECT ?,?,'Jose Romero Aguilar',?,'(347) 353-5307',1
       WHERE NOT EXISTS (SELECT 1 FROM crm_contacts WHERE organization_id=? AND lower(trim(name))='jose romero aguilar' AND lower(email)=?)`)
       .run(contactId, clubId, email, clubId, email).changes;
     if (inserted) {
@@ -433,6 +433,11 @@ try {
         "2026 YS Database Phin + Rei (1).xlsx / f5d6c8dc817502beb39364b6242a3259d7c96e71432f7fc043f12d4cea907443",
         JSON.stringify({ club: "5 Star Soccer Academy", role: "President", first_name: "Jose", last_name: "Romero aguilar", email, phone: "13473535307" }));
     }
+  }
+  if (seedState.run("crm-5-star-jose-primary-2026-11-05").changes) {
+    db.prepare(`UPDATE crm_contacts SET is_primary=1
+      WHERE organization_id=? AND (id=? OR (lower(trim(name))='jose romero aguilar' AND lower(email)=?))`)
+      .run("directory-5-star-soccer-academy", "directory-5-star-soccer-academy:jose-romero-aguilar", "5starsocceracademy@gmail.com");
   }
   db.exec("COMMIT;");
 } catch (error) {
