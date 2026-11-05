@@ -4,11 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import type { CrmClub } from "@/lib/db";
 import { CrmLogo } from "@/components/CrmLogo";
+import { YspPartnerMark } from "@/components/YspPartnerMark";
 
 const areaOrder = ["Brooklyn", "Bronx", "Queens", "Manhattan", "Staten Island", "Long Island", "Westchester", "Hudson Valley", "Capital District", "Connecticut", "Area to confirm"];
 
 function ClubRows({ clubs }: { clubs: CrmClub[] }) {
-  return <div className="partner-list">{clubs.map(club => <Link className="partner-row" href={`/crm/${club.id}`} key={club.id}><CrmLogo name={club.name} path={club.logo_path} /><span className="partner-main"><strong>{club.name}</strong><span className="crm-row-tags"><span className="tag tiny blue">{club.segment === "current_ysp" ? "Current YSP" : "Other club"}</span>{club.locations.length ? club.locations.map(area => <span className="tag tiny outlined" key={area}>{area}</span>) : <span className="tag tiny outlined">Location to confirm</span>}</span><small>{club.assigned_rep_name || "Unassigned"}{club.sources ? ` · ${club.sources}` : ""}</small></span><span className="partner-next"><small>NEXT ACTION</small><strong>{club.next_action || "No next action yet"}</strong></span><span className="row-arrow" aria-hidden="true">↗</span></Link>)}</div>;
+  return <div className="partner-list">{clubs.map(club => <Link className="partner-row" href={`/crm/${club.id}`} key={club.id}><CrmLogo name={club.name} path={club.logo_path} /><span className="partner-main"><strong>{club.name}</strong><span className="crm-row-tags"><span className="tag tiny blue">{club.segment === "current_ysp" ? "Current YSP" : "Other club"}</span>{club.locations.length ? club.locations.map(area => <span className="tag tiny outlined" key={area}>{area}</span>) : <span className="tag tiny outlined">Location to confirm</span>}</span><small>{club.assigned_rep_name || "Unassigned"}{club.sources ? ` · ${club.sources}` : ""}</small></span><span className="partner-next"><small>NEXT ACTION</small><strong>{club.next_action || "No next action yet"}</strong></span>{club.segment === "current_ysp" && <span className="crm-row-partner-mark"><YspPartnerMark /></span>}<span className="row-arrow" aria-hidden="true">↗</span></Link>)}</div>;
 }
 
 export function CrmDirectory({ clubs, reps }: { clubs: CrmClub[]; reps: { id: string; name: string }[] }) {
