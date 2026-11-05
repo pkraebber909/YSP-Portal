@@ -19,6 +19,12 @@ const { default: logoBatches14to17 } = await import("../src/data/logo-batches-14
 const { default: logoBatches18to19 } = await import("../src/data/logo-batches-18-19.json", { with: { type: "json" } });
 const cleanedLogoPathById = new Map(logoBackgroundCleanups.map(([id, , display]) => [id, `/club-logos/${display}`]));
 
+test("staff-confirmed Queens tag appears on 5 Star Soccer Academy", () => {
+  const club = data.getCrmClub("directory-5-star-soccer-academy");
+  assert.equal(club.segment, "directory");
+  assert.deepEqual(club.locations, ["Queens"]);
+});
+
 test("club locations support multiple tags without changing YSP status and survive restart", async () => {
   const id = "directory-ct-rush";
   const before = data.getCrmClub(id);

@@ -411,6 +411,13 @@ try {
   if (seedState.run("crm-locations-from-existing-area-2026-11-05").changes) {
     db.exec("INSERT OR IGNORE INTO crm_locations(organization_id,area,basis) SELECT organization_id,area,area_basis FROM crm_classification WHERE area<>'Area to confirm'");
   }
+  // Staff confirmed 5 Star Soccer Academy serves Queens. Preserve any later staff edits.
+  if (seedState.run("crm-5-star-queens-2026-11-05").changes) {
+    const clubId = "directory-5-star-soccer-academy";
+    const hasLocations = db.prepare("SELECT 1 FROM crm_locations WHERE organization_id=? LIMIT 1").get(clubId);
+    const updated = !hasLocations && db.prepare("UPDATE crm_classification SET area='Queens',area_basis='Staff set' WHERE organization_id=? AND area_basis='Unverified'").run(clubId).changes;
+    if (updated) db.prepare("INSERT INTO crm_locations(organization_id,area,basis) VALUES (?,'Queens','Staff set')").run(clubId);
+  }
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");
