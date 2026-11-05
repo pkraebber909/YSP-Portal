@@ -13,6 +13,7 @@ import { logoAssignments02to06 } from "../data/logo-batches-02-06.ts";
 import { logoAssignments07to08 } from "../data/logo-batches-07-08.ts";
 import { logoAssignments09to11 } from "../data/logo-batches-09-11.ts";
 import { logoAssignments12to13 } from "../data/logo-batches-12-13.ts";
+import { logoBackgroundCleanups } from "../data/logo-background-cleanups.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
@@ -336,6 +337,10 @@ try {
   // selection made later is preserved.
   db.prepare("UPDATE organizations SET logo_path=? WHERE id='community-sc' AND kind='crm_club' AND logo_path=?")
     .run("/club-logos/community-sc--4054a636411f.webp", "/club-logos/community-sc.png");
+  const replaceKnownLogo = db.prepare("UPDATE organizations SET logo_path=? WHERE id=? AND kind='crm_club' AND logo_path=?");
+  for (const [id, source, display] of logoBackgroundCleanups) {
+    replaceKnownLogo.run(`/club-logos/${display}`, id, `/club-logos/${source}`);
+  }
   db.prepare("INSERT OR IGNORE INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id) VALUES (?,?,?,?,?,?)").run(
     "06-united-andy-chan", "06-united-new-york", "Andy Chan", "andy.chan@06united.com", "(718) 760-0280", "1540097"
   );
@@ -373,6 +378,18 @@ try {
       insertContact.run(`${orgId}:${email}`, orgId, name, email, order, orgId, email);
     }
   }
+  // Hide owner-identified duplicate/non-club directory entries without deleting
+  // their notes, sources, contacts, or history. Keep the active rep records.
+  const archiveDirectoryClub = db.prepare("UPDATE organizations SET kind='crm_archived' WHERE id=? AND kind='crm_club'");
+  for (const id of [
+    "eleftheria-pancyprian", "peruvian-american-soccer-nyc",
+    "directory-manhattan-kickers", "directory-green-warriors-sa",
+    "directory-hartford-athletic", "directory-hartford-athletic-youth-academy",
+    "directory-nycfc", "directory-new-york-city-fc-girls", "directory-new-york-city-fc-select",
+  ]) archiveDirectoryClub.run(id);
+  // This record stays searchable, but its crest is intentionally removed.
+  db.prepare("UPDATE organizations SET logo_path=NULL WHERE id='directory-westchester-sc' AND kind='crm_club' AND logo_path=?")
+    .run("/club-logos/westchester-sc--90b797a456ab.png");
   db.exec("COMMIT;");
 } catch (error) {
   db.exec("ROLLBACK;");

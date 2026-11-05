@@ -117,8 +117,11 @@ h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .crm-notice { padding: 13px 16px; margin-bottom: 28px; border-left: 4px solid #2c85bc; background: var(--pale); color: #284457; font-size: .88rem; }
 .crm-logo { width: 68px; height: 68px; flex: none; display: grid; place-items: center; border: 1px solid #a6bed0; background: #e4f3ff; color: #004678; font-size: 1.2rem; font-weight: 700; letter-spacing: -.04em; }
 .crm-logo.large { width: 112px; height: 112px; font-size: 1.8rem; }
-.crm-logo.has-image { border: 0; background: transparent; }
+.crm-logo.has-image { border: 0; background: transparent; overflow: hidden; }
 .crm-logo img { width: 100%; height: 100%; object-fit: contain; }
+.crm-logo.logo-smaller img { transform: scale(.82); }
+.crm-logo.logo-larger img { transform: scale(1.18); }
+.crm-logo.logo-raised img { transform: translateY(-10%); }
 .crm-logo.needs-contrast img { filter: drop-shadow(1px 0 #002d62) drop-shadow(-1px 0 #002d62) drop-shadow(0 1px #002d62) drop-shadow(0 -1px #002d62); }
 .crm-round-crop { display: block; width: 100%; height: 100%; }
 .crm-round-crop img { display: block; clip-path: circle(38% at center); }
