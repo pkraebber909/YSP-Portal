@@ -345,12 +345,14 @@ try {
   for (const [id, source, display] of logoBackgroundCleanups) {
     replaceKnownLogo.run(`/club-logos/${display}`, id, `/club-logos/${source}`);
   }
-  db.prepare("INSERT OR IGNORE INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id) VALUES (?,?,?,?,?,?)").run(
-    "06-united-andy-chan", "06-united-new-york", "Andy Chan", "andy.chan@06united.com", "(718) 760-0280", "1540097"
-  );
+  const seedState = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
+  if (seedState.run("06-united-andy-chan-contact-2026-11-05").changes) {
+    db.prepare("INSERT OR IGNORE INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id) VALUES (?,?,?,?,?,?)").run(
+      "06-united-andy-chan", "06-united-new-york", "Andy Chan", "andy.chan@06united.com", "(718) 760-0280", "1540097"
+    );
+  }
   // Apply each owner-supplied book once. Subsequent staff edits, including
   // unassigning a club, must survive server restarts.
-  const seedState = db.prepare("INSERT OR IGNORE INTO crm_seed_state (key) VALUES (?)");
   // Jason's Sprint 2027 update removes these five from the partner group.
   // Keep their CRM records, logos, notes, and any rep assignments intact.
   if (seedState.run("jason-2027-sprint-partner-status-2026-11-04").changes) {
@@ -461,6 +463,22 @@ export function listCrmNotes(orgId: string) {
 }
 export function listCrmPrimaryContacts(orgId: string) {
   return db.prepare("SELECT id,name,email,phone,ticketing_id FROM crm_contacts WHERE organization_id=? AND is_primary=1 ORDER BY sort_order,name COLLATE NOCASE").all(orgId) as CrmContact[];
+}
+export function addCrmContact(orgId: string, name: string, email: string | null, phone: string | null, ticketingId: string | null) {
+  if (!getCrmClub(orgId)) return false;
+  db.prepare(`INSERT INTO crm_contacts (id,organization_id,name,email,phone,ticketing_id,sort_order)
+    VALUES (?,?,?,?,?,?,COALESCE((SELECT MAX(sort_order)+1 FROM crm_contacts WHERE organization_id=?),0))`)
+    .run(crypto.randomUUID(), orgId, name, email, phone, ticketingId, orgId);
+  return true;
+}
+export function updateCrmContact(orgId: string, contactId: string, name: string, email: string | null, phone: string | null, ticketingId: string | null) {
+  if (!getCrmClub(orgId)) return false;
+  return db.prepare("UPDATE crm_contacts SET name=?,email=?,phone=?,ticketing_id=? WHERE id=? AND organization_id=?")
+    .run(name, email, phone, ticketingId, contactId, orgId).changes > 0;
+}
+export function removeCrmContact(orgId: string, contactId: string) {
+  if (!getCrmClub(orgId)) return false;
+  return db.prepare("DELETE FROM crm_contacts WHERE id=? AND organization_id=?").run(contactId, orgId).changes > 0;
 }
 export function addCrmNote(orgId: string, repId: string, note: string) {
   if (!getCrmClub(orgId)) return false;

@@ -1,7 +1,7 @@
 "use server";
 
 import { getSession } from "@/lib/auth";
-import { addCrmNote, getCrmClub, setCrmNextAction, setCrmClassification, setCrmRep } from "@/lib/db";
+import { addCrmContact, addCrmNote, getCrmClub, removeCrmContact, setCrmNextAction, setCrmClassification, setCrmRep, updateCrmContact } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 async function requireCrmRep(form: FormData) {
@@ -42,4 +42,37 @@ export async function saveCrmRep(form: FormData) {
   revalidatePath("/crm");
   revalidatePath(`/crm/${orgId}`);
   revalidatePath("/rep");
+}
+
+function contactFields(form: FormData) {
+  const name = String(form.get("name") || "").trim();
+  const email = String(form.get("email") || "").trim();
+  const phone = String(form.get("phone") || "").trim();
+  const ticketingId = String(form.get("ticketingId") || "").trim();
+  if (!name || name.length > 120) throw new Error("Enter a contact name of up to 120 characters");
+  if (email.length > 254 || (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) throw new Error("Enter a valid email address");
+  if (phone.length > 40 || ticketingId.length > 80) throw new Error("Contact detail is too long");
+  return { name, email: email || null, phone: phone || null, ticketingId: ticketingId || null };
+}
+
+export async function createCrmContact(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  const { name, email, phone, ticketingId } = contactFields(form);
+  if (!addCrmContact(orgId, name, email, phone, ticketingId)) throw new Error("Club not found");
+  revalidatePath(`/crm/${orgId}`);
+}
+
+export async function saveCrmContact(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  const contactId = String(form.get("contactId") || "");
+  const { name, email, phone, ticketingId } = contactFields(form);
+  if (!updateCrmContact(orgId, contactId, name, email, phone, ticketingId)) throw new Error("Contact not found on this club");
+  revalidatePath(`/crm/${orgId}`);
+}
+
+export async function deleteCrmContact(form: FormData) {
+  const { orgId } = await requireCrmRep(form);
+  const contactId = String(form.get("contactId") || "");
+  if (!removeCrmContact(orgId, contactId)) throw new Error("Contact not found on this club");
+  revalidatePath(`/crm/${orgId}`);
 }

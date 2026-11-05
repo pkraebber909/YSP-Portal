@@ -18,6 +18,34 @@ const { logoBackgroundCleanups } = await import("../src/data/logo-background-cle
 const { default: logoBatches14to17 } = await import("../src/data/logo-batches-14-17.json", { with: { type: "json" } });
 const cleanedLogoPathById = new Map(logoBackgroundCleanups.map(([id, , display]) => [id, `/club-logos/${display}`]));
 
+test("staff can add, edit, and remove club contacts without losing those changes on restart", async () => {
+  const clubId = "directory-bellport";
+  assert.deepEqual(data.listCrmPrimaryContacts(clubId), []);
+  assert.equal(data.addCrmContact(clubId, "Club Lead", "lead@example.com", "(555) 123-4567", "12345"), true);
+  const [contact] = data.listCrmPrimaryContacts(clubId);
+  assert.equal(contact.email, "lead@example.com");
+  assert.equal(data.updateCrmContact(clubId, contact.id, "Club Director", null, "(555) 000-0000", null), true);
+  assert.equal(data.listCrmPrimaryContacts(clubId)[0].name, "Club Director");
+  assert.equal(data.updateCrmContact("06-united-new-york", contact.id, "Wrong Club", null, null, null), false);
+  assert.equal(data.removeCrmContact("06-united-new-york", contact.id), false);
+  assert.equal(data.removeCrmContact(clubId, contact.id), true);
+  assert.deepEqual(data.listCrmPrimaryContacts(clubId), []);
+
+  const isolatedPath = path.join(temp, "contact-restart.sqlite");
+  const originalPath = process.env.YSP_DB_PATH;
+  process.env.YSP_DB_PATH = isolatedPath;
+  try {
+    const firstRun = await import("../src/lib/db.ts?contact-seed-first");
+    assert.equal(firstRun.listCrmPrimaryContacts("06-united-new-york").length, 1);
+    const seededId = firstRun.listCrmPrimaryContacts("06-united-new-york")[0].id;
+    assert.equal(firstRun.removeCrmContact("06-united-new-york", seededId), true);
+    const secondRun = await import("../src/lib/db.ts?contact-seed-second");
+    assert.deepEqual(secondRun.listCrmPrimaryContacts("06-united-new-york"), []);
+  } finally {
+    process.env.YSP_DB_PATH = originalPath;
+  }
+});
+
 test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
   const raw = new DatabaseSync(process.env.YSP_DB_PATH);
   const counts = raw.prepare("SELECT COUNT(*) AS contacts,COUNT(DISTINCT organization_id) AS clubs FROM crm_contacts").get();
