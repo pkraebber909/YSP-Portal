@@ -13,6 +13,7 @@ import { logoAssignments02to06 } from "../data/logo-batches-02-06.ts";
 import { logoAssignments07to08 } from "../data/logo-batches-07-08.ts";
 import { logoAssignments09to11 } from "../data/logo-batches-09-11.ts";
 import { logoAssignments12to13 } from "../data/logo-batches-12-13.ts";
+import logoBatches14to17 from "../data/logo-batches-14-17.json" with { type: "json" };
 import { logoBackgroundCleanups } from "../data/logo-background-cleanups.ts";
 
 const dbPath = path.resolve(process.env.YSP_DB_PATH || ".data/ysp.sqlite");
@@ -327,6 +328,9 @@ try {
   for (const [clubId, logoPath] of logoAssignments07to08) fillLogo.run(logoPath, clubId);
   for (const [clubId, logoPath] of logoAssignments09to11) fillLogo.run(logoPath, clubId);
   for (const [clubId, logoPath] of logoAssignments12to13) fillLogo.run(logoPath, clubId);
+  for (const logo of logoBatches14to17.logos) {
+    if (logo.decision === "add_to_placeholder" && logo.portal_logo_path) fillLogo.run(logo.portal_logo_path, logo.portal_club_id);
+  }
   // Replace only these known seed paths. A later staff-selected crest wins.
   db.prepare("UPDATE organizations SET logo_path=? WHERE id='portchester' AND kind='crm_club' AND logo_path=?")
     .run("/club-logos/port-chester-sc--c8582426f9a2.png", "/club-logos/portchester.png");

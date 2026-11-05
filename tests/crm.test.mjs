@@ -5,6 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
+import crypto from "node:crypto";
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "ysp-crm-test-"));
 process.env.YSP_DB_PATH = path.join(temp, "test.sqlite");
@@ -14,6 +15,7 @@ const { logoAssignments07to08 } = await import("../src/data/logo-batches-07-08.t
 const { logoAssignments09to11 } = await import("../src/data/logo-batches-09-11.ts");
 const { logoAssignments12to13 } = await import("../src/data/logo-batches-12-13.ts");
 const { logoBackgroundCleanups } = await import("../src/data/logo-background-cleanups.ts");
+const { default: logoBatches14to17 } = await import("../src/data/logo-batches-14-17.json", { with: { type: "json" } });
 const cleanedLogoPathById = new Map(logoBackgroundCleanups.map(([id, , display]) => [id, `/club-logos/${display}`]));
 
 test("Chris Anderson contact batch appears on the right club pages without duplicating Andy Chan", () => {
@@ -135,7 +137,18 @@ test("CRM keeps current YSPs, imports distinct workbook clubs without contacts, 
   ]) assert.equal(data.getCrmClub(id).logo_path, cleanedLogoPathById.get(id) || `/club-logos/${file}`);
   const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
   assert.equal(data.getCrmClub("sc-gjoa").logo_path, "/club-logos/sc-gjoa--a282e8405581.jpg");
-  assert.equal(clubs.filter(club => club.logo_path).length, 453);
+  assert.equal(clubs.filter(club => club.logo_path).length, 481);
+  assert.equal(logoBatches14to17.logos.length, 29);
+  assert.equal(new Set(logoBatches14to17.logos.map(logo => logo.portal_club_id)).size, 29);
+  for (const logo of logoBatches14to17.logos) {
+    if (logo.decision === "hold_league_identity") {
+      assert.equal(data.getCrmClub(logo.portal_club_id).logo_path, null);
+      continue;
+    }
+    assert.equal(data.getCrmClub(logo.portal_club_id).logo_path, logo.portal_logo_path);
+    const bytes = fs.readFileSync(path.join(publicDir, logo.portal_logo_path.slice(1)));
+    assert.equal(crypto.createHash("sha256").update(bytes).digest("hex"), logo.sha256);
+  }
   assert.equal(logoAssignments07to08.length, 43);
   for (const [id, logoPath] of logoAssignments07to08) {
     if (!data.getCrmClub(id) || id === "directory-westchester-sc") continue; // Hidden records and the removed Westchester crest retain source provenance.
